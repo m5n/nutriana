@@ -1,0 +1,15 @@
+This project converts the information contained within the USDA National Nutrient Database for Standard Reference into SQL files for import into specific database systems.
+
+Run the build.sh file to generate the SQL files.  Currently, only a MySQL file is created, but it's easy to add files for other database systems.
+Simply copy one of the Perl module files (*.pm) and alter it to output the format that the other database system requires. 
+To alter the database name or user credentials, edit the "generate_sql.pl" file.
+
+The "db_description.json" file was created manually by extracting the information from the "data/sr24_doc.pdf" file.
+Modifications were made to the information in the "data/sr24_doc.pdf" file as well as the resulting SQL to remove any problems importing the nutrient database data; see the "MODIFICATIONS" file.
+
+Author:
+- Maarten van Egmond
+
+License:
+- Uducada is released under the MIT license; see the LICENSE file.
+- The nutrient database contained within this project was downloaded from the USDA site at http://www.ars.usda.gov/nutrientdata and was not altered in any way.
