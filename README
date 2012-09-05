@@ -1,5 +1,7 @@
 This project converts the information contained within the USDA National Nutrient Database for Standard Reference into SQL files for import into specific database systems.
 
+The database was downloaded from the USDA site at http://www.ars.usda.gov/nutrientdata and was not altered in any way.
+
 Run the build.sh file to generate the SQL files.  Currently, only a MySQL file is created, but it's easy to add files for other database systems.
 Simply copy one of the Perl module files (*.pm) and alter it to output the format that the other database system requires. 
 To alter the database name or user credentials, edit the "generate_sql.pl" file.
@@ -11,5 +13,5 @@ Author:
 - Maarten van Egmond
 
 License:
-- Uducada is released under the MIT license; see the LICENSE file.
-- The nutrient database contained within this project was downloaded from the USDA site at http://www.ars.usda.gov/nutrientdata and was not altered in any way.
+- Usda-nutrient-database-sql-port is released under the MIT license; see the LICENSE file.
+- The USDA Nutrient Database "USDA food composition data" is in the public domain and there is no copyright or licensing fees.
