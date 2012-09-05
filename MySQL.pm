@@ -118,7 +118,7 @@ sub sql_load_file {
    my ($file, $table_name, $field_separator, $text_separator) = @_;
 
    # TODO: how to make MySQL generate an error if varchar data truncation occurs?
-   return "load data infile '$file' into table $table_name fields terminated by '$field_separator' optionally enclosed by '$text_separator' lines terminated by '\\r\\n';";
+   return "load data local infile '$file' into table $table_name fields terminated by '$field_separator' optionally enclosed by '$text_separator' lines terminated by '\\r\\n';";
 }
 
 sub sql_assert_record_count {

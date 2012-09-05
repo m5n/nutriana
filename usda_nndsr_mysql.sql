@@ -276,7 +276,7 @@ create table DATSRCLN (
 );
 alter table DATSRCLN add primary key (NDB_No, Nutr_No, DataSrc_ID);
 
-load data infile '/Users/maarten/m5n/food/data/FOOD_DES.txt' into table FOOD_DES fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
+load data local infile './data/FOOD_DES.txt' into table FOOD_DES fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
 create table tmp (c int unique key);
 insert into tmp (c) values (2);
 insert into tmp (select count(*) from FOOD_DES);
@@ -284,7 +284,7 @@ delete from tmp where c = 7907;
 insert into tmp (select count(*) from tmp);
 drop table tmp;
 
-load data infile '/Users/maarten/m5n/food/data/NUT_DATA.txt' into table NUT_DATA fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
+load data local infile './data/NUT_DATA.txt' into table NUT_DATA fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
 create table tmp (c int unique key);
 insert into tmp (c) values (2);
 insert into tmp (select count(*) from NUT_DATA);
@@ -292,7 +292,7 @@ delete from tmp where c = 583957;
 insert into tmp (select count(*) from tmp);
 drop table tmp;
 
-load data infile '/Users/maarten/m5n/food/data/WEIGHT.txt' into table WEIGHT fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
+load data local infile './data/WEIGHT.txt' into table WEIGHT fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
 create table tmp (c int unique key);
 insert into tmp (c) values (2);
 insert into tmp (select count(*) from WEIGHT);
@@ -300,7 +300,7 @@ delete from tmp where c = 13817;
 insert into tmp (select count(*) from tmp);
 drop table tmp;
 
-load data infile '/Users/maarten/m5n/food/data/FOOTNOTE.txt' into table FOOTNOTE fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
+load data local infile './data/FOOTNOTE.txt' into table FOOTNOTE fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
 create table tmp (c int unique key);
 insert into tmp (c) values (2);
 insert into tmp (select count(*) from FOOTNOTE);
@@ -308,7 +308,7 @@ delete from tmp where c = 522;
 insert into tmp (select count(*) from tmp);
 drop table tmp;
 
-load data infile '/Users/maarten/m5n/food/data/FD_GROUP.txt' into table FD_GROUP fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
+load data local infile './data/FD_GROUP.txt' into table FD_GROUP fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
 create table tmp (c int unique key);
 insert into tmp (c) values (2);
 insert into tmp (select count(*) from FD_GROUP);
@@ -316,7 +316,7 @@ delete from tmp where c = 25;
 insert into tmp (select count(*) from tmp);
 drop table tmp;
 
-load data infile '/Users/maarten/m5n/food/data/LANGUAL.txt' into table LANGUAL fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
+load data local infile './data/LANGUAL.txt' into table LANGUAL fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
 create table tmp (c int unique key);
 insert into tmp (c) values (2);
 insert into tmp (select count(*) from LANGUAL);
@@ -324,7 +324,7 @@ delete from tmp where c = 40205;
 insert into tmp (select count(*) from tmp);
 drop table tmp;
 
-load data infile '/Users/maarten/m5n/food/data/LANGDESC.txt' into table LANGDESC fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
+load data local infile './data/LANGDESC.txt' into table LANGDESC fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
 create table tmp (c int unique key);
 insert into tmp (c) values (2);
 insert into tmp (select count(*) from LANGDESC);
@@ -332,7 +332,7 @@ delete from tmp where c = 774;
 insert into tmp (select count(*) from tmp);
 drop table tmp;
 
-load data infile '/Users/maarten/m5n/food/data/NUTR_DEF.txt' into table NUTR_DEF fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
+load data local infile './data/NUTR_DEF.txt' into table NUTR_DEF fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
 create table tmp (c int unique key);
 insert into tmp (c) values (2);
 insert into tmp (select count(*) from NUTR_DEF);
@@ -340,7 +340,7 @@ delete from tmp where c = 146;
 insert into tmp (select count(*) from tmp);
 drop table tmp;
 
-load data infile '/Users/maarten/m5n/food/data/SRC_CD.txt' into table SRC_CD fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
+load data local infile './data/SRC_CD.txt' into table SRC_CD fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
 create table tmp (c int unique key);
 insert into tmp (c) values (2);
 insert into tmp (select count(*) from SRC_CD);
@@ -348,7 +348,7 @@ delete from tmp where c = 10;
 insert into tmp (select count(*) from tmp);
 drop table tmp;
 
-load data infile '/Users/maarten/m5n/food/data/DERIV_CD.txt' into table DERIV_CD fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
+load data local infile './data/DERIV_CD.txt' into table DERIV_CD fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
 create table tmp (c int unique key);
 insert into tmp (c) values (2);
 insert into tmp (select count(*) from DERIV_CD);
@@ -356,7 +356,7 @@ delete from tmp where c = 54;
 insert into tmp (select count(*) from tmp);
 drop table tmp;
 
-load data infile '/Users/maarten/m5n/food/data/DATA_SRC.txt' into table DATA_SRC fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
+load data local infile './data/DATA_SRC.txt' into table DATA_SRC fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
 create table tmp (c int unique key);
 insert into tmp (c) values (2);
 insert into tmp (select count(*) from DATA_SRC);
@@ -364,7 +364,7 @@ delete from tmp where c = 589;
 insert into tmp (select count(*) from tmp);
 drop table tmp;
 
-load data infile '/Users/maarten/m5n/food/data/DATSRCLN.txt' into table DATSRCLN fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
+load data local infile './data/DATSRCLN.txt' into table DATSRCLN fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
 create table tmp (c int unique key);
 insert into tmp (c) values (2);
 insert into tmp (select count(*) from DATSRCLN);

@@ -75,7 +75,7 @@ foreach (@{$data->{"tables"}}) {
     my %table = %{$_};
     my $table_name = substr($table{"file"}, 0, -length(".txt"));
 
-    print sql_load_file("$pwd/data/" . $table{"file"}, $table_name, $field_separator, $text_separator) . "\n";
+    print sql_load_file("./data/" . $table{"file"}, $table_name, $field_separator, $text_separator) . "\n";
 
     # Assert all records were loaded.  Make sure a SQL error is generated if the count is off.
     print sql_assert_record_count($table_name, $table{"records"}) . "\n\n";
