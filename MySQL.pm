@@ -1,5 +1,8 @@
 #!/usr/bin/perl
-    
+#
+# MySQL SQL generating perl module
+# This file is part of http://github/m5n/nutriana
+
 use strict;
 
 sub sql_comment {

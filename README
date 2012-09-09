@@ -1,17 +1,33 @@
-This project converts the information contained within the USDA National Nutrient Database for Standard Reference into SQL files for import into specific database systems.
+DATABASE SYSTEMS SUPPORTED:
+- MySQL
 
-The database was downloaded from the USDA site at http://www.ars.usda.gov/nutrientdata and was not altered in any way.
+NUTRIENT DATABASES INCLUDED:
+- USDA National Nutrient Database for Standard Reference
+  http://www.ars.usda.gov/nutrientdata
 
-Run the build.sh file to generate the SQL files.  Currently, only a MySQL file is created, but it's easy to add files for other database systems.
-Simply copy one of the Perl module files (*.pm) and alter it to output the format that the other database system requires. 
+PROJECT DESCRIPTION:
+This project converts the food composition data released by various official
+sources in the world to more modern formats.  Often this data is provided by the
+source as an Access database, an Excel file, or a set of character delimited
+text files.  For programmatic access, however, some sort of SQL format is
+usually prefered to any of the above formats.
+
+HOW IT WORKS:
+A human being is needed to create a description file for a given nutrient database.  The JSON format was chosen for readability and portability reasons.  
+Nutriana always converts the official data without modification.  However, some changes may be necessary to ensure a successful database creation and data import.  For example:
+- the database schema as indicated by the official source is not compatible with the raw data files provided
+- additional data rows are needed to avoid conflicts with foreign key constraints
+See the *.MODIFICATIONS files for more details.
+
+IF YOUR PREFERRED DATABASE IS NOT SUPPORTED:
+It should be easy to add other SQL-based databases by copying one of the Perl module files (*.pm) and edit it to output the format that your database system requires.  (If you find it's not, let me know by creating an issue.)
+Run the build.sh file to (re)generate the SQL files.  The script will automatically detect the new .pm file and attempt to output SQL for it.
 To alter the database name or user credentials, edit the "generate_sql.pl" file.
 
-The "db_description.json" file was created manually by extracting the information from the "data/sr24_doc.pdf" file.
-Modifications were made to the information in the "data/sr24_doc.pdf" file as well as the resulting SQL to remove any problems importing the nutrient database data; see the "MODIFICATIONS" file.
-
-Author:
+AUTHOR:
 - Maarten van Egmond
 
-License:
-- Usda-nutrient-database-sql-port is released under the MIT license; see the LICENSE file.
-- The USDA Nutrient Database "USDA food composition data" is in the public domain and there is no copyright or licensing fees.
+LICENSE:
+- Nutriana is released under the MIT license; see the LICENSE file.
+- Full licensing and usage information for the incuded nutrient databases is available in the *.LICENSE files; below is a summary: 
+  - The USDA Nutrient Database "USDA food composition data" is in the public domain and there is no copyright or licensing fees.
