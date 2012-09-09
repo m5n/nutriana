@@ -1,5 +1,6 @@
 {
     "version": 24,
+    "description": "USDA National Nutrient Database for Standard Reference, Release 24",
     "url": "http://www.ars.usda.gov/nutrientdata",
     "field_separator": "^",
     "text_separator": "~",
