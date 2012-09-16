@@ -625,7 +625,7 @@
                     "allows_null": false,
                     "description": "Unique ID identifying the reference/source."
                 }
-           ]
+            ]
         }
     ]
 }
