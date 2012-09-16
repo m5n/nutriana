@@ -4,6 +4,9 @@
 PERL=`which perl`
 if [ "$PERL" == "" ]; then echo "Please install Perl" ; exit 1 ; fi
 
+# Start clean.
+./clean.sh
+
 # Process all nutrient databases included.
 for NUTDBDIR in `find . -type d -depth 1`; do
     # Extract nutrient dabatase identifier.
