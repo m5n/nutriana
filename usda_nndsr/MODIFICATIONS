@@ -1,11 +1,14 @@
 Modifications made that were missing or incorrect in the data description file ./data/sr24.pdf:
 
+DATA_SRC table
+- change Title to allow null because entry S1921 doesn't specify this value
+ 
 DATSRCLN table
 - add foreign key NUTR_DEF.Nutr_No for Nutr_No
 
 DERIV_CD table
 - change Deriv_Desc size from 120 to 263 because entry NP's Deriv_desc length is 263
-- insert empty Deriv_Cd value to avoid foreign key error added on NUT_DATA table
+- (MySQL) convert empty string Deriv_Cd values to null to avoid foreign key error added on NUT_DATA table
   + this is to fix ERROR 1452 (23000) at line 368: Cannot add or update a child row:
     a foreign key constraint fails (`food`.<result 2 when explaining filename '#sql-36d3_44'>,
     CONSTRAINT `#sql-36d3_44_ibfk_4` FOREIGN KEY (`Deriv_Cd`) REFERENCES `DERIV_CD` (`Deriv_Cd`))
@@ -13,8 +16,8 @@ DERIV_CD table
   + "select distinct DERIV_CD from NUT_DATA order by DERIV_CD" reveals there's an empty value, which the DERIV_CD table does not contain
 
 FOOD_DES table
-- change record count to 7907 (from 7906)
-- insert empty NDB_No value to avoid foreign key error added on NUT_DATA table
+- change record count from 7906 to 7907
+- (MySQL) convert empty string NDB_No values to null to avoid foreign key error added on NUT_DATA table
   + this is to fix ERROR 1452 (23000) at line 382: Cannot add or update a child row:
     a foreign key constraint fails (`food`.<result 2 when explaining filename '#sql-36d3_47'>,
     CONSTRAINT `#sql-36d3_47_ibfk_5` FOREIGN KEY (`Ref_NDB_No`) REFERENCES `FOOD_DES` (`NDB_No`))
@@ -22,19 +25,27 @@ FOOD_DES table
   + "select distinct Ref_NDB_No from NUT_DATA order by Ref_NDB_No" reveals there's an empty value, which the FOOD_DES table does not contain
 
 FOOTNOTE table
+- change Footnt_Typ to allow null because entries (35234, 01) through (35234, 06) don't specify this value
 - add foreign key NUTR_DEF.Nutr_No for Nutr_No
 
 LANGDESC table
-- change record count to 774 (from 779)
+- change record count from 779 to 774
 
 LANGUAL table
 - add Factor_Code as second primary key as NDB_No is marked as primary key but is not unique
+- (Oracle) convert Factor_Code values to uppercase as some databases (e.g. Oracle) use case-sensitive key values:
+  SQL> select distinct Factor_Code from LANGUAL where Factor_Code not in (select distinct Factor_Code from LANGDESC);
+  FACTO
+  -----
+  a0149
+  f0014
 
 NUT_DATA table
+- change DF size from 2 to 4 because entry (04025, 307) and others length is 3, and (14096, 207) and others length is 4
 - add foreign key FOOD_DES.NDB_No for Ref_NDB_No
 
 NUTR_DEF table
-- insert empty Nutr_No value to avoid foreign key error added on FOOTNOTE table
+- (MySQL) convert empty string Nutr_No values to null to avoid foreign key error added on FOOTNOTE table
   + this is to fix ERROR 1452 (23000) at line 387: Cannot add or update a child row:
     a foreign key constraint fails (`food`.<result 2 when explaining filename '#sql-36d3_48'>,
     CONSTRAINT `#sql-36d3_48_ibfk_2` FOREIGN KEY (`Nutr_No`) REFERENCES `NUTR_DEF` (`Nutr_No`))

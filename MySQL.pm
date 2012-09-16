@@ -11,6 +11,10 @@ sub sql_comment {
    return "-- $comment";
 }
 
+sub sql_how_to_run_as_admin {
+   return "mysql -v -u root < file.sql";
+}
+
 sub sql_drop_database {
    my ($db_name) = @_;
 
@@ -86,9 +90,9 @@ sub sql_datatype_def {
 }
 
 sub sql_field_def {
-    my ($field_name, $datatype, $can_be_blank) = @_; 
+    my ($field_name, $datatype, $allows_null) = @_; 
 
-    return "$field_name $datatype " . ($can_be_blank ? "null" : "not null");
+    return "$field_name $datatype" . ($allows_null ? "" : " not null");
 }
 
 sub sql_insert {
@@ -101,8 +105,19 @@ sub sql_insert {
         push @field_values, $field_names_and_values{$key};
     }
 
-    #return "insert into $table_name (" . join(", ", @{keys %field_names_and_values}) . ") values ('" . join("', '", @{values %field_names_and_values}) . "');";
     return "insert into $table_name (" . join(", ", @field_names) . ") values ('" . join("', '", @field_values) . "');";
+}
+
+sub sql_convert_empty_string_to_null {
+   my ($table_name, $field_name) = @_;
+
+   return "UPDATE $table_name SET $field_name = NULL WHERE $field_name = '';";
+}
+
+sub sql_convert_to_uppercase {
+   my ($table_name, $field_name) = @_;
+
+   return "UPDATE $table_name SET $field_name = UPPER($field_name);";
 }
 
 sub sql_add_primary_keys {
@@ -118,7 +133,7 @@ sub sql_add_foreign_key {
 }
 
 sub sql_load_file {
-   my ($file, $table_name, $field_separator, $text_separator) = @_;
+   my ($nutdbid, $user_name, $user_pwd, $file, $table_name, $field_separator, $text_separator, $maxchars, @fields) = @_;
 
    # TODO: how to make MySQL generate an error if varchar data truncation occurs?
    return "load data local infile '$file' into table $table_name fields terminated by '$field_separator' optionally enclosed by '$text_separator' lines terminated by '\\r\\n';";
@@ -127,7 +142,7 @@ sub sql_load_file {
 sub sql_assert_record_count {
    my ($table_name, $record_count) = @_;
 
-   # MySQL (versions <= 5.5 at least) does not support assertions, so do this via a (clunky) workaround.
+   # MySQL (versions <= 5.5 at least) does not support assertions, so do this via a workaround.
    # 1. create a temporary table with a single unique numeric field
    # 2. insert the value 2 
    # 3. insert the record count of the table to be asserted

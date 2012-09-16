@@ -6,11 +6,13 @@
 use strict;
 
 my $nutdbid = $ARGV[0];
+die "Usage: $0 nutdbid\n" if !$nutdbid;
+
 my $pwd = `pwd`; chomp $pwd;
-my @files = split /\n/, `file $nutdbid/*.txt`;
+my @files = split /\n/, `file $nutdbid/data/*.txt`;
 foreach (@files) {
     $_ =~ /^(.*):/;
-    print "WARNING: data file $pwd/$1 contains non-ASCII characters\n" if $_ !~ /ASCII/;
+    print "  * WARNING: data file $pwd/$1 contains non-ASCII characters\n" if $_ !~ /ASCII/;
 }
 
 # TODO:

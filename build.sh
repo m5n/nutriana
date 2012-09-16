@@ -12,12 +12,16 @@ for NUTDBDIR in `find . -type d -depth 1`; do
     # Ignore .git dir.
     if [ "$NUTDBID" == ".git" ]; then continue; fi
 
+    echo "Processing $NUTDBID..."
+
     # Check that the data files do not contain any special characters.
-    # Because in shell scripts `file $NUTDBID/*.txt` does not preserve newlines,
-    # defer to Perl for this.
+    # Because in shell scripts `file $NUTDBID/data/*.txt` does not preserve
+    # newlines, defer to Perl for this.
+    echo "- Checking data files..."
     $PERL ./check_data_files.pl $NUTDBID
 
     # The Perl modules indicate the databases to generate SQL for.
+    echo "- Generating SQL files..."
     for PMFILE in `find . -type f -name \*.pm`; do
         # Extract dabatase identifier.
         RDBMSID=`expr "$PMFILE" : "\./\(.*\).pm"`
@@ -29,6 +33,6 @@ for NUTDBDIR in `find . -type d -depth 1`; do
         # to avoid accidentally using official modules with the same name.
         $PERL -I . -M$RDBMSID ./generate_sql.pl $RDBMSID $NUTDBID > $OUTFILE
 
-        echo "$RDBMSID file for $NUTDBID generated: $OUTFILE"
+        echo "  - $RDBMSID: $OUTFILE"
     done
 done
