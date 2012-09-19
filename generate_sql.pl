@@ -6,10 +6,9 @@
 
 # Change these to suit your needs.
 # TODO: move to properties file
-my $DB_NAME = "food";
-my $DB_SERVER = "localhost";
 my $DB_USER = "food";
 my $DB_PWD = "food";
+my $DB_SERVER = "localhost";
 
 
 use strict;
@@ -26,8 +25,6 @@ my $pwd = `pwd`; chomp $pwd;
 my $file = "$pwd/$nutdbid/schema.json";
 my $json = do { local $/ = undef; open my $fh, "<", $file or die "Could not open $file: $!"; <$fh>; };
 my $data = decode_json($json);
-my $field_separator = $data->{"field_separator"};
-my $text_separator = $data->{"text_separator"};
 my $header = $data->{"description"} . " (" . $data->{"url"} . ")";
 my $header_length = length($header);
 
@@ -40,15 +37,8 @@ print sql_comment("Run this SQL with an account that has admin priviledges, e.g.
 print sql_comment("="x$header_length). "\n\n";
 
 
-# Set up database.
-print sql_drop_database($DB_NAME) . "\n";
-print sql_create_database($DB_NAME) . "\n";
-print sql_use_database($DB_NAME) . "\n\n";
-
-
-# Set up user.
-print sql_drop_user($DB_USER, $DB_SERVER) . "\n";
-print sql_create_user($DB_USER, $DB_PWD, $DB_NAME, $DB_SERVER) . "\n\n";
+# Set up user and database.
+print sql_recreate_database_and_user_to_access_it($nutdbid, $DB_USER, $DB_PWD, $DB_SERVER) . "\n\n";
 
 
 # Set up tables.
@@ -88,34 +78,46 @@ foreach (@{$data->{"tables"}}) {
 foreach (@{$data->{"tables"}}) {
     my %table = %{$_};
     my $table_name = substr($table{"file"}, 0, -length(".txt"));
-    my @fields = ();
-    my @sizeparts;
-    my $size;
-    my $maxsize = 0;
+    my @fieldinfo = ();
+    my $datafile = "./$nutdbid/data/" . $table{"file"};
+    my $line_separator = "\\r\\n";
+
+    # Convert files if needed.
+    if ($table{"convert_rows_to_remove_trailing_whitespace"}) {
+        # Only convert once.
+        if (-e "$datafile.trimmed") {
+            $datafile = "$datafile.trimmed";   # Update datafile.
+        } else {
+            open INFILE, "<", $datafile or die "Could not open $datafile: $!";
+            $datafile = "$datafile.trimmed";   # Update datafile.
+            open OUTFILE, ">", $datafile or die "Could not open $datafile: $!";
+            while (<INFILE>) {
+                $_ =~ s/\s$//g;
+                print OUTFILE $_ . "\r\n";   # Interpreted version of $line_separator.
+            }
+            close INFILE;
+            close OUTFILE;
+        }
+    }
 
     foreach (@{$table{"fields"}}) {
         my %field = %{$_};
-        push @fields, $field{"name"};
 
-        $size = 0;
-        @sizeparts = split /\./, $field{"size"};
-        foreach (@sizeparts) {
-            $size += $_;
-        }
-        $size += $#sizeparts;   # Using maxindex here, so adding 0 if there's just 1 part.
-        $maxsize = $size if $size > $maxsize;
+        push @fieldinfo, {"name" => $field{"name"}, "type" => $field{"type"}, "size" => $field{"size"}};
     }
 
     print sql_comment("Load data into $table_name") . "\n";
-    print sql_load_file($nutdbid, $DB_USER, $DB_PWD, "./$nutdbid/data/" . $table{"file"}, $table_name, $field_separator, $text_separator, $maxsize, @fields) . "\n";
+    print sql_load_file($nutdbid, $DB_USER, $DB_PWD, $datafile, $table_name, $data->{"field_separator"}, $data->{"text_separator"}, $line_separator, $data->{"ignore_header_lines"}, @fieldinfo) . "\n";
 
     # Assert all records were loaded.  Make sure a SQL error is generated if the count is off.
     print sql_comment("Assert all " . $table{"records"} . " records were loaded") . "\n";
     print sql_assert_record_count($table_name, $table{"records"}) . "\n\n";
 }
 
+my $data = decode_json($json);   # TODO: without this, we get this error: Can't use an undefined value as a HASH reference at ./generate_sql.pl line 120, which is the "my %table = %{$_};" line below.
+
 # Fix casing and empty string issues.
-print sql_comment("Correct data inconsistencies") . "\n";
+print sql_comment("Correct data inconsistencies, if any") . "\n";
 foreach (@{$data->{"tables"}}) {
     my %table = %{$_};
     my $table_name = substr($table{"file"}, 0, -length(".txt"));
@@ -158,4 +160,3 @@ foreach (@{$data->{"tables"}}) {
         print sql_add_foreign_key($table_name, $field{"name"}, $field{"foreign_key"}) . "\n" if $field{"foreign_key"};
     }
 }
-

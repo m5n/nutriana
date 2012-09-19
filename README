@@ -3,7 +3,9 @@ DATABASE SYSTEMS SUPPORTED:
 - Oracle
 
 NUTRIENT DATABASES INCLUDED:
-- USDA National Nutrient Database for Standard Reference
+- Canadian Nutrient File, Health Canada, 2010
+  http://www.healthcanada.gc.ca/cnf
+- USDA National Nutrient Database for Standard Reference, Release 24
   http://www.ars.usda.gov/nutrientdata
 
 PROJECT DESCRIPTION:
@@ -27,5 +29,4 @@ AUTHOR:
 
 LICENSE:
 - Nutriana is released under the MIT license; see the LICENSE file.
-- Full licensing and usage information for the incuded nutrient databases is available in the */LICENSE files; below is a summary: 
-  - The USDA Nutrient Database "USDA food composition data" is in the public domain and there is no copyright or licensing fees.
+- Full licensing and usage information for the incuded nutrient databases is available in the */LICENSE files.

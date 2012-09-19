@@ -4,13 +4,9 @@
 -- Run this SQL with an account that has admin priviledges, e.g.: sqlplus "/as sysdba" < file.sql
 -- =========================================================================================================
 
-
 -- This script assumes you've already set up a database when you installed Oracle.
-
-
-BEGIN EXECUTE IMMEDIATE 'DROP USER food CASCADE'; EXCEPTION WHEN OTHERS THEN IF SQLCODE != -01918 THEN RAISE; END IF; END;
+BEGIN EXECUTE IMMEDIATE 'CREATE USER food IDENTIFIED BY food'; EXCEPTION WHEN OTHERS THEN IF SQLCODE != -01920 THEN RAISE; END IF; END;
 /
-CREATE USER food IDENTIFIED BY food;
 GRANT CONNECT, RESOURCE TO food;
 CONNECT food/food;
 
@@ -278,7 +274,7 @@ DELETE FROM tmp WHERE c = 171155;
 INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
--- Correct data inconsistencies
+-- Correct data inconsistencies, if any
 UPDATE NUT_DATA SET Deriv_Cd = NULL WHERE Deriv_Cd = '';
 UPDATE NUT_DATA SET Ref_NDB_No = NULL WHERE Ref_NDB_No = '';
 UPDATE FOOTNOTE SET Nutr_No = NULL WHERE Nutr_No = '';

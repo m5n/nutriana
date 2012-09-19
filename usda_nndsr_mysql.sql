@@ -4,14 +4,10 @@
 -- Run this SQL with an account that has admin priviledges, e.g.: mysql -v -u root < file.sql
 -- =========================================================================================================
 
-drop database if exists food;
-create database food;
-use food;
-
-grant usage on *.* to 'food'@'localhost';   -- Creates user if it does not yet exist.
-drop user 'food'@'localhost';
-create user 'food'@'localhost' identified by 'food';
-grant all on food.* to 'food'@'localhost' identified by 'food';
+drop database if exists usda_nndsr;
+create database usda_nndsr;
+use usda_nndsr;
+grant all on usda_nndsr.* to 'food'@'localhost' identified by 'food';
 
 -- Food Description
 create table FOOD_DES (
@@ -134,7 +130,12 @@ create table DATSRCLN (
 );
 
 -- Load data into FOOD_DES
-load data local infile './usda_nndsr/data/FOOD_DES.txt' into table FOOD_DES fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
+load data local infile './usda_nndsr/data/FOOD_DES.txt'
+    into table FOOD_DES
+    fields terminated by '^' optionally enclosed by '~'
+    lines terminated by '\r\n'
+    (NDB_No, FdGrp_Cd, Long_Desc, Shrt_Desc, ComName, ManufacName, Survey, Ref_desc, Refuse, SciName, N_Factor, Pro_Factor, Fat_Factor, CHO_Factor)
+;
 -- Assert all 7907 records were loaded
 create table tmp (c int unique key);
 insert into tmp (c) values (2);
@@ -144,7 +145,12 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into NUT_DATA
-load data local infile './usda_nndsr/data/NUT_DATA.txt' into table NUT_DATA fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
+load data local infile './usda_nndsr/data/NUT_DATA.txt'
+    into table NUT_DATA
+    fields terminated by '^' optionally enclosed by '~'
+    lines terminated by '\r\n'
+    (NDB_No, Nutr_No, Nutr_Val, Num_Data_Pts, Std_Error, Src_Cd, Deriv_Cd, Ref_NDB_No, Add_Nutr_Mark, Num_Studies, Min, Max, DF, Low_EB, Up_EB, Stat_cmt, AddMod_Date, CC)
+;
 -- Assert all 583957 records were loaded
 create table tmp (c int unique key);
 insert into tmp (c) values (2);
@@ -154,7 +160,12 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into WEIGHT
-load data local infile './usda_nndsr/data/WEIGHT.txt' into table WEIGHT fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
+load data local infile './usda_nndsr/data/WEIGHT.txt'
+    into table WEIGHT
+    fields terminated by '^' optionally enclosed by '~'
+    lines terminated by '\r\n'
+    (NDB_No, Seq, Amount, Msre_Desc, Gm_Wgt, Num_Data_Pts, Std_Dev)
+;
 -- Assert all 13817 records were loaded
 create table tmp (c int unique key);
 insert into tmp (c) values (2);
@@ -164,7 +175,12 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into FOOTNOTE
-load data local infile './usda_nndsr/data/FOOTNOTE.txt' into table FOOTNOTE fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
+load data local infile './usda_nndsr/data/FOOTNOTE.txt'
+    into table FOOTNOTE
+    fields terminated by '^' optionally enclosed by '~'
+    lines terminated by '\r\n'
+    (NDB_No, Footnt_No, Footnt_Typ, Nutr_No, Footnt_Txt)
+;
 -- Assert all 522 records were loaded
 create table tmp (c int unique key);
 insert into tmp (c) values (2);
@@ -174,7 +190,12 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into FD_GROUP
-load data local infile './usda_nndsr/data/FD_GROUP.txt' into table FD_GROUP fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
+load data local infile './usda_nndsr/data/FD_GROUP.txt'
+    into table FD_GROUP
+    fields terminated by '^' optionally enclosed by '~'
+    lines terminated by '\r\n'
+    (FdGrp_Cd, FdGrp_Desc)
+;
 -- Assert all 25 records were loaded
 create table tmp (c int unique key);
 insert into tmp (c) values (2);
@@ -184,7 +205,12 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into LANGUAL
-load data local infile './usda_nndsr/data/LANGUAL.txt' into table LANGUAL fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
+load data local infile './usda_nndsr/data/LANGUAL.txt'
+    into table LANGUAL
+    fields terminated by '^' optionally enclosed by '~'
+    lines terminated by '\r\n'
+    (NDB_No, Factor_Code)
+;
 -- Assert all 40205 records were loaded
 create table tmp (c int unique key);
 insert into tmp (c) values (2);
@@ -194,7 +220,12 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into LANGDESC
-load data local infile './usda_nndsr/data/LANGDESC.txt' into table LANGDESC fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
+load data local infile './usda_nndsr/data/LANGDESC.txt'
+    into table LANGDESC
+    fields terminated by '^' optionally enclosed by '~'
+    lines terminated by '\r\n'
+    (Factor_Code, Description)
+;
 -- Assert all 774 records were loaded
 create table tmp (c int unique key);
 insert into tmp (c) values (2);
@@ -204,7 +235,12 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into NUTR_DEF
-load data local infile './usda_nndsr/data/NUTR_DEF.txt' into table NUTR_DEF fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
+load data local infile './usda_nndsr/data/NUTR_DEF.txt'
+    into table NUTR_DEF
+    fields terminated by '^' optionally enclosed by '~'
+    lines terminated by '\r\n'
+    (Nutr_No, Units, Tagname, NutrDesc, Num_Dec, SR_Order)
+;
 -- Assert all 146 records were loaded
 create table tmp (c int unique key);
 insert into tmp (c) values (2);
@@ -214,7 +250,12 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into SRC_CD
-load data local infile './usda_nndsr/data/SRC_CD.txt' into table SRC_CD fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
+load data local infile './usda_nndsr/data/SRC_CD.txt'
+    into table SRC_CD
+    fields terminated by '^' optionally enclosed by '~'
+    lines terminated by '\r\n'
+    (Src_Cd, SrcCd_Desc)
+;
 -- Assert all 10 records were loaded
 create table tmp (c int unique key);
 insert into tmp (c) values (2);
@@ -224,7 +265,12 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into DERIV_CD
-load data local infile './usda_nndsr/data/DERIV_CD.txt' into table DERIV_CD fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
+load data local infile './usda_nndsr/data/DERIV_CD.txt'
+    into table DERIV_CD
+    fields terminated by '^' optionally enclosed by '~'
+    lines terminated by '\r\n'
+    (Deriv_Cd, Deriv_Desc)
+;
 -- Assert all 54 records were loaded
 create table tmp (c int unique key);
 insert into tmp (c) values (2);
@@ -234,7 +280,12 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into DATA_SRC
-load data local infile './usda_nndsr/data/DATA_SRC.txt' into table DATA_SRC fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
+load data local infile './usda_nndsr/data/DATA_SRC.txt'
+    into table DATA_SRC
+    fields terminated by '^' optionally enclosed by '~'
+    lines terminated by '\r\n'
+    (DataSrc_ID, Authors, Title, Year, Journal, Vol_City, Issue_State, Start_Page, End_Page)
+;
 -- Assert all 589 records were loaded
 create table tmp (c int unique key);
 insert into tmp (c) values (2);
@@ -244,7 +295,12 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into DATSRCLN
-load data local infile './usda_nndsr/data/DATSRCLN.txt' into table DATSRCLN fields terminated by '^' optionally enclosed by '~' lines terminated by '\r\n';
+load data local infile './usda_nndsr/data/DATSRCLN.txt'
+    into table DATSRCLN
+    fields terminated by '^' optionally enclosed by '~'
+    lines terminated by '\r\n'
+    (NDB_No, Nutr_No, DataSrc_ID)
+;
 -- Assert all 171155 records were loaded
 create table tmp (c int unique key);
 insert into tmp (c) values (2);
@@ -253,7 +309,7 @@ delete from tmp where c = 171155;
 insert into tmp (select count(*) from tmp);
 drop table tmp;
 
--- Correct data inconsistencies
+-- Correct data inconsistencies, if any
 UPDATE NUT_DATA SET Deriv_Cd = NULL WHERE Deriv_Cd = '';
 UPDATE NUT_DATA SET Ref_NDB_No = NULL WHERE Ref_NDB_No = '';
 UPDATE FOOTNOTE SET Nutr_No = NULL WHERE Nutr_No = '';

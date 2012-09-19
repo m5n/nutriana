@@ -2,74 +2,68 @@
 #
 # Oracle SQL generating perl module
 # This file is part of http://github/m5n/nutriana
-    
+     
 use strict;
 
 # TODO: how to make Oracle stop processing a .sql script on error?
 
 sub sql_ignore_exception {
-   my ($errcode, $sql) = @_;
+    my ($errcode, $sql) = @_;
 
-   return "BEGIN EXECUTE IMMEDIATE '" . $sql . "'; EXCEPTION WHEN OTHERS THEN IF SQLCODE != " . $errcode . " THEN RAISE; END IF; END;\n/";
+    return "BEGIN EXECUTE IMMEDIATE '" . $sql . "'; EXCEPTION WHEN OTHERS THEN IF SQLCODE != " . $errcode . " THEN RAISE; END IF; END;\n/";
 }
 
 sub sql_comment {
-   my ($comment) = @_;
+    my ($comment) = @_;
 
-   return "-- $comment";
+    return "-- $comment";
 }
 
 sub sql_how_to_run_as_admin {
-   return "sqlplus \"/as sysdba\" < file.sql";
-   # alternative: return "sqlplus system/your_pwd < file.sql";
+    return "sqlplus \"/as sysdba\" < file.sql";
+    # alternative: return "sqlplus system/your_pwd < file.sql";
 }
 
-sub sql_drop_database {
-   my ($db_name) = @_;
+sub sql_recreate_database_and_user_to_access_it {
+    my ($db_name, $user_name, $user_pwd, $db_server) = @_;
 
-   return "";   # TODO: drop database
-}
+    my $result = "";
 
-sub sql_create_database {
-   my ($db_name) = @_;
+    # *Re*create, so drop old database, if any.
+    # TODO: drop database
 
-   return sql_comment("This script assumes you've already set up a database when you installed Oracle.");   # TODO: create db
-}
+    # Create database.
+    $result .= sql_comment("This script assumes you've already set up a database when you installed Oracle.") . "\n";   # TODO: create db
 
-sub sql_use_database {
-   my ($db_name) = @_;
+    # Switch to it.
+    # Not needed for Oracle.
+    # Thanks, https://www.baezaconsulting.com/index.php?option=com_content&view=article&id=46:use-database-command-in-oracle&catid=7:oracle-answers&Itemid=12
 
-   return "";   # TODO: not needed for Oracle, right?
-}
+    # Create user, if not already there.
+    # Yes, it's better to create tablespace, but then we'd have to pick a path to a
+    # datafile, complicating the script.  Something like this could be added however:
+    # DEFAULT TABLESPACE $user_name TEMPORARY TABLESPACE temp QUOTA UNLIMITED ON $user_name
+    $result .= sql_ignore_exception("-01920", "CREATE USER $user_name IDENTIFIED BY $user_pwd") . "\n";   # Avoid error if user already exists.
+    $result .= "GRANT CONNECT, RESOURCE TO $user_name;\n";
 
-sub sql_drop_user {
-   my ($user_name, $server_name) = @_;
+    # The tables should be created in the new user's schema (see "thanks" link above), so connect as that user.
+    $result .= "CONNECT $user_name/$user_pwd;";
 
-   return sql_ignore_exception("-01918", "DROP USER $user_name CASCADE");   # Avoid error if user does not exist.
-}
-
-sub sql_create_user {
-   my ($user_name, $user_pwd, $db_name, $server_name) = @_;
-
-   # Note: yes, it's better to create tablespace, but then we'd have to pick a path to a datafile, complicating the script.
-   my $result = "CREATE USER $user_name IDENTIFIED BY $user_pwd;\n";   # DEFAULT TABLESPACE $user_name TEMPORARY TABLESPACE temp QUOTA UNLIMITED ON $user_name;\n";
-   $result .= "GRANT CONNECT, RESOURCE TO $user_name;\n";
-   $result .= "CONNECT $user_name/$user_pwd;";
-   return $result;
+    return $result;
 }
 
 sub sql_create_table_start {
-   my ($table_name) = @_;
+    my ($table_name) = @_;
 
-   # Oracle does not support "create or replace" for tables, so drop and (re-)create.
-   # TODO: remove "drop table" once "drop database" is implemented
-   my $result = sql_ignore_exception("-00942", "DROP TABLE $table_name CASCADE CONSTRAINTS") . "\n";   # Avoid error if table does not exist.
-   $result .= "CREATE TABLE $table_name (";
-   return $result;
+    # Oracle does not support "create or replace" for tables, so drop and (re-)create.
+    # TODO: remove "drop table" once "drop database" is implemented
+    my $result = sql_ignore_exception("-00942", "DROP TABLE $table_name CASCADE CONSTRAINTS") . "\n";   # Avoid error if table does not exist.
+    $result .= "CREATE TABLE $table_name (";
+    return $result;
 }
 
 sub sql_create_table_end {
-   return ");";
+    return ");";
 }
 
 sub sql_datatype_def {
@@ -87,6 +81,8 @@ sub sql_datatype_def {
         return $result;
     } elsif ($type eq "Alphanumeric") {
         return "VARCHAR2($size)";
+    } elsif ($type =~ /^Date/) {
+        return "date";
     } else {
         die "Unexpected data type $type";
     }
@@ -112,73 +108,102 @@ sub sql_insert {
 }
 
 sub sql_convert_empty_string_to_null {
-   my ($table_name, $field_name) = @_;
+    my ($table_name, $field_name) = @_;
 
-   return "UPDATE $table_name SET $field_name = NULL WHERE $field_name = '';";
+    return "UPDATE $table_name SET $field_name = NULL WHERE $field_name = '';";
 }
 
 sub sql_convert_to_uppercase {
-   my ($table_name, $field_name) = @_;
+    my ($table_name, $field_name) = @_;
 
-   return "UPDATE $table_name SET $field_name = UPPER($field_name);";
+    return "UPDATE $table_name SET $field_name = UPPER($field_name);";
 }
 
 sub sql_add_primary_keys {
-   my ($table_name, @field_names) = @_;
+    my ($table_name, @field_names) = @_;
 
-   return "ALTER TABLE $table_name ADD PRIMARY KEY (" . join(", ", @field_names) . ");";
+    return "ALTER TABLE $table_name ADD PRIMARY KEY (" . join(", ", @field_names) . ");";
 }
 
 sub sql_add_foreign_key {
-   my ($table_name, $field_name, $foreign_key) = @_;
+    my ($table_name, $field_name, $foreign_key) = @_;
 
-   return "ALTER TABLE $table_name ADD FOREIGN KEY ($field_name) REFERENCES " . join("(", split /\./, $foreign_key) . ");";
+    return "ALTER TABLE $table_name ADD FOREIGN KEY ($field_name) REFERENCES " . join("(", split /\./, $foreign_key) . ");";
+}
+
+sub sqlldr_datatype_def {
+    my ($data_type, $data_size) = @_;
+
+    # CHAR type is good enough for all except date.
+    if ($data_type eq "Numeric") {
+        return (index($data_size, ".") == -1) ? "INTEGER EXTERNAL" : "DECIMAL EXTERNAL";
+    } elsif ($data_type eq "Alphanumeric") {
+        return ($data_size > 255) ? "CHAR($data_size)" : "CHAR";
+    } elsif ($data_type =~ m/^Date/) {
+        $data_type =~ s/Date\(/DATE "/;
+        $data_type =~ s/\)/"/;
+        return $data_type;
+    } else {
+        die "Unexpected data type $data_type";
+    }
 }
 
 sub sql_load_file {
-   my ($nutdbid, $user_name, $user_pwd, $file, $table_name, $field_separator, $text_separator, $maxchars, @fields) = @_;
+    my ($nutdbid, $user_name, $user_pwd, $file, $table_name, $field_separator, $text_separator, $line_separator, $ignore_header_lines, @fieldinfo) = @_;
 
-   # Keep things tidy and gather all control files into a subdir.
-   `mkdir -p ./$nutdbid/sqlldr`;
+    # Keep things tidy and gather all control files into a subdir.
+    `mkdir -p ./$nutdbid/sqlldr`;
 
-   # Generate control file.
-   $file = "./" . $nutdbid . "/sqlldr/" . $table_name . ".ctl";
-   open FILE, ">$file" or die $!;
-   print FILE "OPTIONS (DIRECT=TRUE, PARALLEL=TRUE)\n";   # Load all or nothing.
-   print FILE "LOAD DATA\n";
-   print FILE "    INFILE './$nutdbid/data/$table_name.txt'\n";   # Using field separator so no need for streaming option to load multi-line values.
-   print FILE "    APPEND\n";   # Must be APPEND to use PARALLEL option.
-   print FILE "    INTO TABLE $table_name\n";
-   print FILE "    FIELDS TERMINATED BY '$field_separator'\n";
-   print FILE "    OPTIONALLY ENCLOSED BY '$text_separator'\n";
-   print FILE "    TRAILING NULLCOLS\n";   # To load empty columns, e.g. lines ending in ^^^^.
-   print FILE "    (" . join(" CHAR($maxchars), ", @fields) . " CHAR($maxchars))";   # Don't be limited by sqlldr's max char size of 255.
-   close FILE;
+    # Generate control file.
+    $file = "./" . $nutdbid . "/sqlldr/" . $table_name . ".ctl";
+    open FILE, ">$file" or die $!;
+    print FILE "OPTIONS (DIRECT=TRUE, PARALLEL=TRUE";   # Load all or nothing.
+    print FILE ", SKIP=$ignore_header_lines" if $ignore_header_lines;
+    print FILE ")\n";
+    print FILE "LOAD DATA\n";
+    print FILE "    INFILE './$nutdbid/data/$table_name.txt'\n";   # Using field separator so no need for streaming option to load multi-line values.
+    print FILE "    APPEND\n";   # Must be APPEND to use PARALLEL option.
+    print FILE "    INTO TABLE $table_name\n";
+    print FILE "    FIELDS TERMINATED BY '$field_separator'\n";
+    print FILE "    OPTIONALLY ENCLOSED BY '$text_separator'\n";
+    print FILE "    TRAILING NULLCOLS\n";   # To load empty columns, e.g. lines ending in ^^^^.
+    print FILE "    (";
+    # Need to specify sqlldr data types to get around sqlldr's max char size of 255, as well as read date formats.
+    my $saw_one = 0;
+    foreach (@fieldinfo) {
+        print FILE ", " if $saw_one;
+        $saw_one = 1;
 
-   # Invoke sqlldr.
-   return "HOST SQLLDR $user_name/$user_pwd control=$file;";
+        my %info = %{$_};
+        print FILE $info{"name"} . " " . sqlldr_datatype_def($info{"type"}, $info{"size"});
+    }
+    print FILE ")";
+    close FILE;
+
+    # Invoke sqlldr.
+    return "HOST SQLLDR $user_name/$user_pwd control=$file;";
 }
 
 sub sql_assert_record_count {
-   my ($table_name, $record_count) = @_;
+    my ($table_name, $record_count) = @_;
 
-   # Oracle (versions <= 11g at least) does not support assertions, so do this via a workaround.
-   # 1. create a temporary table with a single unique numeric field
-   # 2. insert the value 2 
-   # 3. insert the record count of the table to be asserted
-   # 4. remove the record where the value is the assertion value
-   # case a: if the record count == assertion value, there's now just 1 row in the temporary table (just the value 2)
-   # case b: if the record count != assertion value, there are 2 rows in the temporary table (the value 2 and the incorrect assertion value)
-   # 5. insert the record count of the temporary table
-   # no error for case a, and a sql error for case b (trying to insert a non-unique value)
+    # Oracle (versions <= 11g at least) does not support assertions, so do this via a workaround.
+    # 1. create a temporary table with a single unique numeric field
+    # 2. insert the value 2 
+    # 3. insert the record count of the table to be asserted
+    # 4. remove the record where the value is the assertion value
+    # case a: if the record count == assertion value, there's now just 1 row in the temporary table (just the value 2)
+    # case b: if the record count != assertion value, there are 2 rows in the temporary table (the value 2 and the incorrect assertion value)
+    # 5. insert the record count of the temporary table
+    # no error for case a, and a sql error for case b (trying to insert a non-unique value)
 
-   my $result = "CREATE TABLE tmp (c NUMBER PRIMARY KEY);\n";
-   $result .= "INSERT INTO tmp (c) VALUES (2);\n";
-   $result .= "INSERT INTO tmp (SELECT COUNT(*) FROM $table_name);\n";
-   $result .= "DELETE FROM tmp WHERE c = $record_count;\n";
-   $result .= "INSERT INTO tmp (SELECT COUNT(*) FROM tmp);\n";
-   $result .= "DROP TABLE tmp;";
-   return $result;
+    my $result = "CREATE TABLE tmp (c NUMBER PRIMARY KEY);\n";
+    $result .= "INSERT INTO tmp (c) VALUES (2);\n";
+    $result .= "INSERT INTO tmp (SELECT COUNT(*) FROM $table_name);\n";
+    $result .= "DELETE FROM tmp WHERE c = $record_count;\n";
+    $result .= "INSERT INTO tmp (SELECT COUNT(*) FROM tmp);\n";
+    $result .= "DROP TABLE tmp;";
+    return $result;
 }
 
 1;

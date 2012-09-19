@@ -4,6 +4,7 @@
     "url": "http://www.ars.usda.gov/nutrientdata",
     "field_separator": "^",
     "text_separator": "~",
+    "ignore_header_lines": 0,
     "tables": [
         {
             "file": "FOOD_DES.txt",
