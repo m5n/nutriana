@@ -1,0 +1,389 @@
+{
+    "version": 25,
+    "description": "USDA National Nutrient Database for Standard Reference (Abbreviated Version), Release 25",
+    "url": "http://www.ars.usda.gov/nutrientdata",
+    "field_separator": "^",
+    "text_separator": "~",
+    "ignore_header_lines": 0,
+    "tables": [
+        {
+            "file": "ABBREV.txt",
+            "description": "Abbreviated",
+            "records": 8176,
+            "fields": [
+                {
+                    "name": "NDB_No",
+                    "type": "Alphanumeric",
+                    "size": 5,
+                    "is_primary_key": true,
+                    "allows_null": false,
+                    "description": "5-digit Nutrient Databank number."
+                },
+                {
+                    "name": "Shrt_Desc",
+                    "type": "Alphanumeric",
+                    "size": 60,
+                    "allows_null": true,
+                    "description": "60-character abbreviated description of food item. For a 200-character description and other descriptive information, link to the Food Description file."
+                },
+                {
+                    "name": "Water",
+                    "type": "Numeric",
+                    "size": 10.2,
+                    "allows_null": true,
+                    "description": "Water (g/100 g)"
+                },
+                {
+                    "name": "Energ_Kcal",
+                    "type": "Numeric",
+                    "size": 10,
+                    "allows_null": true,
+                    "description": "Food energy (kcal/100 g)"
+                },
+                {
+                    "name": "Protein",
+                    "type": "Numeric",
+                    "size": 10.2,
+                    "allows_null": true,
+                    "description": "Protein (g/100 g)"
+                },
+                {
+                    "name": "Lipid_Tot",
+                    "type": "Numeric",
+                    "size": 10.2,
+                    "allows_null": true,
+                    "description": "Total lipid (fat)(g/100 g)"
+                },
+                {
+                    "name": "Ash",
+                    "type": "Numeric",
+                    "size": 10.2,
+                    "allows_null": true,
+                    "description": "Ash (g/100 g)"
+                },
+                {
+                    "name": "Carbohydrt",
+                    "type": "Numeric",
+                    "size": 10.2,
+                    "allows_null": true,
+                    "description": "Carbohydrate, by difference (g/100 g)"
+                },
+                {
+                    "name": "Fiber_TD",
+                    "type": "Numeric",
+                    "size": 10.1,
+                    "allows_null": true,
+                    "description": "Total dietary fiber (g/100 g)"
+                },
+                {
+                    "name": "Sugar_Tot",
+                    "type": "Numeric",
+                    "size": 10.2,
+                    "allows_null": true,
+                    "description": "Total sugars (g/100 g)"
+                },
+                {
+                    "name": "Calcium",
+                    "type": "Numeric",
+                    "size": 10,
+                    "allows_null": true,
+                    "description": "Calcium (mg/100 g)"
+                },
+                {
+                    "name": "Iron",
+                    "type": "Numeric",
+                    "size": 10.2,
+                    "allows_null": true,
+                    "description": "Iron (mg/100 g)"
+                },
+                {
+                    "name": "Magnesium",
+                    "type": "Numeric",
+                    "size": 10,
+                    "allows_null": true,
+                    "description": "Magnesium (mg/100 g)"
+                },
+                {
+                    "name": "Phosphorus",
+                    "type": "Numeric",
+                    "size": 10,
+                    "allows_null": true,
+                    "description": "Phosphorus (mg/100 g)"
+                },
+                {
+                    "name": "Potassium",
+                    "type": "Numeric",
+                    "size": 10,
+                    "allows_null": true,
+                    "description": "Potassium (mg/100 g)"
+                },
+                {
+                    "name": "Sodium",
+                    "type": "Numeric",
+                    "size": 10,
+                    "allows_null": true,
+                    "description": "Sodium (mg/100 g)"
+                },
+                {
+                    "name": "Zinc",
+                    "type": "Numeric",
+                    "size": 10.2,
+                    "allows_null": true,
+                    "description": "Zinc (mg/100 g)"
+                },
+                {
+                    "name": "Copper",
+                    "type": "Numeric",
+                    "size": 10.3,
+                    "allows_null": true,
+                    "description": "Copper (mg/100 g)"
+                },
+                {
+                    "name": "Manganese",
+                    "type": "Numeric",
+                    "size": 10.3,
+                    "allows_null": true,
+                    "description": "Manganese (mg/100 g)"
+                },
+                {
+                    "name": "Selenium",
+                    "type": "Numeric",
+                    "size": 10.1,
+                    "allows_null": true,
+                    "description": "Selenium (mcg/100 g)"
+                },
+                {
+                    "name": "Vit_C",
+                    "type": "Numeric",
+                    "size": 10.1,
+                    "allows_null": true,
+                    "description": "Vitamin C (mg/100 g)"
+                },
+                {
+                    "name": "Thiamin",
+                    "type": "Numeric",
+                    "size": 10.3,
+                    "allows_null": true,
+                    "description": "Thiamin (mg/100 g)"
+                },
+                {
+                    "name": "Riboflavin",
+                    "type": "Numeric",
+                    "size": 10.3,
+                    "allows_null": true,
+                    "description": "Riboflavin (mg/100 g)"
+                },
+                {
+                    "name": "Niacin",
+                    "type": "Numeric",
+                    "size": 10.3,
+                    "allows_null": true,
+                    "description": "Niacin (mg/100 g)"
+                },
+                {
+                    "name": "Panto_acid",
+                    "type": "Numeric",
+                    "size": 10.3,
+                    "allows_null": true,
+                    "description": "Pantothenic acid (mg/100 g)"
+                },
+                {
+                    "name": "Vit_B6",
+                    "type": "Numeric",
+                    "size": 10.3,
+                    "allows_null": true,
+                    "description": "Vitamin B6 (mg/100 g)"
+                },
+                {
+                    "name": "Folate_Tot",
+                    "type": "Numeric",
+                    "size": 10,
+                    "allows_null": true,
+                    "description": "Folate, total (mcg/100 g)"
+                },
+                {
+                    "name": "Folic_acid",
+                    "type": "Numeric",
+                    "size": 10,
+                    "allows_null": true,
+                    "description": "Folic acid (mcg/100 g)"
+                },
+                {
+                    "name": "Food_Folate",
+                    "type": "Numeric",
+                    "size": 10,
+                    "allows_null": true,
+                    "description": "Food folate (mcg/100 g)"
+                },
+                {
+                    "name": "Folate_DFE",
+                    "type": "Numeric",
+                    "size": 10,
+                    "allows_null": true,
+                    "description": "Folate (mcg dietary folate equivalents/100 g)"
+                },
+                {
+                    "name": "Choline_Tot",
+                    "type": "Numeric",
+                    "size": 10,
+                    "allows_null": true,
+                    "description": "Choline, total (mg/100 g)"
+                },
+                {
+                    "name": "Vit_B12",
+                    "type": "Numeric",
+                    "size": 10.2,
+                    "allows_null": true,
+                    "description": "Vitamin B12 (mcg/100 g)"
+                },
+                {
+                    "name": "Vit_A_IU",
+                    "type": "Numeric",
+                    "size": 10,
+                    "allows_null": true,
+                    "description": "Vitamin A (IU/100 g)"
+                },
+                {
+                    "name": "Vit_A_RAE",
+                    "type": "Numeric",
+                    "size": 10,
+                    "allows_null": true,
+                    "description": "Vitamin A (mcg retinol activity equivalents/100g)"
+                },
+                {
+                    "name": "Retinol",
+                    "type": "Numeric",
+                    "size": 10,
+                    "allows_null": true,
+                    "description": "Retinol (mcg/100 g)"
+                },
+                {
+                    "name": "Alpha_Carot",
+                    "type": "Numeric",
+                    "size": 10,
+                    "allows_null": true,
+                    "description": "Alpha-carotene (mcg/100 g)"
+                },
+                {
+                    "name": "Beta_Carot",
+                    "type": "Numeric",
+                    "size": 10,
+                    "allows_null": true,
+                    "description": "Beta-carotene (mcg/100 g)"
+                },
+                {
+                    "name": "Beta_Crypt",
+                    "type": "Numeric",
+                    "size": 10,
+                    "allows_null": true,
+                    "description": "Beta-cryptoxanthin (mcg/100 g)"
+                },
+                {
+                    "name": "Lycopene",
+                    "type": "Numeric",
+                    "size": 10,
+                    "allows_null": true,
+                    "description": "Lycopene (mcg/100 g)"
+                },
+                {
+                    "name": "Lut_Zea",
+                    "type": "Numeric",
+                    "size": 10,
+                    "allows_null": true,
+                    "description": "Lutein+zeazanthin (mcg/100 g)"
+                },
+                {
+                    "name": "Vit_E",
+                    "type": "Numeric",
+                    "size": 10.2,
+                    "allows_null": true,
+                    "description": "Vitamin E (alpha-tocopherol) (mg/100 g)"
+                },
+                {
+                    "name": "Vit_D_mcg",
+                    "type": "Numeric",
+                    "size": 10.1,
+                    "allows_null": true,
+                    "description": "Vitamin D (mcg/100 g)"
+                },
+                {
+                    "name": "Vit_D_IU",
+                    "type": "Numeric",
+                    "size": 10,
+                    "allows_null": true,
+                    "description": "Vitamin D (IU/100 g)"
+                },
+                {
+                    "name": "Vit_K",
+                    "type": "Numeric",
+                    "size": 10.1,
+                    "allows_null": true,
+                    "description": "Vitamin K (phylloquinone) (mcg/100 g)"
+                },
+                {
+                    "name": "FA_Sat",
+                    "type": "Numeric",
+                    "size": 10.3,
+                    "allows_null": true,
+                    "description": "Saturated fatty acid (g/100 g)"
+                },
+                {
+                    "name": "FA_Mono",
+                    "type": "Numeric",
+                    "size": 10.3,
+                    "allows_null": true,
+                    "description": "Monounsaturated fatty acids (g/100 g)"
+                },
+                {
+                    "name": "FA_Poly",
+                    "type": "Numeric",
+                    "size": 10.3,
+                    "allows_null": true,
+                    "description": "Polyunsaturated fatty acids (g/100 g)"
+                },
+                {
+                    "name": "Cholestrl",
+                    "type": "Numeric",
+                    "size": 10.3,
+                    "allows_null": true,
+                    "description": "Cholesterol (mg/100 g)"
+                },
+                {
+                    "name": "GmWt_1",
+                    "type": "Numeric",
+                    "size": 9.2,
+                    "allows_null": true,
+                    "description": "First household weight for this item from the Weight file. For the complete list and description of the measure, link to the Weight file."
+                },
+                {
+                    "name": "GmWt_Desc1",
+                    "type": "Alphanumeric",
+                    "size": 120,
+                    "allows_null": true,
+                    "description": "Description of household weight number 1."
+                },
+                {
+                    "name": "GmWt_2",
+                    "type": "Numeric",
+                    "size": 9.2,
+                    "allows_null": true,
+                    "description": "Second household weight for this item from the Weight file. For the complete list and description of the measure, link to the Weight file."
+                },
+                {
+                    "name": "GmWt_Desc2",
+                    "type": "Alphanumeric",
+                    "size": 120,
+                    "allows_null": true,
+                    "description": "Description of household weight number 2."
+                },
+                {
+                    "name": "Refuse_Pct",
+                    "type": "Numeric",
+                    "size": 2,
+                    "allows_null": true,
+                    "description": "Percent refuse. For a description of refuse, link to the Food Description file."
+                }
+            ]
+        }
+    ]
+}
