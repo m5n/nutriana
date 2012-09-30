@@ -1,54 +1,60 @@
-Modifications made that were missing or incorrect in the data description file ./data/sr24.pdf:
+Modifications made that were missing or incorrect in the data description file ./data/sr25_doc.pdf:
 
 DATA_SRC table
 - change Title to allow null because entry S1921 doesn't specify this value
  
 DATSRCLN table
-- add foreign key NUTR_DEF.Nutr_No for Nutr_No
+- change record count from 187019 to 187156
+- there are DataSrc_ID records in DATSRCLN which are not in DATA_SRC:
+(Once fixed, add back                     "foreign_key": "DATA_SRC.DataSrc_ID", to DATSRCLN.DataSrc_ID in schema.json)
+mysql> select distinct DataSrc_ID from DATSRCLN where DataSrc_ID not in (select DataSrc_ID from DATA_SRC);
++------------+
+| DataSrc_ID |
++------------+
+| S7821      |
+| S7441      |
+| S7521      |
+| S7282      |
+| S7321      |
+| S7601      |
+| S7701      |
+| S6962      |
++------------+
 
 DERIV_CD table
-- change Deriv_Desc size from 120 to 263 because entry NP's Deriv_desc length is 263
-- (MySQL) convert empty string Deriv_Cd values to null to avoid foreign key error added on NUT_DATA table
-  + this is to fix ERROR 1452 (23000) at line 368: Cannot add or update a child row:
-    a foreign key constraint fails (`food`.<result 2 when explaining filename '#sql-36d3_44'>,
-    CONSTRAINT `#sql-36d3_44_ibfk_4` FOREIGN KEY (`Deriv_Cd`) REFERENCES `DERIV_CD` (`Deriv_Cd`))
-  + the error above occurs with this statement: alter table NUT_DATA add foreign key (Deriv_Cd) references DERIV_CD(Deriv_Cd)
-  + "select distinct DERIV_CD from NUT_DATA order by DERIV_CD" reveals there's an empty value, which the DERIV_CD table does not contain
-
-FOOD_DES table
-- change record count from 7906 to 7907
-- (MySQL) convert empty string NDB_No values to null to avoid foreign key error added on NUT_DATA table
-  + this is to fix ERROR 1452 (23000) at line 382: Cannot add or update a child row:
-    a foreign key constraint fails (`food`.<result 2 when explaining filename '#sql-36d3_47'>,
-    CONSTRAINT `#sql-36d3_47_ibfk_5` FOREIGN KEY (`Ref_NDB_No`) REFERENCES `FOOD_DES` (`NDB_No`))
-  + the error above occurs with this statement: alter table NUT_DATA add foreign key (Ref_NDB_No) references FOOD_DES(NDB_No)
-  + "select distinct Ref_NDB_No from NUT_DATA order by Ref_NDB_No" reveals there's an empty value, which the FOOD_DES table does not contain
+- add back SR24 rows NR and O, which are still referenced by NUT_DATA
+- (MySQL) SR24 was ok, but SR25 has ^M character after every line
+  and there's one empty line between NP and PAE, which causes problems with MySQL.
+  Also NP's Deriv_Desc value is not terminated by a ~ (instead there's that emtpy line).
+  There are no ways around this other than pre-processing the file.
 
 FOOTNOTE table
+- change Footnt_No to allow null because entry 12737 doesn't specify this value
 - change Footnt_Typ to allow null because entries (35234, 01) through (35234, 06) don't specify this value
-- add foreign key NUTR_DEF.Nutr_No for Nutr_No
-
-LANGDESC table
-- change record count from 779 to 774
-
-LANGUAL table
-- add Factor_Code as second primary key as NDB_No is marked as primary key but is not unique
-- (Oracle) convert Factor_Code values to uppercase as some databases (e.g. Oracle) use case-sensitive key values:
-  SQL> select distinct Factor_Code from LANGUAL where Factor_Code not in (select distinct Factor_Code from LANGDESC);
-  FACTO
-  -----
-  a0149
-  f0014
-
-NUT_DATA table
-- change DF size from 2 to 4 because entry (04025, 307) and others length is 3, and (14096, 207) and others length is 4
-- add foreign key FOOD_DES.NDB_No for Ref_NDB_No
-
-NUTR_DEF table
 - (MySQL) convert empty string Nutr_No values to null to avoid foreign key error added on FOOTNOTE table
   + this is to fix ERROR 1452 (23000) at line 387: Cannot add or update a child row:
-    a foreign key constraint fails (`food`.<result 2 when explaining filename '#sql-36d3_48'>,
+    a foreign key constraint fails (`usda_nndsr`.<result 2 when explaining filename '#sql-36d3_48'>,
     CONSTRAINT `#sql-36d3_48_ibfk_2` FOREIGN KEY (`Nutr_No`) REFERENCES `NUTR_DEF` (`Nutr_No`))
   + the error above occurs with this statement: alter table FOOTNOTE add foreign key (Nutr_No) references NUTR_DEF(Nutr_No)
   + "select distinct Nutr_No from FOOTNOTE order by Nutr_No" reveals there's an empty value, which the NUTR_DEF table does not contain
 
+LANGUAL table
+- change record count from 40205 to 39085
+
+NUT_DATA table
+- change DF size from 2 to 4 because entry (04025, 307) and others length is 3, and (14096, 207) and others length is 4
+- (MySQL) convert empty string Deriv_Cd values to null to avoid foreign key error added on NUT_DATA table
+  + this is to fix ERROR 1452 (23000) at line 368: Cannot add or update a child row:
+    a foreign key constraint fails (`usda_nndsr`.<result 2 when explaining filename '#sql-36d3_44'>,
+    CONSTRAINT `#sql-36d3_44_ibfk_4` FOREIGN KEY (`Deriv_Cd`) REFERENCES `DERIV_CD` (`Deriv_Cd`))
+  + the error above occurs with this statement: alter table NUT_DATA add foreign key (Deriv_Cd) references DERIV_CD(Deriv_Cd)
+  + "select distinct DERIV_CD from NUT_DATA order by DERIV_CD" reveals there's an empty value, which the DERIV_CD table does not contain
+- (MySQL) convert empty string Ref_NDB_No values to null to avoid foreign key error added on NUT_DATA table
+  + this is to fix ERROR 1452 (23000) at line 382: Cannot add or update a child row:
+    a foreign key constraint fails (`usda_nndsr`.<result 2 when explaining filename '#sql-36d3_47'>,
+    CONSTRAINT `#sql-36d3_47_ibfk_5` FOREIGN KEY (`Ref_NDB_No`) REFERENCES `FOOD_DES` (`NDB_No`))
+  + the error above occurs with this statement: alter table NUT_DATA add foreign key (Ref_NDB_No) references FOOD_DES(NDB_No)
+  + "select distinct Ref_NDB_No from NUT_DATA order by Ref_NDB_No" reveals there's an empty value, which the FOOD_DES table does not contain
+
+WEIGHT table
+- change Msre_Desc size from 80 to 84 because entries (14400, *) have lengths of 83 and 84.

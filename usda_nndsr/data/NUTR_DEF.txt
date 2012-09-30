@@ -31,7 +31,7 @@
 ~317~^~µg~^~SE~^~Selenium, Se~^~1~^~6200~
 ~318~^~IU~^~VITA_IU~^~Vitamin A, IU~^~0~^~7500~
 ~319~^~µg~^~RETOL~^~Retinol~^~0~^~7430~
-~320~^~µg_RAE~^~VITA_RAE~^~Vitamin A, RAE~^~0~^~7420~
+~320~^~µg~^~VITA_RAE~^~Vitamin A, RAE~^~0~^~7420~
 ~321~^~µg~^~CARTB~^~Carotene, beta~^~0~^~7440~
 ~322~^~µg~^~CARTA~^~Carotene, alpha~^~0~^~7450~
 ~323~^~mg~^~TOCPHA~^~Vitamin E (alpha-tocopherol)~^~2~^~7900~
@@ -59,7 +59,7 @@
 ~430~^~µg~^~VITK1~^~Vitamin K (phylloquinone)~^~1~^~8800~
 ~431~^~µg~^~FOLAC~^~Folic acid~^~0~^~7000~
 ~432~^~µg~^~FOLFD~^~Folate, food~^~0~^~7100~
-~435~^~µg_DFE~^~FOLDFE~^~Folate, DFE~^~0~^~7200~
+~435~^~µg~^~FOLDFE~^~Folate, DFE~^~0~^~7200~
 ~454~^~mg~^~BETN~^~Betaine~^~1~^~7270~
 ~501~^~g~^~TRP_G~^~Tryptophan~^~3~^~16300~
 ~502~^~g~^~THR_G~^~Threonine~^~3~^~16400~

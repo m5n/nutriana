@@ -392,8 +392,6 @@
 ~01161~^3^1^~cubic inch~^18^^
 ~01161~^4^1^~slice~^28^^
 ~01161~^5^3^~oz~^85^^
-~01163~^1^1^~cup~^215^^
-~01163~^2^.5^~cup~^108^^
 ~01164~^1^1^~cup~^243^^
 ~01164~^2^2^~tbsp~^30^^
 ~01165~^1^1^~cup, crumbled~^132^^
@@ -418,6 +416,10 @@
 ~01169~^3^1^~oz~^28.35^^
 ~01169~^4^1^~cubic inch~^17^^
 ~01169~^5^1^~slice (1 oz)~^28^^
+~01174~^1^1^~cup~^246^^
+~01174~^2^1^~quart~^984^^
+~01175~^1^1^~cup~^244^^
+~01175~^2^1^~quart~^976^^
 ~01178~^1^1^~tablespoon~^12.0^^
 ~01178~^2^1^~cup~^230^^
 ~01179~^1^1^~tablespoon~^12.0^^
@@ -512,6 +514,7 @@
 ~01235~^1^.5^~cup~^68^^
 ~01236~^1^.5^~cup~^86^^
 ~01237~^1^1^~bar~^50^^
+~01238~^1^1^~serving~^70^^
 ~01239~^1^1^~serving~^82^1^
 ~01240~^1^1^~unit~^96^1^
 ~01241~^1^1^~serving~^70^1^
@@ -520,6 +523,8 @@
 ~01244~^1^1^~bar~^68^2^
 ~01250~^1^1^~can~^227^1^
 ~01251~^1^.25^~cup shredded~^28^^
+~01252~^1^1^~slice 2/3 oz.~^19^^
+~01252~^2^1^~slice 3/4 oz.~^21^^
 ~01253~^1^1^~cup, diced~^140^^
 ~01253~^2^1^~cup, melted~^244^^
 ~01253~^3^1^~cup, shredded~^113^^
@@ -531,6 +536,9 @@
 ~01254~^2^1^~oz~^28.35^^
 ~01254~^3^1^~slice (3/4 oz)~^21^^
 ~01254~^4^1^~package (8 oz)~^227^^
+~01256~^1^1^~container~^170^1^
+~01258~^1^1^~cup, sifted~^107^^
+~01258~^2^1^~tbsp~^7.0^^
 ~02001~^1^1^~tbsp~^6.0^^
 ~02001~^2^1^~tsp~^1.9^^
 ~02002~^1^1^~tbsp, whole~^6.7^^
@@ -1224,6 +1232,10 @@
 ~03228~^2^1^~oz~^28.35^^
 ~03228~^3^1^~jar~^220^^
 ~03228~^4^1^~jar Gerber Third Foods (6 oz)~^170^^
+~03229~^1^1^~oz~^28.35^^
+~03229~^2^1^~jar~^113^^
+~03230~^1^1^~oz~^28.35^^
+~03230~^2^1^~jar~^220^^
 ~03233~^1^1^~tbsp~^15.0^^
 ~03233~^2^1^~oz~^28.35^^
 ~03233~^3^1^~jar~^113^^
@@ -1334,7 +1346,6 @@
 ~03802~^1^1^~scoop~^8.7^^
 ~03803~^1^1^~fl oz~^30.5^^
 ~03805~^1^1^~scoop~^8.3^^
-~03806~^1^1^~fl oz~^30.5^^
 ~03808~^1^1^~scoop~^8.5^^
 ~03809~^1^1^~scoop~^8.3^^
 ~03812~^1^1^~fl oz~^31.3^^
@@ -1373,7 +1384,6 @@
 ~03845~^2^1^~fl oz~^30.5^^
 ~03846~^1^1^~fl oz~^30.5^^
 ~03849~^1^1^~scoop~^9.4^^
-~03850~^1^1^~fl oz~^30.4^^
 ~03851~^1^1^~fl oz~^31.4^^
 ~03852~^1^1^~scoop~^8.8^^
 ~03853~^1^1^~scoop~^8.5^^
@@ -1403,7 +1413,7 @@
 ~03913~^1^1^~scoop~^9.4^^
 ~03925~^1^1^~fl oz~^30.5^^
 ~03926~^1^1^~fl oz~^31.4^^
-~03928~^1^1^~scoop~^4.3^^
+~03928~^1^1^~scoop~^8.5^^
 ~03929~^1^1^~scoop~^9.3^^
 ~03930~^1^1^~fl oz~^30.5^^
 ~03934~^1^1^~oz~^28.35^^
@@ -1436,6 +1446,7 @@
 ~03959~^1^1^~container~^170^^
 ~03960~^1^1^~fl oz~^30.5^^
 ~03961~^1^1^~fl oz~^31.4^^
+~03963~^1^1^~fl oz~^30.5^^
 ~03964~^1^1^~bar~^19^1^
 ~03965~^1^1^~tbsp~^16^8^1.569
 ~03965~^2^1^~container~^69^8^3.378
@@ -1691,6 +1702,10 @@
 ~04595~^1^1^~tbsp~^12.8^^
 ~04595~^2^1^~cup~^205^^
 ~04600~^1^1^~tablespoon~^14.0^^
+~04601~^1^1^~tablespoon~^14.0^^
+~04602~^1^1^~tablespoon~^14.0^^
+~04606~^1^1^~tablespoon~^12.8^^
+~04606~^2^1^~oz~^28.35^^
 ~04609~^1^1^~tsp~^4.3^^
 ~04610~^1^1^~tbsp~^14.0^1^
 ~04610~^2^1^~cup~^227^^
@@ -1863,8 +1878,12 @@
 ~04702~^2^1^~cup~^218^^
 ~04702~^3^1^~teaspoon~^4.5^^
 ~04703~^1^2^~tbso (1 NLEA serving)~^30^1^
+~04704~^1^2^~tbsp~^33^1^
 ~04705~^1^2^~tbsp (1 NLEA serving)~^34^2^
 ~04706~^1^2^~tbsp (1 NLEA serving)~^30^1^
+~04707~^1^1^~tablespoon~^13.7^^
+~04707~^2^1^~cup~^219^1^
+~05000~^1^1^~breast~^384^48^76.654
 ~05001~^1^1^~chicken~^1046^^
 ~05002~^1^1^~chicken~^1028^^
 ~05002~^2^1^~unit (yield from 1 lb ready-to-cook chicken)~^308^^
@@ -2020,7 +2039,7 @@
 ~05072~^1^1^~unit (yield from 1 lb ready-to-cook chicken)~^25^^
 ~05072~^2^1^~drumstick, bone and skin removed~^42^^
 ~05073~^1^1^~drumstick without skin~^97^50^16.532
-~05073~^2^1^~drumstick with skin (yield from 1 lb ready-to-cook chicken)~^105^50^18.415
+~05073~^2^1^~drumstick with skin~^105^50^18.415
 ~05074~^1^1^~cup, chopped or diced~^160^^
 ~05074~^2^1^~unit (yield from 1 lb ready-to-cook chicken)~^28^^
 ~05074~^3^1^~drumstick, bone and skin removed~^46^^
@@ -2076,8 +2095,8 @@
 ~05094~^2^1^~thigh without skin~^116^45^22.921
 ~05095~^1^1^~unit (yield from 1 lb ready-to-cook chicken)~^41^^
 ~05095~^2^1^~thigh, bone removed~^68^^
-~05096~^1^1^~thigh, bone and skin removed (yield from 1 lb ready-to-cook chicken)~^41^^
-~05096~^2^1^~thigh, bone and skin removed~^69^^
+~05096~^1^1^~thigh without skin~^149^45^27.195
+~05096~^2^1^~thigh with skin~^189^45^30.786
 ~05097~^1^1^~unit (yield from 1 lb ready-to-cook chicken)~^31^^
 ~05097~^2^1^~thigh, bone and skin removed~^52^^
 ~05098~^1^1^~thigh with skin (yield from 1 lb ready-to-cook chicken)~^135^45^27.307
@@ -2109,8 +2128,6 @@
 ~05109~^1^1^~chicken~^1509^^
 ~05110~^1^1^~chicken~^1072^^
 ~05110~^2^1^~unit (yield from 1 lb ready-to-cook chicken)~^235^^
-~05111~^1^1^~unit (yield from 1 lb ready-to-cook chicken)~^293^^
-~05111~^2^.5^~chicken, bone removed~^668^^
 ~05112~^1^1^~unit (yield from 1 lb ready-to-cook chicken)~^210^^
 ~05112~^2^.5^~chicken, bone removed~^480^^
 ~05113~^1^1^~unit (yield from 1 lb ready-to-cook chicken)~^209^^
@@ -2218,53 +2235,39 @@
 ~05163~^1^1^~turkey~^5554^^
 ~05164~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^260^^
 ~05164~^2^1^~turkey~^4023^^
-~05165~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^332^^
-~05165~^2^.5^~turkey, bone removed~^2565^^
-~05166~^1^1^~cup, chopped or diced~^140^^
-~05166~^2^1^~unit (yield from 1 lb ready-to-cook turkey)~^240^^
-~05166~^3^.5^~turkey, bone removed~^1857^^
-~05167~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^281^^
-~05167~^2^.5^~turkey, bone and skin removed~^2174^^
-~05168~^1^1^~cup, chopped or diced~^140^^
-~05168~^2^1^~unit (yield from 1 lb ready-to-cook turkey)~^208^^
-~05169~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^51^^
-~05169~^2^.5^~turkey, skin only~^392^^
-~05170~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^32^^
-~05170~^2^.5^~turkey, skin only~^248^^
-~05171~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^16^^
-~05171~^2^1^~giblets~^244^^
-~05172~^1^1^~cup chopped or dice~^145^^
-~05172~^2^1^~unit (yield from 1 lb ready-to-cook turkey)~^10.0^^
-~05173~^1^1^~gizzard~^99^1^
-~05174~^1^1^~gizzard~^84^1^
-~05175~^1^1^~heart~^27^1^
-~05175~^2^10^~hearts~^272^1^
-~05176~^1^1^~heart~^21^1^
-~05176~^2^10^~hearts~^207^1^
-~05177~^1^1^~liver~^100^1^
-~05178~^1^1^~liver~^83^1^
-~05179~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^12.0^^
-~05179~^2^1^~neck, bone and skin removed~^180^^
-~05180~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^10.0^^
-~05180~^2^1^~neck, bone and skin removed~^152^^
-~05181~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^180^^
-~05181~^2^.5^~turkey, bone removed~^1388^^
-~05182~^1^1^~cup, chopped or diced~^140^^
-~05182~^2^1^~unit (yield from 1 lb ready-to-cook turkey)~^136^^
-~05182~^3^.5^~turkey, bone removed~^1050^^
-~05183~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^152^^
-~05183~^2^.5^~turkey, bone removed~^1176^^
-~05184~^1^1^~cup, chopped or diced~^140^^
-~05184~^2^1^~unit (yield from 1 lb ready-to-cook turkey)~^104^^
-~05184~^3^.5^~turkey, bone removed~^808^^
-~05185~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^150^^
-~05185~^2^.5^~turkey, bone and skin removed~^1156^^
-~05186~^1^1^~cup, chopped or diced~^140^^
-~05186~^2^1^~unit (yield from 1 lb ready-to-cook turkey)~^117^^
-~05187~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^132^^
-~05187~^2^.5^~turkey, bone and skin removed~^1017^^
-~05188~^1^1^~cup, chopped or diced~^140^^
-~05188~^2^1^~unit (yield from 1 lb ready-to-cook turkey)~^91^^
+~05165~^1^1^~bird~^5002^8^1142.284
+~05165~^2^1^~oz~^28.35^1^
+~05166~^1^1^~bird~^3812^8^950.883
+~05166~^2^1^~oz~^28.35^1^
+~05167~^1^1^~bird~^5002^8^1142.284
+~05167~^2^1^~oz~^28.35^1^
+~05168~^1^1^~bird~^3812^8^950.883
+~05168~^2^1^~oz~^28.35^1^
+~05169~^1^1^~oz~^28.35^^
+~05169~^2^1^~lb~^453.0^^
+~05170~^1^1^~serving~^85^^
+~05171~^1^1^~giblets~^157^16^52.179
+~05171~^2^1^~piece~^24^18^12.66
+~05172~^1^1^~giblets~^95^18^29.595
+~05173~^1^1^~raw gizzard~^63^8^26.34
+~05174~^1^1^~gizzard cooked~^45^8^17.724
+~05175~^1^1^~piece~^24^18^12.66
+~05176~^1^1^~heart~^20^7^11.33
+~05177~^1^1^~raw liver~^78^8^46.34
+~05178~^1^1^~liver cooked~^53^8^31.32
+~05179~^1^1^~oz~^28.35^^
+~05179~^2^1^~lb~^453.0^^
+~05180~^1^1^~serving~^85^^
+~05181~^1^1^~lb~^453.0^^
+~05181~^2^1^~oz~^28.35^^
+~05182~^1^1^~serving~^85^^
+~05183~^1^1^~oz~^28.35^^
+~05183~^2^1^~lb~^453.0^^
+~05184~^1^1^~serving~^85^^
+~05185~^1^1^~serving~^85^^
+~05186~^1^1^~serving~^85^^
+~05187~^1^1^~serving~^85^^
+~05188~^1^1^~serving~^85^^
 ~05189~^1^.5^~back, bone removed~^361^^
 ~05189~^2^1^~unit (yield from 1 lb ready-to-cook turkey)~^47^^
 ~05190~^1^1^~cup, chopped or diced~^140^^
@@ -2282,163 +2285,15 @@
 ~05195~^2^1^~wing, bone removed~^256^^
 ~05196~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^24^^
 ~05196~^2^1^~wing, bone removed~^186^^
-~05197~^1^1^~turkey~^2410^^
-~05198~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^251^^
-~05198~^2^1^~turkey~^1772^^
-~05199~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^310^^
-~05199~^2^.5^~turkey, bone removed~^1093^^
 ~05200~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^229^^
 ~05200~^2^.5^~turkey, bone removed~^808^^
-~05201~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^272^^
-~05201~^2^.5^~turkey, bone and skin removed~^990^^
-~05202~^1^1^~cup, chopped or diced~^140^^
-~05202~^2^1^~unit (yield from 1 lb ready-to-cook turkey)~^195^^
-~05203~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^38^^
-~05203~^2^.5^~turkey, skin only~^133^^
-~05204~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^34^^
-~05204~^2^.5^~turkey, skin only~^121^^
-~05205~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^159^^
-~05205~^2^.5^~turkey, bone removed~^561^^
-~05206~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^123^^
-~05206~^2^.5^~turkey, bone removed~^433^^
-~05207~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^151^^
-~05207~^2^.5^~turkey, bone removed~^532^^
-~05208~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^106^^
-~05208~^2^.5^~turkey, bone removed~^374^^
-~05209~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^136^^
-~05209~^2^.5^~turkey, bone and skin removed~^481^^
-~05210~^1^1^~cup, chopped or diced~^140^^
-~05210~^2^1^~unit (yield from 1 lb ready-to-cook turkey)~^104^^
-~05211~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^136^^
-~05211~^2^.5^~turkey, bone and skin removed~^479^^
-~05212~^1^1^~cup, chopped or diced~^140^^
-~05212~^2^1^~unit (yield from 1 lb ready-to-cook turkey)~^91^^
-~05213~^1^.5^~back, bone removed~^183^^
-~05213~^2^1^~unit (yield from 1 lb ready-to-cook turkey)~^52^^
-~05214~^1^.5^~back, bone removed~^130^^
-~05214~^2^1^~unit (yield from 1 lb ready-to-cook turkey)~^37^^
-~05215~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^43^^
-~05215~^2^.5^~back, bone and skin removed~^150^^
-~05216~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^27^^
-~05216~^2^.5^~back, bone and skin removed~^99^^
-~05217~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^123^^
-~05217~^2^.5^~breast, bone removed~^433^^
-~05218~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^98^^
-~05218~^2^.5^~breast, bone removed~^344^^
-~05219~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^111^^
-~05219~^2^.5^~breast, bone and skin removed~^390^^
 ~05220~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^87^^
 ~05220~^2^.5^~breast, bone and skin removed~^306^^
-~05221~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^99^^
-~05221~^2^1^~leg, bone removed~^349^^
-~05222~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^70^^
-~05222~^2^1^~leg, bone removed~^245^^
-~05223~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^93^^
-~05223~^2^1^~leg, bone and skin removed~^329^^
-~05224~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^64^^
-~05224~^2^1^~leg, bone and skin removed~^224^^
-~05225~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^36^^
-~05225~^2^1^~wing, bone removed~^128^^
-~05226~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^25^^
-~05226~^2^1^~wing, bone removed~^90^^
-~05227~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^26^^
-~05227~^2^1^~wing, bone and skin removed~^90^^
 ~05228~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^17^^
 ~05228~^2^1^~wing, bone and skin removed~^60^^
 ~05229~^1^1^~turkey~^4457^^
-~05230~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^263^^
-~05230~^2^1^~turkey~^3300^^
-~05231~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^327^^
-~05231~^2^.5^~turkey, bone removed~^2052^^
-~05232~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^243^^
-~05232~^2^.5^~turkey, bone removed~^1524^^
-~05233~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^276^^
-~05233~^2^.5^~turkey, bone and skin removed~^1731^^
-~05234~^1^1^~cup, chopped or diced~^140^^
-~05234~^2^1^~unit (yield from 1 lb ready-to-cook turkey)~^212^^
-~05235~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^51^^
-~05235~^2^.5^~turkey, skin only~^321^^
 ~05236~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^31^^
 ~05236~^2^.5^~turkey, skin only~^196^^
-~05237~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^175^^
-~05237~^2^.5^~turkey, bone removed~^1099^^
-~05238~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^137^^
-~05238~^2^.5^~turkey, bone removed~^859^^
-~05239~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^152^^
-~05239~^2^.5^~turkey, bone and skin removed~^953^^
-~05240~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^106^^
-~05240~^2^.5^~turkey, bone and skin removed~^665^^
-~05241~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^147^^
-~05241~^2^.5^~turkey, bone and skin removed~^919^^
-~05242~^1^1^~cup, chopped or diced~^140^^
-~05242~^2^1^~unit (yield from 1 lb ready-to-cook turkey)~^119^^
-~05243~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^130^^
-~05243~^2^.5^~turkey, bone and skin removed~^812^^
-~05244~^1^1^~cup, chopped or diced~^140^^
-~05244~^2^1^~unit (yield from 1 lb ready-to-cook turkey)~^93^^
-~05245~^1^.5^~back, bone removed~^298^^
-~05245~^2^1^~unit (yield from 1 lb ready-to-cook turkey)~^47^^
-~05246~^1^.5^~back, bone removed~^217^^
-~05246~^2^1^~unit (yield from 1 lb ready-to-cook turkey)~^35^^
-~05247~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^139^^
-~05247~^2^.5^~breast, bone removed~^874^^
-~05248~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^109^^
-~05248~^2^.5^~breast, bone removed~^686^^
-~05249~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^105^^
-~05249~^2^1^~leg, bone removed~^656^^
-~05250~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^71^^
-~05250~^2^1^~leg, bone removed~^448^^
-~05251~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^36^^
-~05251~^2^1^~wing, bone removed~^224^^
-~05252~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^28^^
-~05252~^2^1^~wing, bone removed~^174^^
-~05253~^1^1^~turkey~^8399^^
-~05254~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^258^^
-~05254~^2^1^~turkey~^5957^^
-~05255~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^338^^
-~05255~^2^.5^~turkey, bone removed~^3895^^
-~05256~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^239^^
-~05256~^2^.5^~turkey, bone removed~^2750^^
-~05257~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^286^^
-~05257~^2^.5^~turkey, bone and skin removed~^3302^^
-~05258~^1^1^~cup, chopped or diced~^140^^
-~05258~^2^1^~unit (yield from 1 lb ready-to-cook turkey)~^206^^
-~05259~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^51^^
-~05259~^2^.5^~turkey, skin only~^592^^
-~05260~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^32^^
-~05260~^2^.5^~turkey, skin only~^374^^
-~05261~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^185^^
-~05261~^2^.5^~turkey, bone removed~^2137^^
-~05262~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^136^^
-~05262~^2^.5^~turkey, bone removed~^1566^^
-~05263~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^152^^
-~05263~^2^.5^~turkey, bone removed~^1758^^
-~05264~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^103^^
-~05264~^2^.5^~turkey, bone removed~^1184^^
-~05265~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^154^^
-~05265~^2^.5^~turkey, bone and skin removed~^1771^^
-~05266~^1^1^~cup, chopped or diced~^140^^
-~05266~^2^1^~unit (yield from 1 lb ready-to-cook turkey)~^117^^
-~05267~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^133^^
-~05267~^2^.5^~turkey, bone and skin removed~^1532^^
-~05268~^1^1^~cup, chopped or diced~^140^^
-~05268~^2^1^~unit (yield from 1 lb ready-to-cook turkey)~^90^^
-~05269~^1^.5^~back, bone removed~^524^^
-~05269~^2^1^~unit (yield from 1 lb ready-to-cook turkey)~^45^^
-~05270~^1^.5^~back, bone removed~^380^^
-~05270~^2^1^~unit (yield from 1 lb ready-to-cook turkey)~^33^^
-~05271~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^155^^
-~05271~^2^.5^~breast, bone removed~^1789^^
-~05272~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^115^^
-~05272~^2^.5^~breast, bone removed~^1329^^
-~05273~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^107^^
-~05273~^2^1^~leg, bone removed~^1234^^
-~05274~^1^1^~leg, bone removed (yield after cooking)~^805^^
-~05274~^2^1^~unit (yield from 1 lb ready-to-cook turkey)~^70^^
-~05275~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^30^^
-~05275~^2^1^~wing, bone removed~^348^^
-~05276~^1^1^~unit (yield from 1 lb ready-to-cook turkey)~^21^^
-~05276~^2^1^~wing, bone removed~^237^^
 ~05277~^1^1^~can (5 oz)~^142^^
 ~05282~^1^1^~tbsp~^13.0^^
 ~05282~^2^1^~oz~^28.35^^
@@ -2496,17 +2351,20 @@
 ~05318~^2^1^~unit (yield from 1 lb ready-to-cook duck)~^35^^
 ~05318~^3^3^~oz~^85^^
 ~05318~^4^1^~leg, bone and skin removed~^75^^
+~05319~^1^1^~drumstick~^71^96^13.471
 ~05320~^1^1^~serving~^96^30^24.073
 ~05321~^1^1^~piece~^20^^
 ~05322~^1^1^~piece~^20^^
 ~05323~^1^1^~patty~^60^^
 ~05324~^1^1^~patty~^60^^
+~05325~^1^1^~piece~^20^^
 ~05326~^1^1^~piece~^15.0^^
 ~05326~^2^4^~pieces~^62^^
 ~05327~^1^1^~piece~^15.0^^
 ~05327~^2^4^~pieces~^62^^
 ~05332~^1^4^~oz crumbled~^112^^
 ~05333~^1^3^~oz crumbled~^85^^
+~05334~^1^1^~thigh~^95^96^19.425
 ~05335~^1^1^~oz~^28.35^^
 ~05335~^2^1^~lb~^453.6^^
 ~05336~^1^1^~cup drained~^135^^
@@ -2515,6 +2373,7 @@
 ~05337~^2^1^~can (5 oz)~^142^^
 ~05338~^1^1^~cup drained~^135^^
 ~05338~^2^1^~can (5 oz)~^142^^
+~05339~^1^1^~wing~^51^96^12.015
 ~05341~^1^1^~back~^102^^
 ~05341~^2^1^~serving (3 oz)~^85^^
 ~05341~^3^1^~oz~^28.35^^
@@ -2542,12 +2401,17 @@
 ~05349~^3^1^~oz~^28.35^^
 ~05351~^1^1^~thigh~^89^^
 ~05351~^2^1^~serving~^85^^
-~05351~^3^1^~oz (3 oz)~^28.35^^
 ~05352~^1^1^~wing~^53^^
 ~05352~^2^1^~serving (3 oz)~^85^^
 ~05352~^3^1^~oz~^28.35^^
 ~05353~^1^1^~strip~^9.4^21^2.597
 ~05354~^1^1^~cup~^183^6^22.58
+~05356~^1^1^~serving~^85^^
+~05357~^1^1^~back~^182^^
+~05358~^1^1^~breast~^384^^
+~05359~^1^1^~drumstick~^71^^
+~05361~^1^1^~thigh~^95^^
+~05362~^1^1^~wing~^51^^
 ~05600~^1^1^~oz~^28.35^^
 ~05600~^2^1^~serving~^28^^
 ~05621~^1^1^~patty~^117^6^16.337
@@ -2634,6 +2498,29 @@
 ~05676~^2^1^~drumstick with skin~^105^60^18.385
 ~05677~^1^1^~thigh without skin~^111^45^22.251
 ~05677~^2^1^~thigh with skin~^129^45^25.18
+~05693~^1^1^~back~^182^48^34.31
+~05694~^1^1^~serving~^85^^
+~05695~^1^1^~serving~^85^^
+~05696~^1^1^~serving~^85^^
+~05697~^1^1^~serving~^85^^
+~05698~^1^1^~oz~^28.35^^
+~05699~^1^1^~serving~^85^^
+~05700~^1^1^~lb~^453.0^^
+~05700~^2^1^~oz~^28.35^^
+~05701~^1^1^~serving~^85^^
+~05702~^1^1^~lb~^453.0^^
+~05702~^2^1^~oz~^28.35^^
+~05703~^1^1^~serving~^85^^
+~05703~^2^1^~lb~^453.0^^
+~05704~^1^1^~bird~^5717^11^1080.565
+~05704~^2^1^~oz~^28.35^1^
+~05705~^1^1^~bird~^4147^11^597.099
+~05705~^2^1^~oz~^28.35^1^
+~05706~^1^1^~bird~^5717^11^1080.565
+~05706~^2^1^~oz~^28.35^1^
+~05707~^1^1^~bird~^4147^11^597.099
+~05707~^2^1^~lb~^453.0^1^
+~05707~^3^1^~oz~^28.35^1^
 ~06001~^1^.5^~cup (4 fl oz)~^126^^
 ~06001~^2^1^~can (10.75 oz)~^305^^
 ~06002~^1^1^~cup (8 fl oz)~^257^^
@@ -2703,8 +2590,7 @@
 ~06041~^1^1^~serving 1/2 cup~^126^1^
 ~06042~^1^.5^~cup (4 fl oz)~^126^^
 ~06042~^2^1^~can (10.75 oz)~^305^^
-~06043~^1^.5^~cup~^121^^
-~06043~^2^1^~can (10.7 oz)~^303^^
+~06043~^1^.5^~cup~^126^23^4.295
 ~06044~^1^.5^~cup (4 fl oz)~^126^^
 ~06044~^2^1^~can (10.75 oz)~^305^^
 ~06045~^1^.5^~cup (4 fl oz)~^123^^
@@ -2746,7 +2632,7 @@
 ~06066~^2^1^~can (10.5 oz)~^298^^
 ~06067~^1^1^~cup~^245^1^
 ~06067~^2^1^~can (19 oz)~^539^^
-~06068~^1^.5^~cup~^123^^
+~06068~^1^.5^~cup~^126^^
 ~06068~^2^1^~can (10.5 oz)~^298^^
 ~06070~^1^1^~cup~^245^1^
 ~06070~^2^1^~can (19 oz)~^539^^
@@ -2775,7 +2661,7 @@
 ~06112~^1^1^~cup~^288^^
 ~06112~^2^1^~tbsp~^18^^
 ~06112~^3^1^~fl oz~^36.0^^
-~06114~^1^1^~cup~^238^^
+~06114~^1^.25^~cup~^59^^
 ~06114~^2^1^~can~^298^^
 ~06115~^1^1^~tsp~^3.0^^
 ~06116~^1^1^~cup~^233^^
@@ -2807,8 +2693,9 @@
 ~06147~^2^1^~can (10.75 oz)~^305^^
 ~06149~^1^.5^~cup (4 fl oz)~^126^^
 ~06149~^2^1^~can (10.75 oz)~^305^^
-~06150~^1^1^~cup (8 fl oz)~^250^^
-~06150~^2^1^~packet~^9.3^^
+~06150~^1^1^~tbsp~^17^54^1.204
+~06150~^2^.5^~cup~^143^54^6.154
+~06150~^3^1^~cup~^279^54^13.399
 ~06151~^1^1^~cup~^305^^
 ~06151~^2^1^~tbsp~^19^^
 ~06152~^1^.25^~cup~^63^^
@@ -2816,10 +2703,9 @@
 ~06158~^2^1^~can (11 oz), undiluted~^312^^
 ~06159~^1^1^~can~^294^12^3.502
 ~06159~^2^1^~cup~^148^12^4.496
-~06164~^1^1^~cup~^259^^
-~06164~^2^1^~tbsp~^16^^
-~06164~^3^1^~packet~^8.9^^
-~06164~^4^.5^~cup~^130^^
+~06164~^1^2^~tbsp~^36^24^1.646
+~06164~^2^.5^~cup~^130^^
+~06164~^3^1^~cup~^259^^
 ~06165~^1^1^~cup~^250^^
 ~06165~^2^.5^~cup~^125^^
 ~06166~^1^1^~cup~^250^^
@@ -2904,6 +2790,9 @@
 ~06253~^2^1^~can (10.75 oz), prepared~^602^^
 ~06256~^1^1^~cup (8 fl oz)~^253^^
 ~06256~^2^1^~fl oz~^31.6^^
+~06307~^1^1^~tbsp~^16^12^.455
+~06307~^2^.5^~cup~^146^12^3.297
+~06307~^3^1^~cup~^283^12^8.151
 ~06309~^1^1^~serving 1/2 cup~^126^1^
 ~06311~^1^1^~serving 1/2 cup~^126^1^
 ~06312~^1^1^~serving 1/2 cup~^124^1^
@@ -2930,7 +2819,7 @@
 ~06334~^1^1^~serving 1/2 cup~^124^1^
 ~06336~^1^1^~serving 1/2 cup~^124^1^
 ~06337~^1^1^~serving 1/2 cup~^124^1^
-~06338~^1^1^~serving 1/2 cup~^124^1^
+~06338~^1^.5^~cup~^129^12^2.267
 ~06339~^1^1^~serving 1/2 cup~^124^1^
 ~06340~^1^1^~serving 1/2 cup~^124^1^
 ~06341~^1^1^~serving 1/2 cup~^124^1^
@@ -2938,7 +2827,6 @@
 ~06343~^1^1^~serving 1/2 cup~^124^1^
 ~06344~^1^1^~serving 1/2 cup~^124^1^
 ~06346~^1^1^~serving 1/2 cup~^126^1^
-~06347~^1^1^~serving 1/2 cup~^126^1^
 ~06349~^1^1^~serving 1/2 cup~^126^1^
 ~06350~^1^1^~serving 1/ 2 cup~^126^1^
 ~06351~^1^1^~serving 1/2 cup~^126^1^
@@ -3243,8 +3131,7 @@
 ~06729~^2^1^~serving~^240^^
 ~06730~^1^1^~package yields~^539^^
 ~06730~^2^1^~serving~^243^^
-~06731~^1^1^~package yields~^326^^
-~06731~^2^1^~serving~^135^^
+~06731~^1^1^~serving 1/2 cup~^128^^
 ~06733~^1^1^~package yields~^312^^
 ~06733~^2^1^~serving~^127^^
 ~06734~^1^1^~package yields~^298^^
@@ -3297,8 +3184,9 @@
 ~06973~^1^1^~cup~^273^^
 ~06973~^2^1^~tbsp~^17^^
 ~06974~^1^1^~cup~^241^^
-~06975~^1^1^~serving 2 tbsp~^35^5^1.087
-~06975~^2^1^~cup~^250^1^
+~06975~^1^1^~tbsp~^17^54^1.204
+~06975~^2^.5^~cup~^143^54^6.154
+~06975~^3^1^~cup~^279^54^13.399
 ~06976~^1^1^~serving 1/2 cup~^128^1^
 ~06976~^2^1^~cup~^257^1^
 ~06977~^1^1^~cup~^236^^
@@ -3336,8 +3224,8 @@
 ~07004~^2^1^~oz~^28.35^^
 ~07005~^1^4^~slices~^100^1^
 ~07006~^1^1^~sausage~^91^1^
-~07007~^1^1^~serving~^28^2^
-~07007~^2^1^~slice~^28^2^
+~07007~^1^1^~slice~^30^63^4.827
+~07007~^2^1^~serving~^28^2^
 ~07008~^1^3.527^~oz~^100^2^
 ~07010~^1^1^~slice, medium (4-1/2" dia x 1/8" thick) (1 oz)~^28^^
 ~07010~^2^1^~slice (4" dia x 1/8" thick)~^23^^
@@ -3357,7 +3245,6 @@
 ~07019~^2^1^~link (4" long)~^60^^
 ~07020~^1^1^~slice (1 oz) (4" x 4" x 3/32" thick)~^28^^
 ~07020~^2^2^~slices~^57^^
-~07021~^1^1^~slice~^38^^
 ~07022~^1^1^~frankfurter~^50^35^5.748
 ~07022~^2^1^~package~^446^35^26.463
 ~07023~^1^1^~frankfurter~^45^1^
@@ -3368,7 +3255,7 @@
 ~07026~^2^1^~slice (4-1/4" x 4-1/4" x 1/16")~^21^^
 ~07027~^1^1^~slice (1 oz) (4" x 4" x 3/32" thick)~^28^^
 ~07027~^2^1^~slice (4-1/4" x 4-1/4" x 1/16")~^21^^
-~07028~^1^1^~slice~^24^18^5.542
+~07028~^1^1^~slice~^23^20^6.218
 ~07029~^1^56^~grams 1 serving~^56^^
 ~07029~^2^1^~slice~^28^^
 ~07030~^1^1^~oz~^28.35^^
@@ -3451,8 +3338,9 @@
 ~07070~^1^1^~serving~^28^1^
 ~07071~^1^1^~package (4 oz)~^113^^
 ~07071~^2^1^~slice (3-1/8" dia x 1/16" thick)~^10.0^^
-~07072~^1^3^~slices 1 serving~^27^1^
+~07072~^1^1^~slice~^9.8^54^6.874
 ~07072~^2^1^~oz~^28^1^
+~07072~^3^3^~slices 1 serving~^27^1^
 ~07073~^1^1^~tbsp~^15.0^^
 ~07073~^2^1^~oz~^28.35^^
 ~07074~^1^1^~link (4" long x 1-1/8" dia)~^68^^
@@ -3649,6 +3537,7 @@
 ~07959~^2^1^~slice~^28^3^0
 ~07960~^1^1^~serving~^28^1^
 ~07960~^2^1^~slice~^28^1^
+~07961~^1^1^~slice~^12.0^60^3.149
 ~08001~^1^.5^~cup (1 NLEA serving)~^31^^
 ~08002~^1^1^~cup (1 NLEA serving for adults)~^28^1^
 ~08002~^2^.75^~cup (1 serving for children under 4 years)~^21^1^
@@ -3684,9 +3573,9 @@
 ~08046~^1^1.5^~cup (1 NLEA serving)~^32^^
 ~08047~^1^1.5^~cup (1 NLEA serving)~^31^^
 ~08048~^1^1.25^~cup (1 NLEA serving)~^30^^
-~08049~^1^1^~serving~^21^1^
+~08049~^1^.75^~cup (1 NLEA serving)~^32^^
+~08049~^2^.5^~cup~^21^^
 ~08050~^1^.75^~cup (1 NLEA serving)~^27^^
-~08053~^1^.333^~cup (1 NLEA serving)~^29^^
 ~08054~^1^.5^~cup (1 NLEA serving)~^51^^
 ~08057~^1^.75^~cup (1 NLEA serving)~^32^^
 ~08058~^1^1^~cup (1 NLEA serving)~^30^^
@@ -3695,15 +3584,15 @@
 ~08061~^1^1^~cup (1 NLEA serving)~^59^^
 ~08064~^1^1^~cup (1 NLEA serving)~^27^1^
 ~08065~^1^1.25^~cup (1 NLEA serving)~^33^^
-~08065~^2^1^~cup~^28^4^1.348
+~08065~^2^1^~cup~^29^27^2.914
 ~08066~^1^.75^~cup (1 NLEA serving)~^14.0^1^
 ~08067~^1^1^~cup (1 NLEA serving)~^31^^
 ~08068~^1^1^~cup (1 NLEA serving)~^32^1^
 ~08069~^1^.75^~cup ( 1 NLEA serving)~^30^^
-~08069~^2^1^~cup~^39^4^6.022
+~08069~^2^1^~cup~^42^26^3.017
 ~08071~^1^.75^~cup (1 NLEA serving)~^27^^
 ~08073~^1^.75^~cup (1 NLEA serving)~^27^^
-~08074~^1^1^~serving (NLEA serving size = 1 cup)~^30^^
+~08074~^1^1^~cup (1 NLEA serving)~^30^^
 ~08074~^2^1^~cup~^28^3^.929
 ~08076~^1^1^~cup (1 NLEA serving)~^28^^
 ~08076~^2^1^~box, single serving (.75 oz)~^21^^
@@ -3717,7 +3606,6 @@
 ~08084~^1^1^~cup~^113^^
 ~08084~^2^1^~oz~^28.35^^
 ~08085~^1^1.667^~tbsp (1 NLEA serving)~^14.0^^
-~08086~^1^.75^~cup (1 NLEA serving)~^31^1^
 ~08087~^1^1^~cup (1 NLEA serving)~^29^1^
 ~08089~^1^.75^~cup (1 NLEA serving)~^27^^
 ~08090~^1^1^~cup~^156^^
@@ -3777,12 +3665,12 @@
 ~08123~^4^1^~oz, dry, yields~^177^^
 ~08123~^7^1^~packet, dry, yields~^177^^
 ~08124~^1^1^~packet~^35^^
-~08128~^1^1^~packet~^46^^
+~08128~^1^1^~packet~^45^14^1.743
 ~08129~^1^1^~cup~^240^^
 ~08129~^2^1^~tbsp~^15.0^^
 ~08129~^3^1^~packet, prepared~^161^^
 ~08130~^1^1^~packet~^43^^
-~08132~^1^1^~packet~^43^^
+~08132~^1^1^~packet~^44^15^1.75
 ~08133~^1^1^~cup~^240^^
 ~08133~^2^1^~tbsp~^15.0^^
 ~08133~^3^1^~packet, prepared~^158^^
@@ -3797,7 +3685,6 @@
 ~08137~^1^1^~cup~^241^^
 ~08137~^2^.75^~cup~^181^^
 ~08138~^1^1^~cup~^30^^
-~08140~^1^.75^~cup~^27^^
 ~08142~^1^.33^~cup (1 NLEA serving)~^40^^
 ~08142~^2^1^~cup~^141^^
 ~08142~^3^.25^~cup~^35^^
@@ -3839,8 +3726,6 @@
 ~08168~^1^1^~cup~^244^^
 ~08168~^2^.75^~cup~^183^^
 ~08169~^1^1^~cup (1 serving)~^251^^
-~08171~^1^1^~cup~^241^^
-~08171~^2^.75^~cup~^181^^
 ~08172~^1^1^~cup~^176^^
 ~08172~^2^1^~tbsp~^10.9^^
 ~08173~^1^1^~cup~^233^^
@@ -3863,7 +3748,6 @@
 ~08185~^1^1^~cup~^253^^
 ~08185~^2^.75^~cup~^190^^
 ~08189~^1^.5^~cup (1 NLEA serving)~^49^^
-~08190~^1^1^~cup (1 NLEA serving)~^55^^
 ~08191~^1^1^~cup (1 NLEA serving)~^52^^
 ~08192~^1^1.25^~cup (1 NLEA serving)~^55^^
 ~08194~^1^.75^~cup (1 NLEA serving)~^29^^
@@ -3878,7 +3762,6 @@
 ~08215~^1^1^~cup (1 NLEA serving)~^56^1^
 ~08216~^1^1.25^~cup~^57^^
 ~08218~^1^.5^~cup (1 NLEA serving)~^51^^
-~08219~^1^1^~cup (1 NLEA serving)~^49^^
 ~08220~^1^.666^~cup (1 NLEA serving)~^55^1^
 ~08221~^1^1^~packet~^28^^
 ~08225~^1^1^~packet~^35^^
@@ -3886,43 +3769,31 @@
 ~08230~^1^.25^~cup (1 NLEA serving)~^44^^
 ~08231~^1^.5^~cup (1 NLEA serving)~^40^^
 ~08239~^1^.75^~cup (1 NLEA serving)~^27^1^
-~08242~^1^1^~cup (1 NLEA serving)~^55^^
 ~08243~^1^1^~cup (1 NLEA serving)~^57^1^
 ~08244~^1^.5^~cup (1 NLEA serving)~^30^1^
 ~08245~^1^1^~cup (1 NLEA serving)~^62^^
-~08246~^1^1.333^~cup (1 NLEA serving)~^30^^
 ~08247~^1^1^~cup (1 NLEA serving)~^53^^
-~08253~^1^.5^~cup (1 NLEA serving)~^26^1^
-~08254~^1^.75^~cup (1 NLEA serving)~^55^^
-~08258~^1^.75^~cup (1 NLEA serving)~^30^^
 ~08259~^1^1^~cup (1 NLEA serving)~^29^^
 ~08261~^1^.75^~cup (1 NLEA serving)~^49^1^
 ~08262~^1^1^~cup (1 NLEA serving)~^55^^
 ~08263~^1^.75^~cup (1 NLEA serving)~^30^1^
 ~08267~^1^.75^~cup (1 NLEA serving)~^28^1^
-~08268~^1^1^~cup (1 NLEA serving)~^30^^
+~08268~^1^1^~cup (1 NLEA serving)~^33^1^
 ~08270~^1^.75^~cup (1 NLEA serving)~^27^^
 ~08271~^1^.75^~cup (1 NLEA serving)~^27^^
 ~08272~^1^.75^~cup (1 NLEA serving)~^31^^
 ~08273~^1^1^~cup (1 NLEA serving)~^33^^
 ~08274~^1^1.25^~cup (1 NLEA serving)~^33^1^
 ~08277~^1^.667^~cup (1 NLEA serving)~^55^^
-~08278~^1^1.25^~cup (1 NLEA serving)~^30^^
-~08283~^1^.75^~cup (1 NLEA serving)~^53^^
 ~08284~^1^.667^~cup (1 NLEA serving)~^60^^
 ~08286~^1^.67^~cup (1 NLEA serving)~^55^^
 ~08288~^1^.75^~cup (1 NLEA serving)~^30^^
 ~08290~^1^.75^~cup (1 NLEA serving)~^31^^
-~08293~^1^.75^~cup (1 NLEA serving)~^30^^
-~08294~^1^1^~cup (1 NLEA serving)~^33^^
-~08297~^1^1^~cup (1 NLEA serving)~^31^^
-~08298~^1^.75^~cup (1 NLEA serving)~^30^^
-~08299~^1^1^~cup~^34^^
 ~08305~^1^1^~cup (1 NLEA serving)~^30^^
 ~08309~^1^.75^~cup (1 NLEA serving)~^30^^
 ~08314~^1^.25^~cup~^37^^
-~08315~^1^.25^~cup~^37^^
 ~08316~^1^.25^~cup~^41^^
+~08317~^1^.25^~cup (1 NLEA serving)~^44^^
 ~08318~^1^1^~cup (1 NLEA serving)~^50^^
 ~08319~^1^24^~biscuits (Bite Size) (1 NLEA serving)~^59^1^
 ~08319~^2^51^~biscuits (Little Bites) (1 NLEA serving)~^55^1^
@@ -3931,11 +3802,10 @@
 ~08347~^1^.75^~cup (1 NLEA serving)~^30^^
 ~08348~^1^1^~cup (1 NLEA serving)~^33^^
 ~08349~^1^1^~cup (1 NLEA serving)~^32^^
-~08350~^1^1^~cup (1 NLEA serving)~^30^^
+~08351~^1^1^~cup (1 NLEA serving)~^33^^
 ~08352~^1^.75^~cup (1 NLEA serving)~^32^^
 ~08353~^1^1^~cup (1 NLEA serving)~^60^^
 ~08355~^1^1^~cup (1 NLEA serving)~^33^^
-~08360~^1^1^~cup~^49^^
 ~08363~^1^.25^~cup (1 NLEA serving)~^16^^
 ~08365~^1^3^~biscuits (1 NLEA serving)~^63^1^
 ~08366~^1^1.67^~tablespoon~^14.0^^
@@ -3954,16 +3824,15 @@
 ~08402~^1^.5^~cup~^40^^
 ~08409~^1^.75^~cup (1 NLEA serving)~^30^1^
 ~08409~^2^1^~cup~^40^^
-~08410~^1^1^~packet~^43^1^
+~08410~^1^1^~packet (1 NLEA serving)~^43^1^
 ~08411~^1^1^~packet~^50^^
 ~08414~^1^1^~container~^55^1^
 ~08417~^1^1^~packet~^41^^
 ~08418~^1^1^~container~^54^1^
 ~08419~^1^1^~container~^54^1^
-~08435~^1^1^~cup (1 serving)~^55^^
-~08436~^1^1^~packet~^43^1^
+~08435~^1^.75^~cup (1 NLEA serving)~^55^^
+~08436~^1^1^~packet (1 NLEA serving)~^43^1^
 ~08444~^1^1^~packet~^28^^
-~08448~^1^1^~packet~^28^^
 ~08449~^1^1^~packet~^28^^
 ~08450~^1^1^~packet~^28^^
 ~08451~^1^.5^~cup~^40^1^
@@ -4003,16 +3872,12 @@
 ~08507~^2^1^~cup~^28^3^.896
 ~08508~^1^1^~cup~^29^6^1.367
 ~08508~^2^1^~serving (NLEA serving = 1 cup)~^29^1^
-~08509~^1^1.25^~serving (NLEA serving = 1.25 cup)~^33^1^
-~08509~^2^1^~cup~^28^6^1.864
+~08509~^1^1^~cup (1 NLEA serving)~^28^6^1.864
+~08510~^1^1^~bar~^25^2^
 ~08511~^1^1^~serving (3 T dry cereal plus 1 cup water)~^268^^
 ~08512~^1^1^~serving (3 T dry cereal plus 1 cup water)~^268^^
 ~08513~^1^.75^~cup (1 NLEA serving)~^28^1^
-~08514~^1^.75^~cup (1 NLEA serving)~^30^1^
-~08519~^1^1^~cup (1 NLEA serving)~^30^1^
 ~08520~^1^1^~cup (1 NLEA serving)~^30^1^
-~08524~^1^1^~cup (1 NLEA serving)~^31^1^
-~08528~^1^1.25^~cup (1 NLEA serving)~^60^^
 ~08530~^1^1^~cup (1 NLEA serving)~^30^1^
 ~08531~^1^.75^~cup (1 NLEA serving)~^32^1^
 ~08537~^1^1^~cup (1 NLEA serving)~^50^1^
@@ -4021,14 +3886,11 @@
 ~08542~^1^24^~biscuits (1 NLEA serving)~^52^1^
 ~08543~^1^.75^~cup (1 NLEA serving)~^30^1^
 ~08544~^1^.75^~cup (1 NLEA serving)~^51^1^
-~08545~^1^1^~cup (1 NLEA serving)~^55^1^
 ~08546~^1^1^~bar~^22^1^
-~08548~^1^1^~cup (1 NLEA serving)~^49^1^
 ~08549~^1^.75^~cup (1 NLEA serving)~^32^1^
 ~08550~^1^1^~serving (1 NLEA serving)~^26^1^
 ~08553~^1^.75^~cup (1 NLEA serving)~^30^1^
 ~08554~^1^1^~serving (1 NLEA serving)~^52^1^
-~08556~^1^3^~straws (1 NLEA serving)~^31^1^
 ~08560~^1^1^~cup (1 NLEA serving)~^53^1^
 ~08561~^1^1^~packet (1 NLEA serving)~^40^1^
 ~08562~^1^1^~packet (1 NLEA serving)~^40^1^
@@ -4073,7 +3935,6 @@
 ~08601~^1^.75^~cup (1 NLEA serving)~^55^1^
 ~08602~^1^.75^~cup (1 NLEA serving)~^30^1^
 ~08603~^1^.75^~cup (1 NLEA serving)~^30^1^
-~08604~^1^1^~cup (1 NLEA serving)~^55^1^
 ~08605~^1^1^~cup (1 NLEA serving)~^55^1^
 ~08606~^1^.75^~cup (1 NLEA serving)~^57^1^
 ~08607~^1^.67^~cup (1 NLEA serving)~^56^1^
@@ -4089,30 +3950,32 @@
 ~08617~^1^24^~biscuits (1 NLEA serving)~^52^1^
 ~08618~^1^1^~cup (1 NLEA serving)~^30^1^
 ~08619~^1^1^~cup (1 NLEA serving)~^32^1^
-~08620~^1^1^~cup (1 NLEA serving)~^49^1^
 ~08621~^1^21^~biscuits (1 NLEA serving)~^55^1^
-~08622~^1^1^~cup (1 NLEA serving)~^50^1^
-~08623~^1^1^~cup (1 NLEA serving)~^52^1^
-~08624~^1^.75^~cup (1 NLEA serving)~^26^1^
 ~08625~^1^.75^~cup (1 NLEA serving)~^26^1^
-~08626~^1^.75^~cup (1 NLEA serving)~^26^1^
 ~08627~^1^.5^~cup (1 NLEA serving)~^49^1^
 ~08628~^1^.75^~cup (1 NLEA serving)~^32^1^
 ~08629~^1^1^~cup (1 NLEA serving)~^32^1^
-~08630~^1^.75^~cup (1 NLEA serving)~^30^1^
 ~08631~^1^52^~biscuits (1 NLEA serving)~^55^1^
 ~08632~^1^1^~cup (1 NLEA serving)~^56^1^
 ~08633~^1^1^~cup (1 NLEA serving)~^56^1^
 ~08635~^1^.75^~cup (1 NLEA serving)~^24^^
 ~08636~^1^.75^~cup (1 NLEA serving)~^27^^
 ~08637~^1^.75^~cup (1 NLEA serving)~^27^^
-~08638~^1^1^~packet~^40^2^
 ~08639~^1^1^~packet~^34^1^
 ~08640~^1^1^~packet~^41^1^
 ~08641~^1^1^~packet~^33^2^
 ~08642~^1^1^~packet~^29^1^
 ~08643~^1^1.25^~cup (1 NLEA serving)~^33^^
 ~08644~^1^.75^~cup (1 NLEA serving)~^27^1^
+~08645~^1^.75^~cup (1 NLEA serving)~^49^1^
+~08646~^1^1^~cup (1 NLEA serving)~^59^1^
+~08647~^1^.75^~cup (1 NLEA serving)~^27^1^
+~08648~^1^.75^~cup (1 NLEA serving)~^27^1^
+~08649~^1^.75^~cup (1 NLEA serving)~^51^1^
+~08650~^1^1^~cup (1 NLEA serving)~^52^1^
+~08651~^1^.75^~cup (1 NLEA serving)~^30^^
+~08652~^1^.75^~cup (1 NLEA serving)~^31^1^
+~08653~^1^1^~cup (1 NLEA serving)~^30^1^
 ~09001~^1^1^~cup~^98^^
 ~09001~^2^1^~fruit without refuse~^4.8^^
 ~09002~^1^1^~cup~^242^^
@@ -4399,10 +4262,6 @@
 ~09184~^7^10^~honeydew balls~^138^^
 ~09184~^8^1^~NLEA serving~^134^^
 ~09185~^1^1^~cup, unthawed~^173^^
-~09187~^1^1^~cup~^255^^
-~09188~^1^1^~package (11 oz)~^293^^
-~09189~^1^1^~cup, thawed~^250^^
-~09189~^2^1^~package (10 oz)~^284^^
 ~09190~^1^1^~cup~^140^^
 ~09190~^2^10^~fruit~^15.0^^
 ~09191~^1^1^~cup slices~^143^24^11.993
@@ -4692,6 +4551,10 @@
 ~09410~^1^1^~can (6 fl oz)~^211^^
 ~09411~^1^1^~cup~^239^^
 ~09411~^2^1^~fl oz~^29.9^^
+~09412~^1^1^~small~^152^16^6.171
+~09412~^2^1^~medium~^177^15^10.476
+~09412~^3^1^~large~^227^32^20.313
+~09412~^4^1^~cup, sliced~^140^^
 ~09420~^1^1^~cup, drained~^178^^
 ~09421~^1^1^~date, pitted~^24^10^1.893
 ~09422~^1^1^~cup, chopped or diced~^243^^
@@ -4728,6 +4591,10 @@
 ~09451~^1^1^~cup~^233^6^4.248
 ~09451~^2^1^~fruit (4-2/3" long x 2-3/4" dia)~^209^3^20.621
 ~09452~^1^8^~fl oz~^246^1^
+~09501~^1^1^~cup, sliced~^109^^
+~09501~^2^1^~large~^215^24^26.951
+~09501~^3^1^~medium~^169^23^14.901
+~09501~^4^1^~small~^129^23^10.014
 ~10000~^1^3^~oz~^85^^
 ~10001~^1^1^~oz~^28.35^^
 ~10001~^2^1^~lb~^453.6^^
@@ -4837,8 +4704,7 @@
 ~10066~^2^1^~lb~^453.6^^
 ~10067~^1^1^~chop~^135^60^45.073
 ~10068~^1^1^~chop~^145^91^
-~10069~^1^1^~roast~^848^20^
-~10069~^2^3^~oz~^85^^
+~10069~^1^1^~cooked roast~^1186^20^
 ~10070~^1^1^~oz~^28.35^^
 ~10070~^2^1^~lb~^453.6^^
 ~10071~^1^1^~cup, diced~^135^^
@@ -4926,7 +4792,8 @@
 ~10121~^2^4^~oz~^113^^
 ~10122~^1^1^~piece, cooked, excluding refuse (yield from 1 lb raw meat with refuse)~^231^^
 ~10122~^2^3^~oz~^85^^
-~10123~^1^1^~slice raw~^29^^
+~10123~^1^1^~slice raw~^28^360^5.235
+~10123~^2^1^~package~^442^36^29.953
 ~10124~^1^1^~slice cooked~^8.0^157^
 ~10128~^1^1^~package (12 oz)~^340^^
 ~10128~^2^3^~slices~^68^^
@@ -5075,7 +4942,8 @@
 ~10229~^2^3^~oz~^85^^
 ~10802~^1^1^~oz boneless~^28.35^^
 ~10802~^2^1^~cubic inch boneless~^17^^
-~10803~^1^1^~oz grilled patties~^85^^
+~10803~^1^1^~oz grilled patties~^28.35^^
+~10803~^2^3^~oz grilled patties~^85^^
 ~10804~^1^1^~oz boneless~^28.35^^
 ~10804~^2^1^~cubic inch boneless~^17^^
 ~10805~^1^1^~oz crumbles~^113^^
@@ -5095,8 +4963,9 @@
 ~10858~^1^1^~chop boneless~^150^12^
 ~10859~^1^1^~chop boneless (yield from 189g raw meat)~^150^12^
 ~10860~^1^1^~slice cooked~^8.1^77^
-~10861~^1^1^~slice cooked~^5.0^^
-~10862~^1^1^~slice cooked~^7.9^80^
+~10861~^1^1^~slice cooked~^9.1^220^2.231
+~10861~^2^1^~slice raw~^28^220^
+~10862~^1^1^~slice~^11.5^216^2.612
 ~10863~^1^3^~oz~^85^^
 ~10864~^1^3^~oz~^85^^
 ~10865~^1^1^~roast rump~^2970^5^181.709
@@ -5294,6 +5163,8 @@
 ~10991~^1^1^~rack~^122^36^78.181
 ~10992~^1^1^~rack~^122^36^78.181
 ~10993~^1^1^~rack~^138^37^93.933
+~10994~^1^1^~slice~^26^120^3.403
+~10994~^2^1^~package~^446^12^9.538
 ~11001~^1^1^~cup~^33^^
 ~11001~^2^1^~tbsp~^3.0^^
 ~11003~^1^1^~cup~^28^^
@@ -5718,8 +5589,8 @@
 ~11268~^2^4^~mushrooms~^15.0^^
 ~11269~^1^1^~cup pieces~^145^^
 ~11269~^2^4^~mushrooms~^72^^
-~11270~^1^1^~cup, chopped~^56^^
-~11271~^1^1^~cup, chopped~^140^^
+~11270~^1^1^~cup, chopped~^56^1^
+~11271~^1^1^~cup, chopped~^140^1^
 ~11272~^1^1^~cup, chopped~^146^^
 ~11272~^2^1^~package (10 oz)~^284^^
 ~11273~^1^1^~cup, chopped~^150^^
@@ -5832,6 +5703,7 @@
 ~11334~^2^1^~tablespoon, chopped~^11.6^^
 ~11335~^1^1^~cup, halves~^140^^
 ~11337~^1^1^~package (10 oz)~^284^^
+~11339~^1^1^~cup chopped~^115^4^18.956
 ~11344~^1^1^~cup~^154^^
 ~11344~^2^10^~seeds~^4.0^^
 ~11345~^1^1^~cup~^153^^
@@ -5847,9 +5719,9 @@
 ~11353~^2^1^~Potato medium (2-1/4" to 3-1/4" dia)~^213^^
 ~11353~^3^1^~Potato small (1-3/4" to 2-1/4" dia)~^170^^
 ~11353~^4^.5^~cup, diced~^75^^
-~11354~^1^1^~potato large (3 to 4-1/4" dia)~^369^^
-~11354~^2^1^~potato medium (2-1/4" to 3-1/4" dia)~^213^^
-~11354~^3^1^~potato small (1-3/4" to 2-1/4" dia, raw)~^170^^
+~11354~^1^1^~large (3" to 4-1/4" dia.)~^369^^
+~11354~^2^1^~medium (2+-1/4" to 3-1/4" dia.)~^213^^
+~11354~^3^1^~small (1-3/4" to 2-1/4" dia.)~^92^^
 ~11354~^4^.5^~cup, diced~^75^^
 ~11355~^1^1^~potato large (3" to 4-1/4" dia)~^369^^
 ~11355~^2^1^~potato medium (2-1/4" to 3-1/4" dia)~^213^^
@@ -5911,7 +5783,8 @@
 ~11392~^1^1^~package (6 oz)~^170^^
 ~11394~^1^10^~strip~^30^6^3.997
 ~11395~^1^10^~strip~^21^6^4.18
-~11398~^1^1^~cup~^128^^
+~11398~^1^1^~cup~^120^24^5.806
+~11398~^2^10^~pieces~^91^30^4.017
 ~11399~^1^1^~cup~^128^^
 ~11399~^2^1^~puff~^8.4^^
 ~11399~^3^10^~Crispy Crowns~^60^^
@@ -6228,6 +6101,7 @@
 ~11676~^1^1^~cup~^38^^
 ~11677~^1^1^~tbsp chopped~^10.0^^
 ~11683~^1^1^~cup~^74^^
+~11693~^1^.5^~cup~^121^^
 ~11695~^1^1^~cup, chopped~^158^^
 ~11695~^2^1^~tomato~^111^^
 ~11696~^1^1^~cup, chopped~^139^^
@@ -6380,7 +6254,7 @@
 ~11797~^3^1^~mushroom~^12.0^^
 ~11798~^1^1^~cup pieces~^145^^
 ~11798~^2^4^~mushrooms~^72^^
-~11799~^1^1^~cup, chopped~^140^^
+~11799~^1^1^~cup, chopped~^140^1^
 ~11800~^1^1^~cup, chopped or diced~^150^^
 ~11800~^2^1^~package (10 oz) yields~^212^^
 ~11801~^1^1^~cup, chopped~^180^^
@@ -6590,6 +6464,7 @@
 ~11918~^2^1^~tablespoon, chopped~^11.6^^
 ~11919~^1^1^~cup, chopped or strips~^135^^
 ~11919~^2^1^~tablespoon, chopped~^11.6^^
+~11921~^1^1^~cup chopped~^106^4^7.33
 ~11922~^1^1^~cup~^104^^
 ~11923~^1^1^~cup~^94^^
 ~11927~^1^1^~cup, cubes~^145^^
@@ -6607,7 +6482,7 @@
 ~11933~^3^1^~can (303 x 406)~^262^^
 ~11934~^1^1^~cup~^210^^
 ~11935~^1^1^~cup~^240^^
-~11935~^2^1^~tbsp~^15.0^^
+~11935~^2^1^~tbsp~^17^36^1.486
 ~11935~^3^1^~packet~^9.0^^
 ~11937~^1^1^~cup, chopped or diced~^143^^
 ~11937~^2^1^~cup (about 23 slices)~^155^^
@@ -6656,8 +6531,8 @@
 ~11948~^5^1^~slice~^6.0^^
 ~11948~^6^1^~small~^15.0^^
 ~11949~^1^1^~cup~^240^^
-~11949~^2^1^~tbsp~^15.0^^
-~11949~^3^1^~packet~^6.0^^
+~11949~^2^1^~tbsp~^17^36^1.486
+~11949~^3^1^~packet~^9.0^^
 ~11950~^1^1^~large~^5.0^^
 ~11950~^2^1^~medium~^3.0^^
 ~11950~^3^1^~cup whole~^64^4^25.365
@@ -6924,7 +6799,6 @@
 ~12195~^2^1^~tbsp~^16^^
 ~12198~^1^1^~tbsp~^15.0^^
 ~12198~^2^1^~oz~^28.35^^
-~12199~^1^1^~oz~^28.35^^
 ~12200~^1^1^~oz~^28.35^^
 ~12201~^1^1^~cup~^150^^
 ~12201~^2^1^~tbsp~^8.0^^
@@ -6983,6 +6857,8 @@
 ~12695~^1^1^~cup~^250^^
 ~12695~^2^1^~tbsp~^16^^
 ~12698~^1^1^~tbsp~^15.0^^
+~12737~^1^1^~oz~^28.35^0^
+~12738~^1^1^~oz~^28.35^1^
 ~13000~^1^1^~steak~^214^212^
 ~13001~^1^1^~oz~^28.35^^
 ~13001~^2^1^~lb~^453.6^^
@@ -6994,6 +6870,7 @@
 ~13020~^2^3^~oz~^85^^
 ~13023~^1^1^~oz~^28.35^^
 ~13023~^2^1^~lb~^453.6^^
+~13047~^1^1^~serving~^85^^
 ~13055~^1^1^~steak~^350^10^
 ~13065~^1^1^~oz~^28.35^^
 ~13065~^2^4^~oz~^113^^
@@ -7052,6 +6929,7 @@
 ~13323~^1^1^~oz~^28.35^^
 ~13323~^2^4^~oz~^113^^
 ~13324~^1^3^~oz~^85^^
+~13325~^1^1^~liver~^589^6^237.416
 ~13326~^1^1^~slice~^68^14^12.558
 ~13327~^1^1^~slice~^81^15^
 ~13328~^1^1^~oz~^28.35^^
@@ -7613,7 +7491,6 @@
 ~13950~^1^1^~steak (yield from 388 g raw meat)~^247^10^
 ~13951~^1^1^~steak (yield from 294 g raw meat)~^231^10^
 ~13952~^1^1^~steak (yield from 295 g raw meat)~^233^20^
-~13953~^1^1^~roast (yield from 690g raw meat)~^569^20^
 ~13954~^1^1^~roast~^261^19^
 ~13955~^1^1^~roast (yield from 714 g raw meat)~^591^10^
 ~13956~^1^1^~roast~^271^9^
@@ -7632,11 +7509,7 @@
 ~13973~^1^1^~roast~^1263^24^227
 ~13974~^1^1^~roast~^1327^12^407
 ~13975~^1^1^~piece~^1780^24^
-~13976~^1^1^~lb~^453.6^^
-~13976~^2^1^~oz~^28.35^^
 ~13977~^1^3^~oz ( 1 serving )~^85^^
-~13978~^1^1^~lb~^453.6^^
-~13978~^2^1^~oz~^28.35^^
 ~13979~^1^3^~oz ( 1 serving )~^85^^
 ~13980~^1^1^~piece~^272^7^51.1
 ~13981~^1^1^~piece~^315^4^51.9
@@ -7977,11 +7850,11 @@
 ~14390~^2^1^~fl oz~^32.1^^
 ~14400~^1^1^~fl oz~^30.7^1^
 ~14400~^2^1^~can 12 fl oz~^368^2^
-~14400~^3^1^~bottle 16 lf oz~^491^^
-~14400~^4^1^~cup child 12 fl oz size~^258^^
-~14400~^5^1^~cup small 16 fl oz size~^347^^
-~14400~^6^1^~cup medium 21 fl oz size~^486^^
-~14400~^7^1^~cup large 32 fl oz size~^722^^
+~14400~^3^1^~bottle 16 fl oz~^491^^
+~14400~^4^1^~cup child fast food, 12 fl oz capacity,  weight of the drink only with no ice added~^258^^
+~14400~^5^1^~cup small fast food, 16 fl oz capacity, weight of the drink only with no ice added~^347^^
+~14400~^6^1^~cup medium fast food, 21 fl oz capacity, weight of the drink only  with no ice added~^486^^
+~14400~^7^1^~cup large fast food, 32 fl oz capacity, weight of the drink only  with no ice added~^722^^
 ~14405~^1^1^~fl oz~^35.2^^
 ~14405~^2^1^~can (12 fl oz)~^423^^
 ~14406~^1^1^~serving 8 fl oz~^234^^
@@ -8143,12 +8016,12 @@
 ~14621~^1^1^~serving 8 oz~^246^1^
 ~14622~^1^1^~serving 8 oz~^246^1^
 ~14623~^1^1^~serving 8 oz~^246^1^
-~14624~^1^1^~tsp rounded (1 serving)~^2.0^1^
 ~14625~^1^1^~serving~^240^1^
 ~14626~^1^1^~serving 8 fluid oz~^240^1^
 ~14627~^1^1^~serving~^240^1^
 ~14628~^1^1^~serving 8 fl oz~^240^^
-~14629~^1^1^~serving~^240^1^
+~14629~^1^1^~serving (1 NLEA serving, 8 fl oz)~^240^1^
+~14629~^2^1^~fl oz~^31.0^10^.149
 ~14630~^1^8^~fl oz (1 serving)~^240^1^
 ~14631~^1^1^~tbsp~^7.8^9^.232
 ~14631~^2^1^~cup~^118^3^.252
@@ -8388,6 +8261,7 @@
 ~15093~^2^3^~oz~^85^^
 ~15094~^1^1^~fillet~^184^^
 ~15094~^2^3^~oz~^85^^
+~15095~^1^3^~oz~^85^^
 ~15096~^1^3^~oz~^85^^
 ~15097~^1^1^~fillet~^238^^
 ~15097~^2^3^~oz~^85^^
@@ -8692,8 +8566,15 @@
 ~15247~^2^3^~oz~^85^^
 ~15250~^1^1^~cup, sliced~^127^^
 ~15250~^2^1^~oz cooked, yield~^17^^
+~15251~^1^1^~oz~^28.35^^
+~15252~^1^1^~oz~^28.35^^
 ~15253~^1^1^~can total can contents~^417^12^6.621
 ~15260~^1^1^~can drained solids (total)~^315^17^12.987
+~15261~^1^1^~fillet~^116^43^35.949
+~15261~^2^1^~raw pr g~^112^21^39.391
+~15262~^1^1^~fillet~^87^21^33.94
+~15262~^2^1^~raw pr g~^112^21^39.391
+~15262~^3^1^~ckd pr g~^87^21^33.94
 ~15264~^1^1^~can drained solids, bone and skin removed~^247^12^15.86
 ~15265~^1^1^~can drained solids, bone and skin removed~^242^17^25.225
 ~16001~^1^1^~cup~^197^^
@@ -8705,7 +8586,7 @@
 ~16007~^1^1^~cup~^266^^
 ~16008~^1^1^~cup~^259^^
 ~16009~^1^1^~cup~^253^^
-~16010~^1^1^~cup~^253^^
+~16010~^1^1^~cup~^249^35^8.832
 ~16011~^1^1^~cup~^246^71^
 ~16014~^1^1^~cup~^194^^
 ~16014~^2^1^~tbsp~^12.1^^
@@ -8811,8 +8692,7 @@
 ~16088~^3^1^~oz shelled~^28.35^^
 ~16088~^4^33^~nuts~^28^^
 ~16089~^1^1^~cup, chopped~^144^^
-~16089~^2^1^~cup, halves and whole~^144^^
-~16089~^3^1^~peanut~^0.9^^
+~16089~^2^1^~oz shelled (32 nuts)~^28.35^^
 ~16090~^1^1^~oz~^28.35^^
 ~16090~^2^1^~peanut~^1.0^^
 ~16091~^1^1^~cup~^146^^
@@ -8851,7 +8731,7 @@
 ~16109~^1^1^~cup~^172^^
 ~16109~^2^1^~tbsp~^10.7^^
 ~16110~^1^1^~cup~^172^^
-~16111~^1^1^~cup~^172^^
+~16111~^1^1^~cup~^93^^
 ~16112~^1^1^~cup~^275^^
 ~16113~^1^1^~cup~^175^^
 ~16114~^1^1^~cup~^166^^
@@ -9036,9 +8916,8 @@
 ~16381~^1^1^~cup~^202^^
 ~16384~^1^1^~cup~^180^^
 ~16386~^1^1^~cup~^196^^
-~16389~^1^1^~cup, chopped~^133^^
-~16389~^2^1^~oz shelled~^28.35^^
-~16389~^3^32^~nuts~^28^^
+~16389~^1^1^~cup,~^144^^
+~16389~^2^1^~oz shelled (32 nuts)~^28.35^^
 ~16390~^1^1^~cup~^146^^
 ~16390~^2^1^~oz~^28.35^^
 ~16390~^3^1^~peanut~^1.0^^
@@ -9123,23 +9002,12 @@
 ~16557~^1^1^~patty~^71^1^
 ~16558~^1^1^~patty~^71^1^
 ~16559~^1^2^~pieces~^81^1^
-~16560~^1^1^~piece~^71^1^
+~16560~^1^1^~link~^40^1^
 ~16561~^1^4^~pieces~^76^1^
-~16563~^1^12^~strip~^85^1^
+~16563~^1^12^~strips~^85^1^
 ~16565~^1^1^~cup~^55^1^
 ~16570~^1^1^~patty~^71^1^
-~16571~^1^1^~patty~^71^1^
-~16572~^1^1^~patty~^71^1^
-~16573~^1^1^~patty~^71^1^
-~16574~^1^1^~steak~^156^1^
-~16575~^1^1^~steak~^156^1^
-~16576~^1^1^~steak~^156^1^
-~16577~^1^1^~patty~^71^1^
-~16578~^1^1^~patty~^91^1^
 ~16579~^1^1^~patty~^71^1^
-~16581~^1^1^~patty~^71^1^
-~16582~^1^1^~steak~^156^1^
-~16583~^1^1^~patty~^71^1^
 ~16584~^1^1^~patty~^71^1^
 ~16585~^1^1^~patty~^71^1^
 ~16586~^1^1^~patty~^71^1^
@@ -9155,6 +9023,9 @@
 ~16596~^1^1^~patty~^114^1^
 ~16597~^1^1^~cup~^254^1^
 ~16598~^1^1^~biscuit~^105^1^
+~16600~^1^1^~package~^269^1^
+~16604~^1^6^~pieces~^85^1^
+~16605~^1^1^~package~^269^1^
 ~17001~^1^1^~oz~^28.35^^
 ~17001~^2^1^~lb~^453.6^^
 ~17002~^1^1^~piece, cooked, excluding refuse (yield from 1 lb raw meat with refuse)~^242^^
@@ -9887,13 +9758,14 @@
 ~18010~^5^.33^~cup (NLEA serving size)~^40^^
 ~18010~^6^1^~oz~^28.35^^
 ~18011~^1^1^~oz~^28.35^^
-~18012~^1^1^~oz~^28.35^^
-~18012~^2^1^~biscuit (2" dia)~^23^^
+~18012~^1^1^~serving 1 biscuit~^58^2^
+~18012~^2^1^~oz~^28.35^^
 ~18013~^1^1^~oz~^28.35^^
 ~18013~^2^1^~biscuit (2-1/4" dia)~^21^^
-~18014~^1^1^~oz~^28.35^^
+~18014~^1^1^~biscuit~^58^1^
 ~18014~^2^1^~biscuit~^43^12^13.259
 ~18014~^3^1^~package~^398^6^68.658
+~18014~^4^1^~oz~^28.35^^
 ~18015~^1^1^~oz~^28.35^^
 ~18015~^2^1^~biscuit (2-1/2" dia)~^27^^
 ~18016~^1^1^~oz~^28.35^^
@@ -9909,8 +9781,9 @@
 ~18021~^2^1^~slice~^45^^
 ~18022~^1^1^~oz~^28.35^^
 ~18022~^2^1^~package (8.5 oz)~^241^^
-~18023~^1^1^~oz~^28.35^^
+~18023~^1^1^~muffin~^51^24^4.27
 ~18023~^2^1^~piece~^60^^
+~18023~^3^1^~oz~^28.35^^
 ~18024~^1^1^~oz~^28.35^^
 ~18024~^2^1^~piece~^65^^
 ~18025~^1^1^~oz~^28.35^^
@@ -10055,8 +9928,9 @@
 ~18085~^2^.5^~cup~^100^^
 ~18086~^1^1^~piece (1/12 of 12 oz cake)~^28^^
 ~18086~^2^1^~cake (9" dia x 4")~^340^^
-~18087~^1^1^~oz~^28.35^^
+~18087~^1^1^~serving~^38^1^
 ~18087~^2^1^~package (14.5 oz)~^411^^
+~18087~^3^1^~oz~^28.35^^
 ~18088~^1^1^~piece (1/12 of 10" dia)~^50^^
 ~18088~^2^1^~tube cake (10" dia, 4-3/8" high)~^596^^
 ~18090~^1^1^~oz~^28.35^^
@@ -10067,6 +9941,8 @@
 ~18095~^2^1^~piece (1/8 cake)~^71^^
 ~18096~^1^1^~piece (1/12 of a cake)~^138^12^34.479
 ~18096~^2^1^~cake~^1660^12^413.751
+~18096~^3^1^~piece (1/8 of 18 oz cake)~^64^^
+~18096~^4^1^~oz~^28.35^^
 ~18097~^1^1^~oz~^28.35^^
 ~18097~^2^1^~package (18.25 oz)~^517^^
 ~18099~^1^1^~oz~^28.35^^
@@ -10090,8 +9966,9 @@
 ~18108~^2^1^~piece (1/8 of 8" x 5-3/4" cake)~^56^^
 ~18110~^1^1^~oz~^28.35^^
 ~18110~^2^1^~piece~^43^^
-~18112~^1^1^~oz~^28.35^^
+~18112~^1^1^~serving~^43^1^
 ~18112~^2^1^~package (18.25 oz)~^517^^
+~18112~^3^1^~oz~^28.35^^
 ~18114~^1^1^~oz~^28.35^^
 ~18114~^2^1^~package (14.5 oz)~^411^^
 ~18116~^1^1^~oz~^28.35^^
@@ -10118,18 +9995,22 @@
 ~18134~^2^1^~piece (1/12 of 10 inch cake)~^63^^
 ~18135~^1^1^~oz~^28.35^^
 ~18135~^2^1^~package (18.50 oz)~^524^^
-~18137~^1^1^~oz~^28.35^^
+~18137~^1^1^~serving~^46^1^
 ~18137~^2^1^~package (18.50 oz)~^524^^
+~18137~^3^1^~oz~^28.35^^
 ~18139~^1^1^~cake, 2-layer (8" or 9" dia)~^887^^
 ~18139~^2^1^~piece (1/12 of 9" dia)~^74^^
 ~18140~^1^1^~piece (1/12 of a cake)~^144^12^35.677
 ~18140~^2^1^~cake~^1729^12^428.122
+~18140~^3^1^~piece (1/8 of 18 oz cake)~^64^^
+~18140~^4^1^~oz~^28.35^^
 ~18141~^1^1^~oz~^28.35^^
 ~18141~^2^1^~piece (1/8 of 18 oz cake)~^64^^
 ~18142~^1^1^~oz~^28.35^^
 ~18142~^2^1^~package (18.50 oz)~^524^^
-~18144~^1^1^~oz~^28.35^^
+~18144~^1^1^~serving~^43^1^
 ~18144~^2^1^~package (18.50 oz)~^524^^
+~18144~^3^1^~oz~^28.35^^
 ~18146~^1^1^~cake, 2-layer (8" dia)~^817^^
 ~18146~^2^1^~piece (1/12 of 8" dia)~^68^^
 ~18147~^1^1^~oz~^28.35^^
@@ -10164,8 +10045,9 @@
 ~18160~^1^1^~cookie (average weight of 1 cookie)~^12.2^18^2.758
 ~18161~^1^1^~oz~^28.35^^
 ~18161~^2^1^~package (17.5 oz)~^496^^
-~18163~^1^1^~oz~^28.35^^
+~18163~^1^1^~serving~^33^2^
 ~18163~^2^1^~portion, dough spoon from roll~^29^3^4.219
+~18163~^3^1^~oz~^28.35^^
 ~18164~^1^1^~oz~^28.35^^
 ~18164~^2^1^~cookie, medium (2-1/4" dia)~^12.0^^
 ~18165~^1^1^~oz~^28.35^^
@@ -10255,9 +10137,10 @@
 ~18203~^2^1^~cookie, medium (1-5/8" dia)~^7.0^^
 ~18204~^1^1^~oz~^28.35^^
 ~18204~^2^1^~cookie~^15.0^^
-~18205~^1^1^~oz~^28.35^^
+~18205~^1^1^~serving~^33^2^
 ~18205~^2^1^~cookie dough for 1rolled cookie~^17^3^.747
 ~18205~^3^1^~cookie 1 pre-sliced cookie dough~^26^5^.446
+~18205~^4^1^~oz~^28.35^^
 ~18206~^1^1^~oz~^28.35^^
 ~18206~^2^1^~cookie 1 rolled cookie dough~^15.0^3^1.141
 ~18206~^3^1^~cookie 1 pre-sliced cookie dough~^23^5^.449
@@ -10435,6 +10318,7 @@
 ~18255~^13^1^~honeybun (4-1/2" x 3-1/2")~^78^^
 ~18255~^14^1^~honeybun (5" x 3-1/2")~^85^^
 ~18255~^15^1^~doughnut, medium (approx 3-3/4" dia)~^60^^
+~18255~^16^1^~doughnut~^63^15^10.892
 ~18256~^1^1^~oz~^28.35^^
 ~18256~^2^1^~doughnut oval (3-1/2" x 2-1/2")~^85^^
 ~18257~^1^1^~oz~^28.35^^
@@ -10481,8 +10365,10 @@
 ~18274~^4^1^~medium~^113^11^8.142
 ~18274~^5^1^~large (3-1/4" dia x 2-3/4")~^139^8^6.27
 ~18274~^6^1^~extra large~^168^23^8.164
-~18275~^1^1^~oz~^28.35^^
+~18274~^7^1^~muffin~^31^27^30.394
+~18275~^1^1^~serving~^43^1^
 ~18275~^2^1^~package, mix + drained berries~^356^^
+~18275~^3^1^~oz~^28.35^^
 ~18277~^1^1^~oz~^28.35^^
 ~18277~^2^1^~muffin, toaster~^33^^
 ~18278~^1^1^~oz~^28.35^^
@@ -10512,6 +10398,7 @@
 ~18288~^2^1^~pancake~^41^35^1.338
 ~18288~^3^1^~pancake (6" dia)~^73^^
 ~18288~^4^1^~mini pancake~^10.1^64^.772
+~18288~^5^1^~pancake~^40^12^1.064
 ~18289~^1^.333^~cup~^52^32^5.301
 ~18289~^2^1^~oz~^28.35^^
 ~18289~^3^1^~cup, poured from box~^130^^
@@ -10653,10 +10540,12 @@
 ~18357~^2^1^~roll~^30^^
 ~18358~^1^1^~oz~^28.35^^
 ~18358~^2^1^~roll~^30^^
-~18360~^1^1^~oz~^28.35^^
-~18360~^2^1^~large (6-1/2" dia)~^21^^
-~18360~^3^1^~medium (approx 5" dia)~^12.7^15^.942
-~18360~^4^1^~miniature (3" dia)~^5.0^^
+~18360~^1^1^~shell~^12.9^31^1.68
+~18360~^2^1^~taco~^12.7^15^.942
+~18360~^3^1^~medium (approx 5" dia)~^13.3^^
+~18360~^4^1^~large (6-1/2" dia)~^21^^
+~18360~^5^1^~miniature (3" dia)~^5.0^^
+~18360~^6^1^~oz~^28.35^^
 ~18361~^1^1^~oz~^28.35^^
 ~18361~^2^1^~toaster pastry~^50^^
 ~18362~^1^1^~oz~^28.35^^
@@ -10868,39 +10757,27 @@
 ~18457~^1^3^~saltines~^15.0^^
 ~18457~^2^6^~saltines~^30^^
 ~18459~^1^1^~tart~^52^^
-~18475~^1^1^~pastry~^52^^
 ~18476~^1^1^~pastry~^52^^
 ~18477~^1^1^~pastry~^52^^
 ~18478~^1^1^~pastry~^50^^
-~18479~^1^1^~pastry~^50^^
-~18480~^1^1^~pastry~^52^^
+~18479~^1^1^~pastry~^50^1^
 ~18481~^1^1^~pastry~^52^^
-~18482~^1^1^~pastry~^52^^
-~18483~^1^1^~pastry~^52^^
-~18484~^1^1^~pastry~^52^^
+~18482~^1^1^~pastry~^52^1^
 ~18486~^1^1^~pastry~^52^^
 ~18487~^1^1^~pastry~^52^^
 ~18488~^1^1^~pastry~^52^^
-~18489~^1^1^~pastry~^52^^
-~18490~^1^1^~pastry~^54^^
-~18494~^1^1^~pastry~^50^^
-~18495~^1^1^~pastry~^52^^
-~18496~^1^1^~pastry~^52^^
-~18497~^1^1^~pastry~^52^^
+~18489~^1^1^~pastry~^52^1^
+~18490~^1^1^~pastry~^52^1^
+~18494~^1^1^~pastry~^50^1^
+~18497~^1^1^~pastry~^50^1^
 ~18499~^1^3^~pancakes (NLEA serving)~^116^^
-~18500~^1^1^~serving~^78^^
 ~18501~^1^1^~bar (NLEA serving)~^116^^
-~18505~^1^1^~round waffle (4" dia) (include frozen)~^35^^
-~18505~^2^1^~serving~^70^^
-~18506~^1^1^~waffle, round (4" dia) (include frozen)~^35^^
-~18506~^2^1^~serving~^70^^
+~18505~^1^2^~waffles 1 serving~^70^1^
+~18505~^2^1^~round waffle (4" dia) (include frozen)~^35^^
+~18506~^1^2^~waffles 1 serving~^70^1^
+~18506~^2^1^~waffle, round (4" dia) (include frozen)~^35^^
 ~18507~^1^1^~waffle, round (4" dia) (include frozen)~^35^^
 ~18507~^2^1^~serving~^70^^
-~18508~^1^1^~pastry~^62^^
-~18509~^1^1^~pastry~^62^^
-~18510~^1^1^~pastry~^62^^
-~18512~^1^1^~waffle, round (4" dia) (include frozen)~^35^^
-~18512~^2^1^~serving~^70^^
 ~18513~^1^1^~serving~^24^^
 ~18522~^1^1^~serving~^24^^
 ~18524~^1^1^~serving~^22^^
@@ -10922,7 +10799,7 @@
 ~18567~^1^1^~NLEA serving (makes 1/2 cup prepared)~^28^^
 ~18603~^1^1^~serving~^67^^
 ~18608~^1^1^~serving~^31^^
-~18609~^1^1^~serving~^31^^
+~18609~^1^8^~cookies~^30^1^
 ~18610~^1^1^~serving~^40^^
 ~18612~^1^1^~serving~^57^^
 ~18614~^1^1^~serving~^28^^
@@ -10932,13 +10809,14 @@
 ~18619~^1^1^~serving~^11.0^^
 ~18621~^1^1^~cracker~^3.3^12^.108
 ~18621~^2^5^~cracker (1 NLEA serving)~^16^^
-~18629~^1^1^~serving~^64^^
-~18630~^1^1^~serving~^28^^
-~18631~^1^1^~serving~^62^^
+~18629~^1^1^~biscuit~^64^^
+~18629~^2^1^~serving~^64^^
+~18630~^1^1^~serving 2 cookies~^38^^
+~18631~^1^1^~serving~^52^^
 ~18632~^1^1^~serving~^30^^
-~18633~^1^1^~serving~^61^^
+~18633~^1^1^~biscuit~^34^^
 ~18634~^1^1^~serving~^34^^
-~18635~^1^1^~serving~^44^^
+~18635~^1^1^~serving 1 roll with icing~^44^1^
 ~18637~^1^1^~serving~^28^^
 ~18639~^1^1^~serving~^57^^
 ~18640~^1^1^~eclair, frozen~^59^^
@@ -11012,14 +10890,30 @@
 ~18972~^1^1^~slice~^48^1^
 ~18973~^1^1^~piece~^57^1^
 ~18974~^1^15^~cracker~^30^1^
-~18975~^1^15^~cracker~^30^1^
-~18976~^1^18^~cracker~^30^1^
-~18977~^1^15^~cracker~^31^1^
+~18975~^1^15^~crackers~^30^1^
+~18977~^1^15^~crackers~^31^1^
 ~18978~^1^2^~pieces~^72^1^
 ~18979~^1^7^~cracker~^30^1^
 ~18980~^1^2^~pieces~^72^1^
-~18981~^1^15^~cracker~^30^1^
+~18981~^1^15^~crackers~^30^1^
 ~18982~^1^7^~cracker~^30^1^
+~18983~^1^1^~package~^39^1^
+~18984~^1^1^~package~^39^1^
+~18985~^1^1^~package~^39^1^
+~18986~^1^1^~package~^39^1^
+~18987~^1^1^~package~^36^1^
+~18988~^1^1^~package~^36^1^
+~18989~^1^1^~package~^36^1^
+~18990~^1^1^~package~^39^1^
+~18991~^1^4^~cookies~^31^1^
+~18992~^1^12^~chips~^28^1^
+~18993~^1^1^~cookie~^30^1^
+~18994~^1^1^~cookie~^30^1^
+~18995~^1^1^~bscuit~^105^1^
+~18996~^1^1^~bscuit~^105^1^
+~18997~^1^2^~pieces~^90^1^
+~18998~^1^2^~pieces~^90^1^
+~18999~^1^1^~set~^46^1^
 ~19002~^1^1^~oz~^28.35^^
 ~19002~^2^1^~piece, large~^20^^
 ~19003~^1^1^~oz~^28.35^^
@@ -11031,9 +10925,10 @@
 ~19007~^1^1^~oz~^28.35^^
 ~19007~^2^2^~oz~^57^^
 ~19008~^1^1^~oz~^28.35^^
-~19008~^2^32^~pieces~^28^1^
+~19008~^2^1^~package 1.25 oz~^35^^
 ~19009~^1^1^~oz~^28.35^^
 ~19009~^2^2^~oz~^57^^
+~19009~^3^1^~cup~^85^^
 ~19010~^1^1^~bar (1 oz)~^28^^
 ~19013~^1^1^~oz~^28.35^^
 ~19013~^2^1^~package~^27^^
@@ -11137,6 +11032,9 @@
 ~19075~^1^1^~bar 1.25 oz~^35^1^
 ~19075~^2^1^~bar 1.6 oz~^45^1^
 ~19075~^3^6^~blocks~^43^1^
+~19076~^1^1^~piece~^6.6^4^.189
+~19076~^2^1^~bar 2.25 oz~^64^1^
+~19076~^3^1^~serving 6 pieces~^40^1^
 ~19077~^1^1^~oz~^28.35^^
 ~19078~^1^1^~square~^29^18^.72
 ~19078~^2^1^~cup, grated~^132^^
@@ -11173,6 +11071,7 @@
 ~19098~^2^1^~bar snack size~^16^1^
 ~19099~^1^1^~oz~^28.35^^
 ~19100~^1^1^~piece~^17^^
+~19101~^1^1^~oz~^28.35^^
 ~19102~^1^1^~piece~^16^^
 ~19103~^1^1^~oz~^28.35^^
 ~19104~^1^1^~oz~^28.35^^
@@ -11335,6 +11234,7 @@
 ~19168~^2^1^~recipe yield~^563^^
 ~19169~^1^1^~package (3 oz)~^85^^
 ~19169~^2^1^~portion, amount to make 1/2 cup~^21^^
+~19170~^1^.5^~cup~^141^^
 ~19171~^1^1^~tbsp~^5.0^1^
 ~19172~^1^1^~package (3 oz)~^85^^
 ~19172~^2^1^~portion, amount to make 1/2 cup~^21^^
@@ -11363,6 +11263,7 @@
 ~19188~^2^1^~portion, amount to make 1/2 cup~^25^^
 ~19189~^1^.5^~cup~^142^^
 ~19189~^2^1^~package yield (2 cups)~^570^^
+~19190~^1^.5^~cup~^128^^
 ~19191~^1^.5^~cup~^147^^
 ~19191~^2^1^~package yield (2 cups)~^587^^
 ~19193~^1^1^~oz~^28.35^^
@@ -11370,8 +11271,10 @@
 ~19193~^3^1^~serving 3.5 oz shelf stable~^99^^
 ~19194~^1^1^~package~^106^^
 ~19194~^2^1^~portion, amount to make 1/2 cup~^27^^
+~19195~^1^.5^~cup~^128^^
 ~19198~^1^1^~package (3.5 oz)~^92^^
 ~19198~^2^1^~portion, amount to make 1/2 cup~^23^^
+~19199~^1^.5^~cup~^128^^
 ~19201~^1^1^~oz~^28.35^^
 ~19201~^2^1^~container refrigerated 4 oz~^110^7^3.524
 ~19201~^3^1^~container shelf stable 3.5 oz~^97^7^6.244
@@ -11379,10 +11282,16 @@
 ~19202~^2^1^~portion, amount to make 1/2 cup~^25^^
 ~19203~^1^.5^~cup~^142^^
 ~19203~^2^1^~package yield (2 cups)~^569^^
+~19204~^1^1^~serving~^8.0^^
+~19204~^2^1^~package~^32^^
+~19205~^1^.5^~cup~^141^^
 ~19206~^1^1^~package (3.12 oz)~^88^^
 ~19206~^2^1^~portion, amount to make 1/2 cup~^22^^
 ~19207~^1^.5^~cup~^140^^
 ~19207~^2^1^~package yield (2 cups)~^559^^
+~19208~^1^.5^~cup~^128^^
+~19209~^1^.5^~cup~^128^^
+~19212~^1^.5^~cup~^128^^
 ~19216~^1^1^~piece~^39^^
 ~19216~^2^1^~recipe yield~^907^^
 ~19217~^1^1^~bar~^51^^
@@ -11405,11 +11314,13 @@
 ~19230~^2^.083^~package~^38^^
 ~19233~^1^1^~serving 3.5 oz shelf stable~^99^1^
 ~19234~^1^1^~container refrigerated 4 oz~^112^2^
+~19235~^1^1^~serving 4 oz~^113^1^
 ~19236~^1^17^~pieces~^39^1^
 ~19238~^1^16^~pieces~^39^1^
 ~19239~^1^1^~bar 1.92 oz~^54^1^
 ~19239~^2^2^~bars~^34^1^
 ~19240~^1^1^~package~^388^^
+~19241~^1^2^~tablespoon~^33^^
 ~19243~^1^15^~pieces~^39^1^
 ~19244~^1^1^~package~^411^^
 ~19244~^2^.083^~package~^34^^
@@ -11440,6 +11351,8 @@
 ~19271~^2^.5^~cup (4 fl oz)~^66^^
 ~19272~^1^1^~pouch~^26^^
 ~19273~^1^1^~roll~^21^^
+~19274~^1^1^~serving~^21^^
+~19274~^2^1^~packet~^14.2^^
 ~19279~^1^1^~oz~^28.35^^
 ~19280~^1^.5^~cup (4 fl oz)~^99^^
 ~19281~^1^1^~fl oz~^29.0^^
@@ -11479,8 +11392,10 @@
 ~19315~^1^1^~serving 2.07 oz pack~^59^1^
 ~19318~^1^1^~package (3.5 oz)~^99^^
 ~19318~^2^1^~portion, amount to make 1/2 cup~^25^^
+~19319~^1^.5^~cup~^127^^
 ~19320~^1^1^~package (3.12 oz)~^88^^
 ~19320~^2^1^~portion, amount to make 1/2 cup~^22^^
+~19321~^1^.5^~cup~^127^^
 ~19322~^1^1^~package (3.5 oz)~^99^^
 ~19322~^2^1^~portion, amount to make 1/2 cup~^25^^
 ~19323~^1^.5^~cup~^147^^
@@ -11498,6 +11413,7 @@
 ~19331~^2^1^~package yield (2 cups)~^587^^
 ~19332~^1^1^~package (3 oz)~^85^^
 ~19332~^2^1^~portion, amount to make 1/2 cup~^21^^
+~19333~^1^.5^~cup~^127^^
 ~19334~^1^1^~cup packed~^220^^
 ~19334~^2^1^~cup unpacked~^145^^
 ~19334~^3^1^~tsp brownulated~^3.2^^
@@ -11556,6 +11472,8 @@
 ~19370~^2^1^~cup~^205^1^
 ~19370~^3^10^~pieces~^10.7^1^
 ~19370~^4^1^~package fun size~^20^1^
+~19371~^1^2^~tablespoon~^33^^
+~19372~^1^2^~tablespoon~^33^^
 ~19375~^1^1^~recipe yield~^327^^
 ~19379~^1^1^~piece~^20^^
 ~19379~^2^1^~recipe yield (60 pieces)~^1229^^
@@ -11580,6 +11498,7 @@
 ~19407~^2^1^~stick~^20^^
 ~19408~^1^1^~oz~^28.35^^
 ~19408~^2^.5^~oz~^14.2^^
+~19409~^1^2^~tablespoon~^33^^
 ~19410~^1^1^~oz~^28.35^^
 ~19410~^2^1^~can (7 oz)~^198^^
 ~19411~^1^1^~oz~^28.35^^
@@ -11616,6 +11535,8 @@
 ~19438~^1^1^~bar~^37^^
 ~19439~^1^1^~bar~^37^^
 ~19440~^1^1^~bar~^28^^
+~19441~^1^1^~bar~^37^1^
+~19441~^2^1^~bar~^37^7^0
 ~19444~^1^1^~oz~^28.35^^
 ~19445~^1^1^~oz~^28.35^^
 ~19524~^1^1^~oz~^28.35^^
@@ -11742,6 +11663,9 @@
 ~19909~^1^1^~tsp~^0.5^7^.049
 ~19909~^2^1^~cup~^23^6^.834
 ~19910~^1^1^~serving 1.5 oz~^42^1^
+~19911~^1^60^~milliliter~^80^^
+~19912~^1^.25^~cup~^55^3^5.369
+~19912~^2^1^~tsp~^6.9^3^.529
 ~20001~^1^1^~cup~^193^6^1.78
 ~20002~^1^1^~cup~^246^6^2.195
 ~20003~^1^1^~cup~^128^^
@@ -11857,7 +11781,7 @@
 ~20111~^1^1^~cup~^38^^
 ~20111~^2^2^~oz~^57^^
 ~20112~^1^1^~cup~^160^^
-~20113~^1^1^~cup~^45^^
+~20113~^1^.5^~cup dry~^28^1^
 ~20113~^2^1.5^~oz~^43^^
 ~20114~^1^2^~oz~^57^^
 ~20115~^1^1^~cup~^114^^
@@ -11946,7 +11870,7 @@
 ~21018~^1^2^~eggs~^94^^
 ~21019~^1^1^~muffin~^63^^
 ~21020~^1^1^~item~^108^4^2.09
-~21021~^1^1^~sandwich~^139^^
+~21021~^1^1^~sandwich~^126^12^6.798
 ~21022~^1^1^~item~^165^^
 ~21023~^1^2^~slices~^135^^
 ~21024~^1^3^~pieces~^65^^
@@ -12023,10 +11947,10 @@
 ~21102~^1^1^~sandwich~^182^^
 ~21103~^1^1^~sandwich~^228^^
 ~21104~^1^1^~sandwich~^146^^
-~21105~^1^1^~sandwich~^158^^
-~21106~^1^1^~sandwich~^183^^
+~21105~^1^1^~sandwich~^220^12^14.192
+~21106~^1^1^~sandwich~^134^12^5.061
 ~21107~^1^1^~item~^86^^
-~21108~^1^1^~item~^114^^
+~21108~^1^1^~sandwich~^97^24^4.451
 ~21109~^1^1^~item~^110^^
 ~21110~^1^1^~item~^120^^
 ~21111~^1^1^~item~^215^^
@@ -12049,15 +11973,15 @@
 ~21127~^2^1^~package~^116^8^
 ~21128~^1^1^~ear~^146^^
 ~21129~^1^1^~piece~^22^36^3.62
-~21130~^1^1^~portion (8-9 onion rings)~^83^^
+~21130~^1^1^~package (18 onion rings)~^117^12^20.4
 ~21131~^1^1^~piece~^296^^
 ~21132~^1^1^~piece~^299^^
 ~21133~^1^1^~piece~^339^^
 ~21134~^1^1^~piece~^395^^
 ~21135~^1^1^~piece~^302^^
-~21138~^1^1^~large~^169^^
-~21138~^2^1^~medium~^134^^
-~21138~^3^1^~small~^85^^
+~21138~^1^1^~serving small~^71^1^
+~21138~^2^1^~serving medium~^117^1^
+~21138~^3^1^~serving large~^154^1^
 ~21139~^1^1^~cup~^242^12^12.401
 ~21140~^1^.333^~cup~^95^^
 ~21141~^1^1^~fluid ounce~^25^^
@@ -12088,20 +12012,21 @@
 ~21227~^4^1^~serving 6 servings per 34.98 oz package~^170^23^
 ~21227~^5^1^~serving 6 servings per 30.7 oz package~^149^11^
 ~21227~^6^1^~serving 3 servings per 14.3 oz package~^138^11^
-~21228~^1^1^~item~^105^^
+~21228~^1^1^~sandwich~^95^12^4.029
 ~21229~^1^6^~pieces~^96^^
 ~21229~^2^4^~pieces~^64^^
 ~21229~^3^10^~pieces~^160^^
 ~21229~^4^20^~pieces~^320^^
-~21230~^1^1^~item~^219^^
-~21232~^1^1^~item~^142^^
-~21233~^1^1^~item~^119^^
+~21230~^1^1^~sandwich~^152^36^34.597
+~21232~^1^1^~sandwich~^134^12^5.061
+~21233~^1^1^~item 4 oz~^119^^
 ~21234~^1^1^~item~^171^^
-~21235~^1^1^~item~^199^^
-~21237~^1^1^~item~^219^^
+~21235~^1^1^~item 7.1 oz~^199^^
+~21237~^1^1^~item 7.6 oz~^219^^
 ~21238~^1^1^~small serving~^71^^
 ~21238~^2^1^~medium serving~^117^^
 ~21238~^3^1^~large serving~^154^^
+~21238~^4^1^~kids serving~^31^^
 ~21239~^1^1^~item~^218^^
 ~21240~^1^1^~item~^236^^
 ~21241~^1^1^~item~^117^^
@@ -12109,24 +12034,29 @@
 ~21243~^1^1^~item~^310^^
 ~21244~^1^1^~item~^230^^
 ~21245~^1^1^~item~^225^^
-~21246~^1^5^~pieces~^75^^
-~21246~^2^4^~pieces Kid's Meal~^60^^
+~21246~^1^5^~pieces~^68^^
+~21246~^2^10^~pieces~^142^^
+~21247~^1^1^~kid's meal Serving~^71^^
+~21247~^2^1^~small Serving~^113^^
+~21247~^3^1^~medium Serving~^142^^
+~21247~^4^1^~large Serving~^184^^
 ~21248~^1^1^~junior 6 oz. cup~^113^^
 ~21248~^2^1^~small 12 oz. cup~^227^^
 ~21248~^3^1^~medium 16 oz. cup~^298^^
 ~21249~^1^1^~small serving~^74^^
 ~21249~^2^1^~medium serving~^117^^
 ~21249~^3^1^~large serving~^160^^
-~21250~^1^1^~item~^121^^
+~21250~^1^1^~sandwich~^99^12^3.718
 ~21251~^1^1^~item~^133^^
 ~21252~^1^1^~item~^291^^
 ~21253~^1^1^~item~^316^^
 ~21254~^1^1^~item~^374^^
 ~21255~^1^1^~item~^399^^
-~21256~^1^4^~pieces~^62^^
-~21256~^2^6^~pieces~^92^^
-~21256~^3^8^~pieces~^123^^
-~21259~^1^1^~item~^204^^
+~21256~^1^1^~strip~^14.3^60^1.269
+~21256~^2^3^~pieces~^43^^
+~21256~^3^5^~pieces~^71^^
+~21258~^1^1^~sandwich~^220^12^14.192
+~21259~^1^1^~sandwich~^199^12^9.867
 ~21260~^1^1^~each taco~^69^12^11.225
 ~21261~^1^1^~each taco~^102^12^13.703
 ~21262~^1^1^~each taco~^98^12^9.985
@@ -12211,11 +12141,11 @@
 ~21305~^1^1^~item 7.017 oz~^199^^
 ~21306~^1^1^~item 4.744 oz~^135^^
 ~21307~^1^1^~item 5.923 oz~^168^^
-~21308~^1^3^~pieces 4.6 oz~^131^^
-~21308~^2^5^~pieces 7.7 oz~^219^^
-~21309~^1^4^~pieces 2.3 oz~^64^^
-~21309~^2^6^~pieces 3.4 oz~^95^^
-~21309~^3^10^~pieces 5.6 oz~^159^^
+~21308~^1^3^~pieces 4.4 oz~^124^^
+~21308~^2^5^~pieces 7.3 oz~^206^^
+~21309~^1^4^~pieces~^64^1^
+~21309~^2^6^~pieces~^95^1^
+~21309~^3^10^~pieces~^159^1^
 ~21310~^1^1^~package~^28^^
 ~21311~^1^1.5^~oz~^43^^
 ~21312~^1^1^~package~^14.0^^
@@ -12227,13 +12157,13 @@
 ~21318~^1^5.7^~oz~^162^^
 ~21319~^1^2^~oz~^56^^
 ~21320~^1^2^~eggs 3.6 oz~^102^^
-~21321~^1^3^~hotcakes~^149^^
+~21321~^1^3^~hotcakes 5.3 oz~^149^^
 ~21322~^1^3.7^~oz~^105^^
 ~21323~^1^1.5^~oz~^43^^
 ~21324~^1^2.7^~oz~^77^^
 ~21325~^1^2^~oz~^56^^
 ~21326~^1^2^~oz~^57^^
-~21327~^1^1^~item 5.9 oz~^168^^
+~21327~^1^1^~item 5.8 oz~^165^^
 ~21328~^1^1^~item 4.744 oz~^135^^
 ~21329~^1^1^~item 7 oz~^199^^
 ~21330~^1^12^~fl oz cup child size~^266^^
@@ -12261,7 +12191,7 @@
 ~21341~^1^1^~item 9.5 oz~^269^^
 ~21342~^1^1^~package~^68^^
 ~21343~^1^.8^~oz~^21^^
-~21344~^1^1^~item~^173^^
+~21344~^1^1^~sandwich~^155^12^5.512
 ~21345~^1^1^~item~^280^^
 ~21346~^1^2^~fl oz~^62^^
 ~21347~^1^2^~fl oz~^59^^
@@ -12272,11 +12202,12 @@
 ~21352~^1^1^~item~^218^^
 ~21353~^1^1^~item~^247^^
 ~21354~^1^1^~item~^233^^
+~21355~^1^1^~sandwich~^131^12^4.352
 ~21356~^1^1^~item~^138^^
-~21357~^1^1^~item 4.8 oz~^139^^
+~21357~^1^1^~sandwich~^126^12^6.798
 ~21358~^1^1^~item 4 oz~^115^^
-~21359~^1^1^~item 5.7 oz~^165^^
-~21360~^1^1^~item 5 oz~^142^^
+~21359~^1^1^~item 5.8 oz~^165^^
+~21360~^1^1^~item 4.9 oz~^142^^
 ~21361~^1^1^~item 4.1 oz~^117^^
 ~21362~^1^1^~item 5.7 oz~^163^^
 ~21363~^1^1^~item 14.8 oz~^420^^
@@ -12284,14 +12215,14 @@
 ~21365~^1^1^~item~^221^^
 ~21366~^1^1^~item~^89^^
 ~21369~^1^1^~item~^264^^
-~21370~^1^1^~item 10.9 oz~^311^^
-~21371~^1^1^~item 11.1 oz~^314^^
-~21372~^1^1^~item~^213^^
-~21376~^1^1^~item 11.2 oz~^321^^
-~21377~^1^1^~item 11.4 oz~^342^^
-~21378~^1^1^~item~^223^^
-~21379~^1^1^~item~^87^^
-~21380~^1^1^~item~^149^^
+~21370~^1^1^~item 10.4 oz~^296^^
+~21371~^1^1^~item 10.9 oz~^309^^
+~21372~^1^1^~item 7.5 oz~^213^^
+~21376~^1^1^~item 10.8 oz~^305^^
+~21377~^1^1^~item 11.3 oz~^319^^
+~21378~^1^1^~item 7.8 oz~^223^^
+~21379~^1^1^~item 3.1 oz~^87^^
+~21380~^1^1^~item 5.2 oz~^149^^
 ~21381~^1^1^~item~^142^^
 ~21382~^1^1^~item~^124^^
 ~21383~^1^1^~item~^151^4^28.736
@@ -12307,9 +12238,9 @@
 ~21390~^1^1^~item~^247^3^38.793
 ~21391~^1^1^~item~^171^^
 ~21393~^1^1^~item~^205^^
-~21395~^1^1^~item~^173^1^
+~21395~^1^1^~sandwich~^155^32^8.054
 ~21396~^1^1^~item~^280^^
-~21397~^1^1^~item~^266^3^43.439
+~21397~^1^1^~sandwich~^215^12^14.941
 ~21398~^1^1^~item~^199^^
 ~21399~^1^1^~item~^355^^
 ~21400~^1^1^~item~^219^^
@@ -12317,11 +12248,11 @@
 ~21401~^2^5^~pieces~^77^1^
 ~21401~^3^6^~pieces~^92^1^
 ~21401~^4^8^~pieces~^123^1^
-~21402~^1^1^~item 8 oz~^229^^
-~21403~^1^1^~item 8.1 oz~^230^^
-~21404~^1^1^~item 9.4 oz~^269^^
+~21402~^1^1^~item 7 oz~^200^^
+~21403~^1^1^~item~^230^^
+~21404~^1^1^~item 7.9 oz~^223^^
 ~21405~^1^1^~item 9 oz~^254^^
-~21406~^1^1^~item 8.5 oz~^242^^
+~21406~^1^1^~item 7.1 oz~^202^^
 ~21407~^1^1^~item 8.5 oz~^240^^
 ~21408~^1^1^~item 2 oz~^57^^
 ~21409~^1^1^~item~^191^4^5.366
@@ -12473,13 +12404,25 @@
 ~21497~^2^1^~pizza~^952^12^138.329
 ~21498~^1^1^~slice~^125^96^27.208
 ~21498~^2^1^~pizza~^1003^12^124.076
-~21499~^1^.33^~pieces~^116^1^
-~21500~^1^.33^~pieces~^113^1^
-~21501~^1^.33^~pieces~^113^1^
+~21499~^1^.33^~pizza~^116^1^
+~21500~^1^.33^~pizza~^113^1^
+~21501~^1^.33^~pizza~^113^1^
 ~21502~^1^.33^~pieces~^113^1^
-~21503~^1^.33^~pieces~^120^1^
-~22118~^1^1^~patty~^67^1^
-~22120~^1^.667^~cup (1 serving)~^55^1^
+~21503~^1^.33^~pizza~^120^1^
+~21504~^1^.33^~pizza~^115^1^
+~21505~^1^1^~slice~^69^24^6.489
+~21505~^2^1^~pie~^556^24^16.798
+~21506~^1^1^~sandwich~^162^12^4.601
+~21507~^1^1^~sandwich~^146^8^5.622
+~21508~^1^1^~sandwich~^126^12^9.015
+~21509~^1^1^~small~^91^^
+~21509~^2^1^~medium~^117^^
+~21509~^3^1^~large~^142^^
+~21510~^1^1^~sandwich~^215^12^14.941
+~22118~^1^1^~cup~^252^^
+~22118~^2^1^~package yields~^3175^^
+~22118~^3^1^~patty~^67^^
+~22120~^1^.67^~cup~^55^1^
 ~22121~^1^1^~patty~^71^1^
 ~22122~^1^1^~patty~^38^1^
 ~22123~^1^1^~patty~^67^1^
@@ -12504,21 +12447,25 @@
 ~22903~^2^1^~pizza~^428^189^167.586
 ~22904~^1^1^~cup~^242^6^5.191
 ~22905~^1^1^~cup (1 serving)~^196^4^5.393
-~22906~^1^1^~pie (average weight of prepared pie)~^234^12^47.026
+~22906~^1^1^~pie~^302^24^124.956
 ~22907~^1^1^~cup~^255^28^6.857
 ~22908~^1^1^~cup~^236^1^
 ~22910~^1^1^~serving~^243^23^31.145
 ~22910~^2^1^~oz~^28.35^^
 ~22911~^1^1^~cup~^240^^
-~22912~^1^1^~cup~^255^28^6.857
+~22912~^1^1^~cup~^246^35^6.916
+~22912~^2^1^~can~^411^35^5.671
 ~22914~^1^1^~serving (1 NLEA serving)~^252^4^0
 ~22914~^2^1^~cup~^238^20^5.597
 ~22915~^1^1^~package~^309^^
 ~22915~^2^1^~oz~^28.35^^
-~22916~^1^1^~serving~^297^^
+~22916~^1^1^~piece side~^134^48^26.182
+~22916~^2^1^~piece corner~^115^48^21.948
+~22916~^3^1^~piece center~^278^2^
 ~22917~^1^1^~burrito frozen~^139^73^13.591
 ~22917~^2^1^~oz~^28.35^^
 ~22918~^1^1^~burrito~^129^9^16.2
+~22919~^1^7.5^~oz 1 serving~^213^^
 ~22928~^1^1^~burrito cooked~^116^72^15.027
 ~22928~^2^1^~oz~^28.35^^
 ~22929~^1^1^~cup~^259^1^
@@ -12559,6 +12506,7 @@
 ~22957~^3^1^~oz~^28.35^^
 ~22958~^1^1^~bowl~^340^12^21.955
 ~22959~^1^1^~serving (makes about 1 cup prepared)~^70^^
+~22960~^1^1^~cup~^198^24^9.392
 ~22961~^1^1^~hot pocket (1 NLEA serving)~^127^^
 ~22962~^1^1^~hot pocket (1 NLEA serving)~^127^^
 ~22962~^2^1^~each (analytical measurement)~^129^12^6.351
@@ -12574,10 +12522,36 @@
 ~22973~^1^1^~corndog~^78^19^5.55
 ~22973~^2^1^~corndog mini~^17^2^
 ~22974~^1^1^~serving~^87^22^3.96
-~22974~^2^1^~piece~^18^22^2.425
+~22974~^2^1^~piece~^18^12^.761
 ~22975~^1^1^~serving~^82^9^4.531
 ~22975~^2^1^~piece~^20^9^2.101
 ~22976~^1^1^~cup~^159^22^12.215
+~22977~^1^1^~piece side~^123^48^26.372
+~22977~^2^1^~piece corner~^114^48^32.003
+~22977~^3^1^~piece center~^255^2^
+~22978~^1^1^~piece~^21^24^7.428
+~22979~^1^1^~package~^283^1^
+~22980~^1^1^~package~^269^1^
+~22981~^1^1^~package~^255^1^
+~22982~^1^1^~package~^269^1^
+~22983~^1^1^~package~^283^1^
+~22984~^1^1^~package~^283^1^
+~22985~^1^1^~package~^283^1^
+~22986~^1^1^~package~^283^1^
+~22987~^1^1^~package~^283^1^
+~22988~^1^.5^~cup~^140^1^
+~22989~^1^1^~package~^269^1^
+~22990~^1^1^~package~^269^1^
+~22991~^1^1^~package~^269^1^
+~22992~^1^1^~package~^283^1^
+~22993~^1^1^~package~^255^1^
+~22994~^1^1^~package~^269^1^
+~22995~^1^1^~package~^283^1^
+~22996~^1^1^~package~^269^1^
+~22997~^1^1^~package~^283^1^
+~22998~^1^.333^~cup~^56^12^3.984
+~22998~^2^1^~tbsp~^10.2^12^2.339
+~22999~^1^1^~cup~^233^12^13.458
 ~23000~^1^1^~steak~^369^1^
 ~23000~^2^1^~roast~^1159^1^
 ~23001~^1^1^~oz~^28.35^^
@@ -12893,8 +12867,30 @@
 ~23291~^2^1^~roast~^844^16^169.177
 ~23292~^1^1^~fillet~^166^8^24.238
 ~23292~^2^1^~roast~^866^8^178.113
+~23295~^1^1^~steak~^152^34^36.1
+~23302~^1^1^~steak~^150^42^41.2
+~23303~^1^1^~roast~^339^47^48.9
+~23304~^1^1^~steak~^152^34^36.1
+~23305~^1^1^~roast~^339^47^48.9
+~23306~^1^1^~roast~^449^18^180.7
+~23309~^1^1^~roast~^763^25^154.1
+~23310~^1^1^~steak~^173^44^42.4
+~23311~^1^1^~roast~^348^62^63
+~23312~^1^1^~roast~^359^64^56.7
+~23313~^1^1^~roast~^342^52^84.4
+~23314~^1^1^~roast~^377^59^77.7
+~23315~^1^1^~roast~^449^^
+~23318~^1^1^~roast~^763^^
+~23319~^1^1^~roast~^348^^
+~23320~^1^1^~roast~^359^64^56.7
+~23321~^1^1^~roast~^342^52^84.4
+~23322~^1^1^~roast~^377^59^77.7
+~23323~^1^1^~steak~^173^^
 ~23501~^1^1^~patty~^68^^
+~23502~^1^1^~oz~^28.35^^
 ~23503~^1^1^~patty~^64^^
+~23506~^1^1^~serving~^85^^
+~23508~^1^1^~serving~^85^^
 ~23509~^1^3^~oz ( 1 serving )~^85^^
 ~23509~^2^1^~lb~^453.6^^
 ~23511~^1^3^~oz ( 1 serving )~^85^^
@@ -13028,6 +13024,7 @@
 ~23603~^1^1^~oz~^28.35^^
 ~23603~^2^1^~lb~^453.6^^
 ~23604~^1^1^~oz~^28.35^1^
+~23604~^2^1^~lb~^453.6^1^
 ~23605~^1^1^~oz~^28.35^1^
 ~23605~^2^1^~lb~^453.6^1^
 ~23606~^1^1^~oz~^28.35^1^
@@ -13096,6 +13093,7 @@
 ~23637~^2^1^~lb~^453.6^^
 ~23638~^1^1^~oz~^28.35^1^
 ~23638~^2^1^~lb~^453.6^1^
+~23640~^1^1^~serving~^85^^
 ~23646~^1^1^~roast~^261^19^
 ~23647~^1^1^~roast~^591^10^
 ~23648~^1^1^~roast~^271^9^
@@ -13143,9 +13141,8 @@
 ~25024~^2^1^~medium~^115^^
 ~25024~^3^1^~small~^62^^
 ~25025~^1^1^~oz~^28.35^^
-~25026~^1^1^~cup~^7.9^52^
-~25026~^2^1^~ckd pr g~^87^40^3.388
-~25026~^3^1^~raw pr g~^97^40^3.771
+~25026~^1^1^~bag~^87^12^2.428
+~25026~^2^1^~oz~^28.35^^
 ~25027~^1^1^~oz~^28.35^6^1.098
 ~25028~^1^1^~oz~^28.35^^
 ~25028~^2^10^~chips~^25^17^6.678
@@ -13168,11 +13165,13 @@
 ~25046~^1^1^~oz~^28.35^^
 ~25046~^2^1^~bag~^175^11^6.998
 ~25046~^3^6^~piece chips~^28^^
+~25048~^1^1^~bar~^32^^
 ~25050~^1^1^~oz~^28.35^^
 ~25050~^2^10^~chips~^17^4^5.276
 ~25050~^3^1^~bag~^105^4^18.509
 ~25051~^1^1^~bar~^68^2^
 ~25052~^1^1^~bar~^24^1^
+~25053~^1^1^~bar~^35^1^
 ~25054~^1^1^~bar~^35^1^
 ~25056~^1^1^~bar~^31^1^
 ~27000~^1^1^~cup~^241^12^4.727
@@ -13192,8 +13191,6 @@
 ~27013~^2^1^~serving~^126^1^
 ~27014~^1^.5^~cup~^126^1^
 ~27014~^2^1^~serving~^126^1^
-~27015~^1^.5^~cup~^126^1^
-~27015~^2^1^~serving~^126^1^
 ~27016~^1^.5^~cup~^126^1^
 ~27016~^2^1^~serving~^126^1^
 ~27017~^1^1^~cup~^245^1^
@@ -13239,7 +13236,321 @@
 ~27049~^1^2^~tablespoons~^30^^
 ~27050~^1^2^~Tbsp~^35^^
 ~27051~^1^.25^~cup~^60^^
-~27052~^1^2^~Tbsp~^34^^
+~27052~^1^2^~tbsp~^30^27^2.681
+~27052~^2^.5^~cup~^125^27^4.677
+~27053~^1^2^~tbsp~^32^4^2.137
+~27053~^2^.5^~cup~^124^4^8.096
+~27054~^1^2^~tbsp~^30^11^2.759
+~27054~^2^.5^~cup~^125^11^4.249
+~27055~^1^1^~tbsp~^18^12^1.233
+~27055~^2^.5^~cup~^144^12^7.596
+~27055~^3^1^~cup~^280^12^11.647
+~27056~^1^1^~tbsp~^16^12^.435
+~27056~^2^.5^~cup~^148^12^2.189
+~27056~^3^1^~cup~^291^12^8.104
+~27057~^1^1^~tbsp~^18^12^.905
+~27057~^2^.5^~cup~^138^12^4.402
+~27057~^3^1^~cup~^265^12^11.982
+~27058~^1^1^~tbsp~^17^6^.958
+~27058~^2^.5^~cup~^137^6^4.874
+~27058~^3^1^~cup~^270^6^2.883
+~28000~^1^1^~set~^46^1^
+~28001~^1^1^~pizza~^150^1^
+~28002~^1^1^~pizza~^150^1^
+~28003~^1^3^~pancakes~^105^1^
+~28004~^1^3^~pancakes~^105^1^
+~28005~^1^3^~pancakes~^105^1^
+~28006~^1^3^~pancakes~^105^1^
+~28007~^1^2^~waffles~^76^1^
+~28008~^1^2^~waffles~^76^1^
+~28009~^1^2^~waffles~^70^1^
+~28010~^1^2^~waffles~^70^1^
+~28011~^1^3^~sets~^92^1^
+~28012~^1^2^~waffles~^70^1^
+~28013~^1^2^~waffles~^70^1^
+~28014~^1^1^~waffle~^45^1^
+~28015~^1^2^~waffles~^70^1^
+~28015~^2^3^~sets waffle minis~^93^1^
+~28016~^1^2^~waffles~^70^1^
+~28017~^1^11^~crisps~^31^1^
+~28018~^1^2^~waffles~^70^1^
+~28019~^1^2^~waffles~^70^1^
+~28020~^1^11^~crisps~^31^1^
+~28021~^1^2^~waffles~^70^1^
+~28022~^1^2^~waffles~^70^1^
+~28023~^1^2^~waffles~^70^1^
+~28024~^1^2^~waffles~^70^1^
+~28025~^1^1^~waffle~^55^1^
+~28026~^1^1^~waffle~^55^1^
+~28027~^1^4^~cookies~^29^1^
+~28028~^1^4^~cookies~^29^1^
+~28029~^1^4^~cookies~^30^1^
+~28030~^1^3^~cookies~^36^1^
+~28031~^1^2^~cookies~^24^1^
+~28032~^1^2^~cookies~^29^1^
+~28033~^1^2^~cookies~^25^1^
+~28034~^1^2^~cookies~^25^1^
+~28035~^1^4^~cookies~^32^1^
+~28036~^1^5^~cookies~^33^1^
+~28037~^1^3^~cookies~^32^1^
+~28038~^1^8^~cookies~^30^1^
+~28039~^1^1^~cookie~^30^1^
+~28040~^1^1^~cookie~^30^1^
+~28041~^1^1^~cookie~^30^1^
+~28042~^1^15^~crackers~^30^1^
+~28043~^1^1^~package 1 serving~^40^1^
+~28044~^1^8^~cookies 1 serving~^31^1^
+~28044~^2^1^~package 40 g package~^40^1^
+~28045~^1^6^~cookies 1 serving~^30^1^
+~28045~^2^1^~package 1 40 g package~^40^1^
+~28046~^1^8^~crackers 1 serving~^29^1^
+~28047~^1^2^~cookies~^32^1^
+~28048~^1^2^~cookies~^32^1^
+~28049~^1^1^~package~^39^1^
+~28050~^1^1^~package~^39^1^
+~28051~^1^1^~package~^39^1^
+~28052~^1^2^~cookies~^32^1^
+~28053~^1^2^~cookies~^31^1^
+~28054~^1^2^~cookies~^30^1^
+~28055~^1^2^~cookies~^32^1^
+~28056~^1^1^~pouch~^34^1^
+~28057~^1^2^~cookies~^31^1^
+~28058~^1^2^~cookies~^30^1^
+~28059~^1^2^~cookies~^32^1^
+~28060~^1^2^~cookies~^31^1^
+~28061~^1^5^~cookies 1 serving~^28^1^
+~28061~^2^1^~package 1 40 g package~^40^1^
+~28062~^1^2^~cookies~^31^1^
+~28063~^1^4^~crackers~^14.0^1^
+~28064~^1^4^~crackers~^14.0^1^
+~28065~^1^17^~crackers~^15.0^1^
+~28066~^1^17^~crackers~^15.0^1^
+~28067~^1^4^~crackers~^14.0^1^
+~28068~^1^4^~crackers~^14.0^1^
+~28069~^1^5^~crackers~^16^1^
+~28070~^1^12^~crackers~^29^1^
+~28071~^1^12^~crackers~^29^1^
+~28072~^1^2^~cookies~^28^1^
+~28073~^1^4^~cookies~^26^1^
+~28074~^1^2^~cookies~^36^1^
+~28075~^1^2^~cookies~^35^1^
+~28076~^1^3^~cookies~^26^1^
+~28077~^1^3^~cookies~^26^1^
+~28078~^1^3^~cookies~^26^1^
+~28079~^1^2^~cookies~^28^1^
+~28080~^1^3^~pieces~^27^1^
+~28081~^1^2^~cookies~^30^1^
+~28082~^1^2^~cookies~^30^1^
+~28083~^1^2^~cookies~^31^1^
+~28084~^1^1^~cup~^8.0^1^
+~28085~^1^4^~cookies~^27^1^
+~28086~^1^3^~cookies~^29^1^
+~28087~^1^3^~cookies~^31^1^
+~28088~^1^3^~cookies~^31^1^
+~28089~^1^1^~package~^40^1^
+~28089~^2^14^~cookie~^30^^
+~28091~^1^3^~cookies~^31^1^
+~28092~^1^3^~cookies~^31^1^
+~28093~^1^4^~cookies~^29^1^
+~28094~^1^1^~cookie~^31^1^
+~28095~^1^1^~cookie~^31^1^
+~28096~^1^2^~cookies~^30^1^
+~28097~^1^2^~cookies~^26^1^
+~28098~^1^2^~cookies~^30^1^
+~28099~^1^1^~cookie~^31^1^
+~28100~^1^3^~cookies~^29^1^
+~28101~^1^1^~package~^37^1^
+~28102~^1^1^~pouch~^25^1^
+~28103~^1^1^~pouch~^25^1^
+~28104~^1^1^~pouch~^25^1^
+~28105~^1^1^~pouch~^25^1^
+~28106~^1^4^~cookies~^28^1^
+~28107~^1^5^~cookies~^33^1^
+~28108~^1^6^~cookies~^29^1^
+~28109~^1^2^~cookies~^29^1^
+~28110~^1^1^~package~^39^1^
+~28111~^1^.125^~crust 1 serving (from 9" shell)~^21^1^
+~28111~^2^1^~shell 1 serving (from 3" mini shell)~^23^1^
+~28112~^1^.125^~crust 9" crust~^21^1^
+~28113~^1^1^~pouch~^21^1^
+~28114~^1^1^~pouch~^21^1^
+~28115~^1^1^~package~^21^1^
+~28116~^1^1^~pouch~^20^1^
+~28117~^1^1^~package~^21^1^
+~28118~^1^1^~pouch~^20^1^
+~28119~^1^1^~pouch~^21^1^
+~28120~^1^1^~pouch~^21^1^
+~28121~^1^1^~package~^21^1^
+~28122~^1^1^~pouch~^21^1^
+~28123~^1^1^~pouch~^21^1^
+~28124~^1^2^~cookies~^30^1^
+~28125~^1^2^~cookies~^31^1^
+~28126~^1^2^~cookies~^30^1^
+~28127~^1^2^~cookies~^31^1^
+~28128~^1^5^~cookies 28 g package~^28^1^
+~28128~^2^1^~package 34 g package~^34^1^
+~28129~^1^2^~cookies~^31^1^
+~28130~^1^2^~cookies~^32^1^
+~28131~^1^2^~cookies~^38^1^
+~28132~^1^2^~cookies~^38^1^
+~28133~^1^5^~crackers~^16^1^
+~28134~^1^5^~crackers~^16^1^
+~28135~^1^5^~crackers~^16^1^
+~28136~^1^5^~crackers~^16^1^
+~28137~^1^5^~crackers~^16^1^
+~28138~^1^2^~crackers~^16^1^
+~28139~^1^5^~crackers~^15.0^1^
+~28140~^1^5^~crackers~^15.0^1^
+~28141~^1^5^~crackers~^15.0^1^
+~28142~^1^5^~crackers~^16^1^
+~28143~^1^6^~crackers~^15.0^1^
+~28144~^1^5^~crackers~^14.0^1^
+~28145~^1^3^~crackers~^14.0^1^
+~28146~^1^3^~crackers~^14.0^1^
+~28147~^1^3^~crackers~^14.0^1^
+~28148~^1^5^~crackers~^16^1^
+~28149~^1^8^~crackers~^15.0^1^
+~28150~^1^4^~cookies~^29^1^
+~28151~^1^4^~cookies~^32^1^
+~28152~^1^18^~cookies~^30^1^
+~28153~^1^2^~cookies~^31^1^
+~28154~^1^2^~cookies~^31^1^
+~28155~^1^1^~waffle~^12.0^1^
+~28156~^1^1^~cone~^12.0^1^
+~28157~^1^17^~crackers~^30^1^
+~28158~^1^16^~crackers~^30^1^
+~28159~^1^16^~crackers~^30^1^
+~28160~^1^18^~crackers~^30^1^
+~28161~^1^18^~crackers~^30^1^
+~28162~^1^6^~tbsp~^33^1^
+~28163~^1^1^~pastry~^50^1^
+~28164~^1^1^~pastry~^50^1^
+~28165~^1^1^~pastry~^50^1^
+~28167~^1^1^~pastry~^50^1^
+~28168~^1^1^~pastry~^50^1^
+~28169~^1^1^~pastry~^50^1^
+~28170~^1^1^~pastry~^50^1^
+~28171~^1^1^~pastry~^50^1^
+~28172~^1^1^~pastry~^52^1^
+~28173~^1^1^~pastry~^50^1^
+~28173~^2^1^~package 2 pack~^100^1^
+~28174~^1^1^~pastry~^50^1^
+~28175~^1^1^~pastry~^50^1^
+~28176~^1^1^~pastry~^50^1^
+~28177~^1^1^~pastry~^50^1^
+~28178~^1^1^~pastry~^48^1^
+~28179~^1^1^~pastry~^48^1^
+~28180~^1^1^~pastry~^50^1^
+~28181~^1^1^~pastry~^48^1^
+~28182~^1^1^~pastry~^48^1^
+~28183~^1^1^~pouch~^23^1^
+~28184~^1^1^~pouch~^23^1^
+~28185~^1^1^~pouch~^10.0^1^
+~28186~^1^27^~chips~^30^1^
+~28187~^1^30^~chips~^30^1^
+~28188~^1^27^~chips~^30^1^
+~28189~^1^27^~chips~^30^1^
+~28190~^1^24^~crackers~^30^1^
+~28191~^1^24^~crackers~^30^1^
+~28192~^1^1^~pastry~^50^1^
+~28192~^2^1^~package 2-count package~^100^1^
+~28193~^1^1^~pastry~^50^1^
+~28194~^1^6^~cookies~^29^1^
+~28195~^1^4^~cookies~^30^1^
+~28196~^1^6^~cookies~^29^1^
+~28197~^1^5^~cookies~^32^1^
+~28198~^1^2^~cookies~^38^1^
+~28199~^1^2^~cookies~^38^1^
+~28200~^1^6^~cookies~^29^1^
+~28201~^1^6^~cookies~^29^1^
+~28202~^1^4^~cookies~^29^1^
+~28203~^1^4^~cookies~^32^1^
+~28204~^1^6^~cookies~^29^1^
+~28205~^1^2^~cookies~^31^1^
+~28206~^1^2^~cookies~^32^1^
+~28207~^1^2^~cookies~^31^1^
+~28208~^1^2^~cookies~^38^1^
+~28209~^1^2^~cookies~^38^1^
+~28210~^1^4^~cookies~^28^1^
+~28211~^1^8^~cookies~^30^1^
+~28212~^1^6^~cookies~^32^1^
+~28213~^1^3^~cookies~^29^1^
+~28214~^1^3^~cookies~^29^1^
+~28215~^1^9^~cookies~^32^1^
+~28216~^1^5^~cookies~^33^1^
+~28217~^1^2^~cookies~^28^1^
+~28218~^1^2^~cookies~^29^1^
+~28219~^1^2^~cookies~^29^1^
+~28220~^1^1^~pouch~^21^1^
+~28221~^1^3^~cookies~^32^1^
+~28222~^1^4^~cookies~^30^1^
+~28223~^1^4^~cookies~^26^1^
+~28224~^1^4^~cookies~^31^1^
+~28225~^1^3^~cookies~^29^1^
+~28226~^1^3^~cookies~^32^1^
+~28227~^1^3^~cookies~^28^1^
+~28228~^1^3^~cookies~^28^1^
+~28229~^1^8^~cookies~^30^1^
+~28230~^1^1^~pouch~^21^1^
+~28231~^1^9^~cookies~^32^1^
+~28232~^1^5^~cookies~^28^1^
+~28233~^1^8^~cookies~^30^1^
+~28234~^1^25^~crackers~^30^1^
+~28235~^1^25^~crackers~^30^1^
+~28235~^2^1^~pouch~^21^1^
+~28236~^1^13^~crackers~^30^1^
+~28237~^1^25^~crackers~^30^1^
+~28237~^2^1^~pouch~^21^1^
+~28238~^1^25^~crackers~^30^1^
+~28238~^2^1^~pouch~^21^1^
+~28239~^1^25^~crackers~^30^1^
+~28240~^1^25^~crackers~^30^1^
+~28241~^1^1^~package~^25^1^
+~28242~^1^1^~pouch~^25^1^
+~28243~^1^25^~crackers~^30^1^
+~28244~^1^25^~crackers~^30^1^
+~28245~^1^27^~crackers~^30^1^
+~28246~^1^25^~crackers~^30^1^
+~28247~^1^25^~crackers~^30^1^
+~28248~^1^25^~crackers~^30^1^
+~28249~^1^25^~crackers~^30^1^
+~28250~^1^1^~pouch~^21^1^
+~28251~^1^1^~package~^21^1^
+~28252~^1^26^~crackers~^30^1^
+~28253~^1^.5^~cup~^30^1^
+~28254~^1^.5^~cup 25 crackers~^30^1^
+~28255~^1^3^~crackers~^14.0^1^
+~28256~^1^1^~package~^39^1^
+~28257~^1^1^~package~^39^1^
+~28258~^1^1^~package~^39^1^
+~28259~^1^11^~pancakes~^110^1^
+~28260~^1^2^~waffles~^70^1^
+~28261~^1^3^~cookies~^34^1^
+~28262~^1^3^~cookies~^34^1^
+~28263~^1^8^~crackers~^30^1^
+~28264~^1^2^~cookies~^29^1^
+~28265~^1^1^~package~^39^1^
+~28266~^1^.125^~crust~^21^1^
+~28267~^1^2^~cookies~^31^1^
+~28268~^1^1^~cone~^13.0^1^
+~28269~^1^2^~cookies~^27^1^
+~28270~^1^2^~cookies~^38^1^
+~28271~^1^8^~cookies~^30^1^
+~28272~^1^3^~cookies~^29^1^
+~28273~^1^3^~cookies~^29^1^
+~28274~^1^8^~crackers~^31^1^
+~28275~^1^5^~cookies~^30^1^
+~28276~^1^2^~cookies~^29^1^
+~28277~^1^3^~cookies~^32^1^
+~28278~^1^3^~cookies~^32^1^
+~28279~^1^3^~cookies~^28^1^
+~28280~^1^27^~crackers~^30^1^
+~28280~^2^1^~package~^35^^
+~28281~^1^29^~crackers~^30^1^
+~28281~^2^1^~package~^35^^
+~28282~^1^16^~crackers~^15.0^1^
+~28283~^1^5^~crackers~^15.0^1^
+~28284~^1^5^~crackers~^15.0^1^
 ~31001~^1^8^~fl oz~^243^1^
 ~31001~^2^1^~serving~^243^1^
 ~31002~^1^8^~fl oz~^243^1^
@@ -13270,6 +13581,17 @@
 ~31017~^2^1^~serving~^243^^
 ~31018~^1^8^~fl oz~^243^1^
 ~31018~^2^1^~serving~^243^1^
+~31019~^1^.25^~cup~^5.0^1^
+~31020~^1^.25^~cup~^25^1^
+~32000~^1^.333^~cup~^61^12^3.598
+~32000~^2^1^~tbsp~^9.0^12^1.278
+~32001~^1^1^~cup~^247^12^3.726
+~32002~^1^.333^~cup~^68^11^3.41
+~32002~^2^1^~tbsp~^9.6^11^1.578
+~32003~^1^1^~cup~^238^11^12.852
+~32004~^1^3.5^~oz 1 serving~^25^^
+~32004~^2^4^~oz 1 serving~^37^^
+~32005~^1^1^~cup prepared~^189^12^22.018
 ~35009~^1^1^~strip~^45^5^11.656
 ~35015~^1^1^~cup~^157^3^30.331
 ~35139~^1^1^~oz~^28.35^^
@@ -13302,7 +13624,11 @@
 ~35232~^1^1^~oz~^28.35^^
 ~35233~^1^1^~nut~^0.4^10^.067
 ~35233~^2^1^~oz~^28.35^^
-~35234~^1^1^~piece~^19^^
+~35234~^1^1^~piece~^28^^
+~35234~^2^1^~piece~^19^^
+~35236~^1^8^~oz~^227^^
+~35237~^1^4^~oz~^113^^
+~35239~^1^1^~piece~^57^^
 ~36000~^1^1^~steak~^179^12^21.141
 ~36001~^1^1^~piece~^10.4^12^.457
 ~36001~^2^1^~serving~^159^12^40.453
@@ -13420,8 +13746,6 @@
 ~42148~^1^1^~serving 1.63 oz singles bag~^46^1^
 ~42148~^2^1^~cup~^203^^
 ~42148~^3^1^~piece~^2.2^^
-~42149~^1^1^~cup~^234^^
-~42149~^2^1^~fl oz~^29.2^^
 ~42150~^1^1^~tbsp~^15.0^^
 ~42150~^2^1^~jar NFS~^113^^
 ~42150~^3^1^~jar Beech-Nut Stage 2 (4 oz)~^113^^
@@ -13452,7 +13776,6 @@
 ~42178~^2^1^~cup~^240^^
 ~42179~^1^1^~cup, sliced~^151^^
 ~42179~^2^1^~frankfurter~^57^^
-~42181~^1^1^~fl oz~^30.2^^
 ~42182~^1^1^~cup~^230^^
 ~42182~^2^1^~fl oz~^28.8^^
 ~42183~^1^2^~cookie 2011 label~^51^^
@@ -13518,6 +13841,8 @@
 ~42283~^2^10^~chips~^12.0^^
 ~42284~^1^1^~cookie~^1.7^^
 ~42285~^1^1^~tbsp~^3.7^^
+~42286~^1^1^~tbsp~^14.0^^
+~42286~^2^1^~jar Gerber Second Food (4 oz)~^113^^
 ~42289~^1^1^~tbsp~^14.0^^
 ~42289~^2^1^~cup~^224^^
 ~42289~^3^1^~teaspoon~^4.5^^
@@ -13612,7 +13937,7 @@
 ~43216~^2^1^~tsp~^4.2^^
 ~43216~^3^1^~individual packet~^3.0^^
 ~43217~^1^1^~cup~^245^^
-~43218~^1^1^~cup~^113^^
+~43218~^1^.67^~cup (1 NLEA serving)~^55^^
 ~43241~^1^1^~cup~^122^^
 ~43245~^1^1^~cup (1 NLEA serving)~^55^^
 ~43260~^1^1^~tbsp~^5.6^^
@@ -13656,7 +13981,6 @@
 ~43331~^2^1^~cup~^240^^
 ~43340~^1^1^~cup, grated~^100^^
 ~43340~^2^1^~tbsp~^5.0^^
-~43343~^1^1^~tsp dry~^6.4^^
 ~43345~^1^1^~tsp~^2.0^^
 ~43346~^1^1^~fl oz~^29.8^^
 ~43346~^4^1^~bar~^74^^
@@ -13690,8 +14014,6 @@
 ~43384~^4^1^~slice, thick~^43^^
 ~43384~^5^1^~slice, thin~^14.0^^
 ~43387~^1^1^~cup~^144^^
-~43388~^1^1^~cup (8 fl oz)~^240^^
-~43388~^2^1^~fl oz~^30.0^^
 ~43390~^2^1^~oz, boneless~^28.35^^
 ~43390~^3^1^~cubic inch, boneless~^17^^
 ~43390~^4^1^~medium slice (approx 3" x 2" x 1/4")~^28^^
@@ -13815,3 +14137,6 @@
 ~83110~^1^1^~cup, cooked~^136^^
 ~83110~^4^1^~cubic inch, boneless~^17^^
 ~83110~^5^1^~piece (5-1/2" x 1-1/2" x 1/2")~^80^^
+~90240~^1^3^~oz~^85^^
+~90560~^1^3^~oz~^85^^
+~93600~^1^3^~oz~^85^^

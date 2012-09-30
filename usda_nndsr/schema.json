@@ -1,6 +1,6 @@
 {
-    "version": 24,
-    "description": "USDA National Nutrient Database for Standard Reference, Release 24",
+    "version": 25,
+    "description": "USDA National Nutrient Database for Standard Reference, Release 25",
     "url": "http://www.ars.usda.gov/nutrientdata",
     "field_separator": "^",
     "text_separator": "~",
@@ -9,7 +9,7 @@
         {
             "file": "FOOD_DES.txt",
             "description": "Food Description",
-            "records": 7907,
+            "records": 8176,
             "fields": [
                 {
                     "name": "NDB_No",
@@ -88,35 +88,35 @@
                     "type": "Numeric",
                     "size": 4.2,
                     "allows_null": true,
-                    "description": "Factor for converting nitrogen to protein (see p. 10)."
+                    "description": "Factor for converting nitrogen to protein (see p. 12)."
                 },
                 {
                     "name": "Pro_Factor",
                     "type": "Numeric",
                     "size": 4.2,
                     "allows_null": true,
-                    "description": "Factor for calculating calories from protein (see p. 11)."
+                    "description": "Factor for calculating calories from protein (see p. 13)."
                 },
                 {
                     "name": "Fat_Factor",
                     "type": "Numeric",
                     "size": 4.2,
                     "allows_null": true,
-                    "description": "Factor for calculating calories from fat (see p. 11)."
+                    "description": "Factor for calculating calories from fat (see p. 13)."
                 },
                 {
                     "name": "CHO_Factor",
                     "type": "Numeric",
                     "size": 4.2,
                     "allows_null": true,
-                    "description": "Factor for calculating calories from carbohydrate (see p. 11)."
+                    "description": "Factor for calculating calories from carbohydrate (see p. 13)."
                 }
             ]
         },
         {
             "file": "NUT_DATA.txt",
             "description": "Nutrient Data",
-            "records": 583957,
+            "records": 594091,
             "fields": [
                 {
                     "name": "NDB_No",
@@ -241,8 +241,7 @@
                 },
                 {
                     "name": "AddMod_Date",
-                    "type": "Alphanumeric",
-                    "size": 10,
+                    "type": "Date(mm/yyyy)",
                     "allows_null": true,
                     "description": "Indicates when a value was either added to the database or last modified."
                 },
@@ -258,7 +257,7 @@
         {
             "file": "WEIGHT.txt",
             "description": "Weight",
-            "records": 13817,
+            "records": 14142,
             "fields": [
                 {
                     "name": "NDB_No",
@@ -287,7 +286,7 @@
                 {
                     "name": "Msre_Desc",
                     "type": "Alphanumeric",
-                    "size": 80,
+                    "size": 84,
                     "allows_null": false,
                     "description": "Description (for example, cup, diced, and 1-inch pieces)."
                 },
@@ -317,7 +316,7 @@
         {
             "file": "FOOTNOTE.txt",
             "description": "Footnote",
-            "records": 522,
+            "records": 525,
             "fields": [
                 {
                     "name": "NDB_No",
@@ -331,7 +330,7 @@
                     "name": "Footnt_No",
                     "type": "Alphanumeric",
                     "size": 4,
-                    "allows_null": false,
+                    "allows_null": true,
                     "description": "Sequence number. If a given footnote applies to more than one nutrient number, the same footnote number is used. As a result, this file cannot be indexed."
                 },
                 {
@@ -384,7 +383,7 @@
         {
             "file": "LANGUAL.txt",
             "description": "LanguaL Factor",
-            "records": 40205,
+            "records": 39085,
             "fields": [
                 {
                     "name": "NDB_No",
@@ -402,7 +401,6 @@
                     "is_primary_key": true,
                     "foreign_key": "LANGDESC.Factor_Code",
                     "allows_null": false,
-                    "convert_to_uppercase": true,
                     "description": "The LanguaL factor from the Thesaurus"
                 }
             ]
@@ -503,8 +501,9 @@
         },
         {
             "file": "DERIV_CD.txt",
-            "description": "Data Derivation Description",
+            "description": "Data Derivation Code Description",
             "records": 54,
+            "convert_rows_to_remove_trailing_whitespace_and_empty_lines": true,
             "fields": [
                 {
                     "name": "Deriv_Cd",
@@ -517,7 +516,7 @@
                 {
                     "name": "Deriv_Desc",
                     "type": "Alphanumeric",
-                    "size": 263,
+                    "size": 120,
                     "allows_null": false,
                     "description": "Description of derivation code giving specific information on how the value was determined."
                 }
@@ -526,7 +525,7 @@
         {
             "file": "DATA_SRC.txt",
             "description": "Sources of Data",
-            "records": 589,
+            "records": 602,
             "fields": [
                 {
                     "name": "DataSrc_ID",
@@ -597,7 +596,7 @@
         {
             "file": "DATSRCLN.txt",
             "description": "Sources of Data Link",
-            "records": 171155,
+            "records": 187156,
             "fields": [
                 {
                     "name": "NDB_No",
@@ -622,7 +621,6 @@
                     "type": "Alphanumeric",
                     "size": 6,
                     "is_primary_key": true,
-                    "foreign_key": "DATA_SRC.DataSrc_ID",
                     "allows_null": false,
                     "description": "Unique ID identifying the reference/source."
                 }

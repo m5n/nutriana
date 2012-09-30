@@ -21,8 +21,7 @@ die "Usage: $0 rdbmsid nutdbid\n" if !$dbid or !$nutdbid;
 
 
 my $project_url = "http://github.com/m5n/nutriana";
-my $pwd = `pwd`; chomp $pwd;
-my $file = "$pwd/$nutdbid/schema.json";
+my $file = "./$nutdbid/schema.json";
 my $json = do { local $/ = undef; open my $fh, "<", $file or die "Could not open $file: $!"; <$fh>; };
 my $data = decode_json($json);
 my $header = $data->{"description"} . " (" . $data->{"url"} . ")";
@@ -83,17 +82,18 @@ foreach (@{$data->{"tables"}}) {
     my $line_separator = "\\r\\n";
 
     # Convert files if needed.
-    if ($table{"convert_rows_to_remove_trailing_whitespace"}) {
+    if ($table{"convert_rows_to_remove_trailing_whitespace_and_empty_lines"}) {
         # Only convert once.
         if (-e "$datafile.trimmed") {
-            $datafile = "$datafile.trimmed";   # Update datafile.
+            $datafile = "$datafile.trimmed";   # Update file used in sql_load_data below.
         } else {
             open INFILE, "<", $datafile or die "Could not open $datafile: $!";
-            $datafile = "$datafile.trimmed";   # Update datafile.
+            $datafile = "$datafile.trimmed";   # Update file used in sql_load_data below.
             open OUTFILE, ">", $datafile or die "Could not open $datafile: $!";
+            # TODO: doing this while loop ends up setting @{$data->{"tables"}}[0] to undefined, leading to trouble below.  Why?
             while (<INFILE>) {
                 $_ =~ s/\s$//g;
-                print OUTFILE $_ . "\r\n";   # Interpreted version of $line_separator.
+                print OUTFILE $_ . "\r\n" if length($_) > 0;   # Interpreted version of $line_separator.   # TODO: find Perl function to convert "\\r\\n" -> "\r\n".
             }
             close INFILE;
             close OUTFILE;

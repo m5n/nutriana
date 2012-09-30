@@ -10,7 +10,7 @@
             "file": "FOOD_NM.txt",
             "description": "Food Name. This is a principal file. It stores information about each food in the database. It contains a description of each food in English and French as well as dates and comments.",
             "records": 5807,
-            "convert_rows_to_remove_trailing_whitespace": true,
+            "convert_rows_to_remove_trailing_whitespace_and_empty_lines": true,
             "fields": [
                 {
                     "name": "FD_ID",
