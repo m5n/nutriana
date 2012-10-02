@@ -20,12 +20,11 @@ HOW IT WORKS:
 A human being is needed to extract the description and constraints of a given
 nutrient database into a file that can be programmatically processed.  The JSON
 format was chosen for readability and portability reasons.
-Nutriana prefers not to modify the nutrient database's official data files.  However,
-to ensure successful database creation and data import, some changes may be necessary.
-The modifications are fully disclosed in the */MODIFICATIONS files, and usually
-involve schema definition corrections (e.g. field size or primary or foreign key
-adjustments).  Occasionally though, values are converted to uppercase or trailing
-spaces are removed from the data files.
+Nutriana prefers not to modify the nutrient database's official data files, but to
+ensure successful database creation and data import, some changes may be necessary.
+All modifications are fully disclosed in the */MODIFICATIONS files, and typically
+involve correcting field size or key constraint definitions, removing trailing
+whitespace and/or replacing "no value" indicators with "null".
 
 IF YOUR PREFERRED DATABASE IS NOT SUPPORTED:
 It should be easy to add support for other databases by copying one of the Perl
