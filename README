@@ -5,6 +5,8 @@ DATABASE SYSTEMS SUPPORTED:
 NUTRIENT DATABASES INCLUDED:
 - Canadian Nutrient File, Health Canada, 2010
   (electronic version at www.healthcanada.gc.ca/cnf)
+- Ciqual French food composition table version 2012
+  http://www.afssa.fr/TableCIQUAL
 - U.S. Department of Agriculture, Agricultural Research Service. 2012.
   USDA National Nutrient Database for Standard Reference, Release 25.
   Nutrient Data Laboratory Home Page, http://www.ars.usda.gov/ba/bhnrc/ndl
@@ -15,20 +17,20 @@ Nutriana takes the food composition data released by various official sources in
 world and converts it into formats specific to the database systems mentioned above.
 
 HOW IT WORKS:
-A human being is needed to extract the description and constraints of a given nutrient
-database into a file that can be programmatically processed.  The JSON format was chosen
-for readability and portability reasons.
-Nutriana never modifies the nutrient database's official data files.  However, to ensure
-successful database creation and data import, some changes may be necessary.  The
-modifications are fully disclosed in the */MODIFICATIONS files, and usually involve
-schema definition corrections (e.g. field size or primary or foreign key adjustments).
-Occasionally though, values are converted to uppercase or trailing spaces are removed
-from the data files.
+A human being is needed to extract the description and constraints of a given
+nutrient database into a file that can be programmatically processed.  The JSON
+format was chosen for readability and portability reasons.
+Nutriana prefers not to modify the nutrient database's official data files.  However,
+to ensure successful database creation and data import, some changes may be necessary.
+The modifications are fully disclosed in the */MODIFICATIONS files, and usually
+involve schema definition corrections (e.g. field size or primary or foreign key
+adjustments).  Occasionally though, values are converted to uppercase or trailing
+spaces are removed from the data files.
 
 IF YOUR PREFERRED DATABASE IS NOT SUPPORTED:
-It should be easy to add support for other databases by copying one of the Perl module
-files (*.pm) and editing it as needed to output the format for your database system.
-(If you find it's not, let me know by creating an issue.)
+It should be easy to add support for other databases by copying one of the Perl
+module files (*.pm) and editing it as needed to output the format for your database
+system.  (If you find it's not, let me know by creating an issue.)
 Run the build.sh file to (re)generate the database vendor files.  The script will
 automatically detect the new .pm file and attempt to output SQL for it.
 To alter the database name or user credentials, edit the "generate_sql.pl" file.
@@ -38,5 +40,5 @@ AUTHOR:
 
 LICENSE:
 - Nutriana is released under the MIT license; see the LICENSE file.
-- Full licensing and usage information for the incuded nutrient databases is available in
-  the */LICENSE files.
+- Full licensing and usage information for the incuded nutrient databases is
+  available in the */LICENSE files.
