@@ -24,10 +24,10 @@ CREATE TABLE FOOD_DES (
     Ref_desc VARCHAR2(135),   -- Description of inedible parts of a food item (refuse), such as seeds or bone.
     Refuse NUMBER(2),   -- Percentage of refuse.
     SciName VARCHAR2(65),   -- Scientific name of the food item. Given for the least processed form of the food (usually raw), if applicable.
-    N_Factor NUMBER(4, 2),   -- Factor for converting nitrogen to protein (see p. 12).
-    Pro_Factor NUMBER(4, 2),   -- Factor for calculating calories from protein (see p. 13).
-    Fat_Factor NUMBER(4, 2),   -- Factor for calculating calories from fat (see p. 13).
-    CHO_Factor NUMBER(4, 2)   -- Factor for calculating calories from carbohydrate (see p. 13).
+    N_Factor NUMBER(4, 2),   -- Factor for converting nitrogen to protein (see p. 11).
+    Pro_Factor NUMBER(4, 2),   -- Factor for calculating calories from protein (see p. 12).
+    Fat_Factor NUMBER(4, 2),   -- Factor for calculating calories from fat (see p. 12).
+    CHO_Factor NUMBER(4, 2)   -- Factor for calculating calories from carbohydrate (see p. 12).
 );
 
 -- Nutrient Data
@@ -73,7 +73,7 @@ BEGIN EXECUTE IMMEDIATE 'DROP TABLE FOOTNOTE CASCADE CONSTRAINTS'; EXCEPTION WHE
 CREATE TABLE FOOTNOTE (
     NDB_No VARCHAR2(5) NOT NULL,   -- 5-digit Nutrient Databank number.
     Footnt_No VARCHAR2(4),   -- Sequence number. If a given footnote applies to more than one nutrient number, the same footnote number is used. As a result, this file cannot be indexed.
-    Footnt_Typ VARCHAR2(1),   -- Type of footnote: D = footnote adding information to the food description; M = footnote adding information to measure description; N = footnote providing additional information on a nutrient value. If the Footnt_typ = N, the Nutr_No will also be filled in.
+    Footnt_Typ VARCHAR2(1) NOT NULL,   -- Type of footnote: D = footnote adding information to the food description; M = footnote adding information to measure description; N = footnote providing additional information on a nutrient value. If the Footnt_typ = N, the Nutr_No will also be filled in.
     Nutr_No VARCHAR2(3),   -- Unique 3-digit identifier code for a nutrient to which footnote applies.
     Footnt_Txt VARCHAR2(200) NOT NULL   -- Footnote text.
 );
@@ -156,31 +156,31 @@ CREATE TABLE DATSRCLN (
 
 -- Load data into FOOD_DES
 HOST SQLLDR food/food control=./usda_nndsr/sqlldr/FOOD_DES.ctl;
--- Assert all 8176 records were loaded
+-- Assert all 8194 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
 INSERT INTO tmp (SELECT COUNT(*) FROM FOOD_DES);
-DELETE FROM tmp WHERE c = 8176;
+DELETE FROM tmp WHERE c = 8194;
 INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into NUT_DATA
 HOST SQLLDR food/food control=./usda_nndsr/sqlldr/NUT_DATA.ctl;
--- Assert all 594091 records were loaded
+-- Assert all 595359 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
 INSERT INTO tmp (SELECT COUNT(*) FROM NUT_DATA);
-DELETE FROM tmp WHERE c = 594091;
+DELETE FROM tmp WHERE c = 595359;
 INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into WEIGHT
 HOST SQLLDR food/food control=./usda_nndsr/sqlldr/WEIGHT.ctl;
--- Assert all 14142 records were loaded
+-- Assert all 14162 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
 INSERT INTO tmp (SELECT COUNT(*) FROM WEIGHT);
-DELETE FROM tmp WHERE c = 14142;
+DELETE FROM tmp WHERE c = 14162;
 INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
@@ -256,21 +256,21 @@ DROP TABLE tmp;
 
 -- Load data into DATA_SRC
 HOST SQLLDR food/food control=./usda_nndsr/sqlldr/DATA_SRC.ctl;
--- Assert all 602 records were loaded
+-- Assert all 610 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
 INSERT INTO tmp (SELECT COUNT(*) FROM DATA_SRC);
-DELETE FROM tmp WHERE c = 602;
+DELETE FROM tmp WHERE c = 610;
 INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into DATSRCLN
 HOST SQLLDR food/food control=./usda_nndsr/sqlldr/DATSRCLN.ctl;
--- Assert all 187156 records were loaded
+-- Assert all 187720 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
 INSERT INTO tmp (SELECT COUNT(*) FROM DATSRCLN);
-DELETE FROM tmp WHERE c = 187156;
+DELETE FROM tmp WHERE c = 187720;
 INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
@@ -306,3 +306,4 @@ ALTER TABLE LANGUAL ADD FOREIGN KEY (NDB_No) REFERENCES FOOD_DES(NDB_No);
 ALTER TABLE LANGUAL ADD FOREIGN KEY (Factor_Code) REFERENCES LANGDESC(Factor_Code);
 ALTER TABLE DATSRCLN ADD FOREIGN KEY (NDB_No) REFERENCES FOOD_DES(NDB_No);
 ALTER TABLE DATSRCLN ADD FOREIGN KEY (Nutr_No) REFERENCES NUTR_DEF(Nutr_No);
+ALTER TABLE DATSRCLN ADD FOREIGN KEY (DataSrc_ID) REFERENCES DATA_SRC(DataSrc_ID);

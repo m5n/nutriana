@@ -73,11 +73,11 @@ load data local infile './usda_nndsr_abbr/data/ABBREV.txt'
     lines terminated by '\r\n'
     (NDB_No, Shrt_Desc, Water, Energ_Kcal, Protein, Lipid_Tot, Ash, Carbohydrt, Fiber_TD, Sugar_Tot, Calcium, Iron, Magnesium, Phosphorus, Potassium, Sodium, Zinc, Copper, Manganese, Selenium, Vit_C, Thiamin, Riboflavin, Niacin, Panto_acid, Vit_B6, Folate_Tot, Folic_acid, Food_Folate, Folate_DFE, Choline_Tot, Vit_B12, Vit_A_IU, Vit_A_RAE, Retinol, Alpha_Carot, Beta_Carot, Beta_Crypt, Lycopene, Lut_Zea, Vit_E, Vit_D_mcg, Vit_D_IU, Vit_K, FA_Sat, FA_Mono, FA_Poly, Cholestrl, GmWt_1, GmWt_Desc1, GmWt_2, GmWt_Desc2, Refuse_Pct)
 ;
--- Assert all 8176 records were loaded
+-- Assert all 8194 records were loaded
 create table tmp (c int unique key);
 insert into tmp (c) values (2);
 insert into tmp (select count(*) from ABBREV);
-delete from tmp where c = 8176;
+delete from tmp where c = 8194;
 insert into tmp (select count(*) from tmp);
 drop table tmp;
 

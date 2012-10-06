@@ -1,26 +1,9 @@
 Modifications made that were missing or incorrect in the data description file ./data/sr25_doc.pdf:
 
 DATA_SRC table
+- change record count from 602 to 610
 - change Title to allow null because entry S1921 doesn't specify this value
  
-DATSRCLN table
-- change record count from 187019 to 187156
-- there are DataSrc_ID records in DATSRCLN which are not in DATA_SRC:
-(Once fixed, add back                     "foreign_key": "DATA_SRC.DataSrc_ID", to DATSRCLN.DataSrc_ID in schema.json)
-mysql> select distinct DataSrc_ID from DATSRCLN where DataSrc_ID not in (select DataSrc_ID from DATA_SRC);
-+------------+
-| DataSrc_ID |
-+------------+
-| S7821      |
-| S7441      |
-| S7521      |
-| S7282      |
-| S7321      |
-| S7601      |
-| S7701      |
-| S6962      |
-+------------+
-
 DERIV_CD table
 - add back SR24 rows NR and O, which are still referenced by NUT_DATA
 - (MySQL) SR24 was ok, but SR25 has ^M character after every line
@@ -30,7 +13,6 @@ DERIV_CD table
 
 FOOTNOTE table
 - change Footnt_No to allow null because entry 12737 doesn't specify this value
-- change Footnt_Typ to allow null because entries (35234, 01) through (35234, 06) don't specify this value
 - (MySQL) convert empty string Nutr_No values to null to avoid foreign key error added on FOOTNOTE table
   + this is to fix ERROR 1452 (23000) at line 387: Cannot add or update a child row:
     a foreign key constraint fails (`usda_nndsr`.<result 2 when explaining filename '#sql-36d3_48'>,
@@ -38,10 +20,8 @@ FOOTNOTE table
   + the error above occurs with this statement: alter table FOOTNOTE add foreign key (Nutr_No) references NUTR_DEF(Nutr_No)
   + "select distinct Nutr_No from FOOTNOTE order by Nutr_No" reveals there's an empty value, which the NUTR_DEF table does not contain
 
-LANGUAL table
-- change record count from 40205 to 39085
-
 NUT_DATA table
+- change record count from 599359 to 595359
 - change DF size from 2 to 4 because entry (04025, 307) and others length is 3, and (14096, 207) and others length is 4
 - (MySQL) convert empty string Deriv_Cd values to null to avoid foreign key error added on NUT_DATA table
   + this is to fix ERROR 1452 (23000) at line 368: Cannot add or update a child row:

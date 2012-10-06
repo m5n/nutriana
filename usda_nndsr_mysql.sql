@@ -21,10 +21,10 @@ create table FOOD_DES (
     Ref_desc varchar(135),   -- Description of inedible parts of a food item (refuse), such as seeds or bone.
     Refuse tinyint(2) unsigned,   -- Percentage of refuse.
     SciName varchar(65),   -- Scientific name of the food item. Given for the least processed form of the food (usually raw), if applicable.
-    N_Factor dec(4, 2) unsigned,   -- Factor for converting nitrogen to protein (see p. 12).
-    Pro_Factor dec(4, 2) unsigned,   -- Factor for calculating calories from protein (see p. 13).
-    Fat_Factor dec(4, 2) unsigned,   -- Factor for calculating calories from fat (see p. 13).
-    CHO_Factor dec(4, 2) unsigned   -- Factor for calculating calories from carbohydrate (see p. 13).
+    N_Factor dec(4, 2) unsigned,   -- Factor for converting nitrogen to protein (see p. 11).
+    Pro_Factor dec(4, 2) unsigned,   -- Factor for calculating calories from protein (see p. 12).
+    Fat_Factor dec(4, 2) unsigned,   -- Factor for calculating calories from fat (see p. 12).
+    CHO_Factor dec(4, 2) unsigned   -- Factor for calculating calories from carbohydrate (see p. 12).
 );
 
 -- Nutrient Data
@@ -64,7 +64,7 @@ create table WEIGHT (
 create table FOOTNOTE (
     NDB_No varchar(5) not null,   -- 5-digit Nutrient Databank number.
     Footnt_No varchar(4),   -- Sequence number. If a given footnote applies to more than one nutrient number, the same footnote number is used. As a result, this file cannot be indexed.
-    Footnt_Typ varchar(1),   -- Type of footnote: D = footnote adding information to the food description; M = footnote adding information to measure description; N = footnote providing additional information on a nutrient value. If the Footnt_typ = N, the Nutr_No will also be filled in.
+    Footnt_Typ varchar(1) not null,   -- Type of footnote: D = footnote adding information to the food description; M = footnote adding information to measure description; N = footnote providing additional information on a nutrient value. If the Footnt_typ = N, the Nutr_No will also be filled in.
     Nutr_No varchar(3),   -- Unique 3-digit identifier code for a nutrient to which footnote applies.
     Footnt_Txt varchar(200) not null   -- Footnote text.
 );
@@ -136,11 +136,11 @@ load data local infile './usda_nndsr/data/FOOD_DES.txt'
     lines terminated by '\r\n'
     (NDB_No, FdGrp_Cd, Long_Desc, Shrt_Desc, ComName, ManufacName, Survey, Ref_desc, Refuse, SciName, N_Factor, Pro_Factor, Fat_Factor, CHO_Factor)
 ;
--- Assert all 8176 records were loaded
+-- Assert all 8194 records were loaded
 create table tmp (c int unique key);
 insert into tmp (c) values (2);
 insert into tmp (select count(*) from FOOD_DES);
-delete from tmp where c = 8176;
+delete from tmp where c = 8194;
 insert into tmp (select count(*) from tmp);
 drop table tmp;
 
@@ -152,11 +152,11 @@ load data local infile './usda_nndsr/data/NUT_DATA.txt'
     (NDB_No, Nutr_No, Nutr_Val, Num_Data_Pts, Std_Error, Src_Cd, Deriv_Cd, Ref_NDB_No, Add_Nutr_Mark, Num_Studies, Min, Max, DF, Low_EB, Up_EB, Stat_cmt, @date1, CC)
     set
     AddMod_Date = str_to_date(@date1, '%m/%Y');
--- Assert all 594091 records were loaded
+-- Assert all 595359 records were loaded
 create table tmp (c int unique key);
 insert into tmp (c) values (2);
 insert into tmp (select count(*) from NUT_DATA);
-delete from tmp where c = 594091;
+delete from tmp where c = 595359;
 insert into tmp (select count(*) from tmp);
 drop table tmp;
 
@@ -167,11 +167,11 @@ load data local infile './usda_nndsr/data/WEIGHT.txt'
     lines terminated by '\r\n'
     (NDB_No, Seq, Amount, Msre_Desc, Gm_Wgt, Num_Data_Pts, Std_Dev)
 ;
--- Assert all 14142 records were loaded
+-- Assert all 14162 records were loaded
 create table tmp (c int unique key);
 insert into tmp (c) values (2);
 insert into tmp (select count(*) from WEIGHT);
-delete from tmp where c = 14142;
+delete from tmp where c = 14162;
 insert into tmp (select count(*) from tmp);
 drop table tmp;
 
@@ -287,11 +287,11 @@ load data local infile './usda_nndsr/data/DATA_SRC.txt'
     lines terminated by '\r\n'
     (DataSrc_ID, Authors, Title, Year, Journal, Vol_City, Issue_State, Start_Page, End_Page)
 ;
--- Assert all 602 records were loaded
+-- Assert all 610 records were loaded
 create table tmp (c int unique key);
 insert into tmp (c) values (2);
 insert into tmp (select count(*) from DATA_SRC);
-delete from tmp where c = 602;
+delete from tmp where c = 610;
 insert into tmp (select count(*) from tmp);
 drop table tmp;
 
@@ -302,11 +302,11 @@ load data local infile './usda_nndsr/data/DATSRCLN.txt'
     lines terminated by '\r\n'
     (NDB_No, Nutr_No, DataSrc_ID)
 ;
--- Assert all 187156 records were loaded
+-- Assert all 187720 records were loaded
 create table tmp (c int unique key);
 insert into tmp (c) values (2);
 insert into tmp (select count(*) from DATSRCLN);
-delete from tmp where c = 187156;
+delete from tmp where c = 187720;
 insert into tmp (select count(*) from tmp);
 drop table tmp;
 
@@ -342,3 +342,4 @@ alter table LANGUAL add foreign key (NDB_No) references FOOD_DES(NDB_No);
 alter table LANGUAL add foreign key (Factor_Code) references LANGDESC(Factor_Code);
 alter table DATSRCLN add foreign key (NDB_No) references FOOD_DES(NDB_No);
 alter table DATSRCLN add foreign key (Nutr_No) references NUTR_DEF(Nutr_No);
+alter table DATSRCLN add foreign key (DataSrc_ID) references DATA_SRC(DataSrc_ID);

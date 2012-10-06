@@ -9,7 +9,7 @@
         {
             "file": "FOOD_DES.txt",
             "description": "Food Description",
-            "records": 8176,
+            "records": 8194,
             "fields": [
                 {
                     "name": "NDB_No",
@@ -88,35 +88,35 @@
                     "type": "Numeric",
                     "size": 4.2,
                     "allows_null": true,
-                    "description": "Factor for converting nitrogen to protein (see p. 12)."
+                    "description": "Factor for converting nitrogen to protein (see p. 11)."
                 },
                 {
                     "name": "Pro_Factor",
                     "type": "Numeric",
                     "size": 4.2,
                     "allows_null": true,
-                    "description": "Factor for calculating calories from protein (see p. 13)."
+                    "description": "Factor for calculating calories from protein (see p. 12)."
                 },
                 {
                     "name": "Fat_Factor",
                     "type": "Numeric",
                     "size": 4.2,
                     "allows_null": true,
-                    "description": "Factor for calculating calories from fat (see p. 13)."
+                    "description": "Factor for calculating calories from fat (see p. 12)."
                 },
                 {
                     "name": "CHO_Factor",
                     "type": "Numeric",
                     "size": 4.2,
                     "allows_null": true,
-                    "description": "Factor for calculating calories from carbohydrate (see p. 13)."
+                    "description": "Factor for calculating calories from carbohydrate (see p. 12)."
                 }
             ]
         },
         {
             "file": "NUT_DATA.txt",
             "description": "Nutrient Data",
-            "records": 594091,
+            "records": 595359,
             "fields": [
                 {
                     "name": "NDB_No",
@@ -257,7 +257,7 @@
         {
             "file": "WEIGHT.txt",
             "description": "Weight",
-            "records": 14142,
+            "records": 14162,
             "fields": [
                 {
                     "name": "NDB_No",
@@ -337,7 +337,7 @@
                     "name": "Footnt_Typ",
                     "type": "Alphanumeric",
                     "size": 1,
-                    "allows_null": true,
+                    "allows_null": false,
                     "description": "Type of footnote: D = footnote adding information to the food description; M = footnote adding information to measure description; N = footnote providing additional information on a nutrient value. If the Footnt_typ = N, the Nutr_No will also be filled in."
                 },
                 {
@@ -525,7 +525,7 @@
         {
             "file": "DATA_SRC.txt",
             "description": "Sources of Data",
-            "records": 602,
+            "records": 610,
             "fields": [
                 {
                     "name": "DataSrc_ID",
@@ -596,7 +596,7 @@
         {
             "file": "DATSRCLN.txt",
             "description": "Sources of Data Link",
-            "records": 187156,
+            "records": 187720,
             "fields": [
                 {
                     "name": "NDB_No",
@@ -621,6 +621,7 @@
                     "type": "Alphanumeric",
                     "size": 6,
                     "is_primary_key": true,
+                    "foreign_key": "DATA_SRC.DataSrc_ID",
                     "allows_null": false,
                     "description": "Unique ID identifying the reference/source."
                 }

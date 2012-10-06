@@ -71,11 +71,11 @@ CREATE TABLE ABBREV (
 
 -- Load data into ABBREV
 HOST SQLLDR food/food control=./usda_nndsr_abbr/sqlldr/ABBREV.ctl;
--- Assert all 8176 records were loaded
+-- Assert all 8194 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
 INSERT INTO tmp (SELECT COUNT(*) FROM ABBREV);
-DELETE FROM tmp WHERE c = 8176;
+DELETE FROM tmp WHERE c = 8194;
 INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 

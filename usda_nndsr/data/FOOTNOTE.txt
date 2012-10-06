@@ -495,13 +495,13 @@
 ~35231~^~02~^~N~^~207~^~If salted fat, ash could be higher and fat lower on a 100-gram basis.~
 ~35232~^~01~^~N~^~432~^~Food folate is the sum of 5-Methyl Tetrahydrofolate, 10-Formyl Folic Acid, 5-Formyl Tetrahydrofolic Acid and Tetrahydrofolic Acid~
 ~35232~^~01~^~N~^~417~^~Food folate is the sum of 5-Methyl Tetrahydrofolate, 10-Formyl Folic Acid, 5-Formyl Tetrahydrofolic Acid and Tetrahydrofolic Acid~
-~35234~^~01~^~~^~301~^~Elevated levels from Juniper or saltbush ash~
-~35234~^~02~^~~^~304~^~Elevated levels from Juniper saltbush ash~
-~35234~^~03~^~~^~305~^~Elevated levels from Juniper saltbuish ash~
-~35234~^~04~^~~^~306~^~Elevated levels from Juniper saltbush ash~
-~35234~^~05~^~~^~307~^~Elevated levels from Juniper saltbush ash~
-~35234~^~06~^~~^~303~^~Elevated levels from Juniper saltbush ash~
-~35234~^~07~^~M~^~~^~Weight of serving (piece) based on limited samples and may vary widely.~
+~35234~^~01~^~M~^~~^~Weight of serving (piece) based on limited samples and may vary widely.~
+~35234~^~02~^~N~^~301~^~Elevated levels from Juniper or saltbush ash~
+~35234~^~02~^~N~^~306~^~Elevated levels from Juniper or saltbush ash~
+~35234~^~02~^~N~^~303~^~Elevated levels from Juniper or saltbush ash~
+~35234~^~02~^~N~^~304~^~Elevated levels from Juniper or saltbush ash~
+~35234~^~02~^~N~^~307~^~Elevated levels from Juniper or saltbush ash~
+~35234~^~02~^~N~^~305~^~Elevated levels from Juniper or saltbuish ash~
 ~35235~^~01~^~N~^~432~^~Food folate is the sum of 5-Methyl Tetrahydrofolate, 10-Formyl Folic Acid, 5-Formyl Tetrahydrofolic Acid and Tetrahydrofolic Acid~
 ~35235~^~01~^~N~^~417~^~Food folate is the sum of 5-Methyl Tetrahydrofolate, 10-Formyl Folic Acid, 5-Formyl Tetrahydrofolic Acid and Tetrahydrofolic Acid~
 ~36603~^~01~^~D~^~~^~Rice was not included in analyses.~
