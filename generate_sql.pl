@@ -12,6 +12,7 @@ my $DB_SERVER = "localhost";
 
 
 use strict;
+use warnings;
 use JSON;
 
 
@@ -114,7 +115,7 @@ foreach (@{$data->{"tables"}}) {
     print sql_assert_record_count($table_name, $table{"records"}) . "\n\n";
 }
 
-my $data = decode_json($json);   # TODO: without this, we get this error: Can't use an undefined value as a HASH reference at ./generate_sql.pl line 120, which is the "my %table = %{$_};" line below.
+$data = decode_json($json);   # TODO: without this, we get this error: Can't use an undefined value as a HASH reference at ./generate_sql.pl line 120, which is the "my %table = %{$_};" line below.
 
 # Fix casing and empty string issues.
 print sql_comment("Correct data inconsistencies, if any") . "\n";
