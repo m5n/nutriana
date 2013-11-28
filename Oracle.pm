@@ -165,7 +165,7 @@ sub sql_load_file {
     print FILE "    APPEND\n";   # Must be APPEND to use PARALLEL option.
     print FILE "    INTO TABLE $table_name\n";
     print FILE "    FIELDS TERMINATED BY '$field_separator'\n";
-    print FILE "    OPTIONALLY ENCLOSED BY '$text_separator'\n";
+    print FILE "    OPTIONALLY ENCLOSED BY '$text_separator'\n" if $text_separator;
     print FILE "    TRAILING NULLCOLS\n";   # To load empty columns, e.g. lines ending in ^^^^.
     print FILE "    (";
     # Need to specify sqlldr data types to get around sqlldr's max char size of 255, as well as read date formats.
@@ -192,10 +192,11 @@ sub sql_assert_record_count {
     # 2. insert the value 2 
     # 3. insert the record count of the table to be asserted
     # 4. remove the record where the value is the assertion value
-    # case a: if the record count == assertion value, there's now just 1 row in the temporary table (just the value 2)
-    # case b: if the record count != assertion value, there are 2 rows in the temporary table (the value 2 and the incorrect assertion value)
+    # case a: if the record count in step 3 == assertion value, there's now just 1 row in the temporary table (just the value 2)
+    # case b: if the record count in step 3 != assertion value, there are now 2 rows in the temporary table (the value 2 and the incorrect record count value)
     # 5. insert the record count of the temporary table
     # no error for case a, and a sql error for case b (trying to insert a non-unique value)
+    # (note this also works if the assertion value happens to == 2)
 
     my $result = "CREATE TABLE tmp (c NUMBER PRIMARY KEY);\n";
     $result .= "INSERT INTO tmp (c) VALUES (2);\n";

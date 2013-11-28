@@ -136,7 +136,9 @@ sub sql_load_file {
     # TODO: how to make MySQL generate an error if varchar data truncation occurs?
     my $result = "load data local infile '$file'\n";
     $result .= "    into table $table_name\n";
-    $result .= "    fields terminated by '$field_separator' optionally enclosed by '$text_separator'\n";
+    $result .= "    fields terminated by '$field_separator'";
+    $result .= " optionally enclosed by '$text_separator'" if $text_separator;
+    $result .= "\n";
     $result .= "    lines terminated by '$line_separator'\n";
     $result .= "    ignore $ignore_header_lines lines\n" if $ignore_header_lines;
     $result .= "    (";
@@ -187,10 +189,11 @@ sub sql_assert_record_count {
     # 2. insert the value 2 
     # 3. insert the record count of the table to be asserted
     # 4. remove the record where the value is the assertion value
-    # case a: if the record count == assertion value, there's now just 1 row in the temporary table (just the value 2)
-    # case b: if the record count != assertion value, there are 2 rows in the temporary table (the value 2 and the incorrect assertion value)
+    # case a: if the record count in step 3 == assertion value, there's now just 1 row in the temporary table (just the value 2)
+    # case b: if the record count in step 3 != assertion value, there are now 2 rows in the temporary table (the value 2 and the incorrect record count value)
     # 5. insert the record count of the temporary table
     # no error for case a, and a sql error for case b (trying to insert a non-unique value)
+    # (note this also works if the assertion value happens to == 2)
 
     my $result = "create table tmp (c int unique key);\n";
     $result .= "insert into tmp (c) values (2);\n";
