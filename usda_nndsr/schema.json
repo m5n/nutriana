@@ -1,7 +1,7 @@
 {
-    "version": 25,
-    "description": "USDA National Nutrient Database for Standard Reference, Release 25",
-    "url": "http://www.ars.usda.gov/nutrientdata",
+    "version": 26,
+    "description": "USDA National Nutrient Database for Standard Reference, Release 26",
+    "url": "http://www.ars.usda.gov/ba/bhnrc/ndl",
     "field_separator": "^",
     "text_separator": "~",
     "ignore_header_lines": 0,
@@ -9,7 +9,7 @@
         {
             "file": "FOOD_DES.txt",
             "description": "Food Description",
-            "records": 8194,
+            "records": 8463,
             "fields": [
                 {
                     "name": "NDB_No",
@@ -88,35 +88,35 @@
                     "type": "Numeric",
                     "size": 4.2,
                     "allows_null": true,
-                    "description": "Factor for converting nitrogen to protein (see p. 11)."
+                    "description": "Factor for converting nitrogen to protein (see p. 12)."
                 },
                 {
                     "name": "Pro_Factor",
                     "type": "Numeric",
                     "size": 4.2,
                     "allows_null": true,
-                    "description": "Factor for calculating calories from protein (see p. 12)."
+                    "description": "Factor for calculating calories from protein (see p. 13)."
                 },
                 {
                     "name": "Fat_Factor",
                     "type": "Numeric",
                     "size": 4.2,
                     "allows_null": true,
-                    "description": "Factor for calculating calories from fat (see p. 12)."
+                    "description": "Factor for calculating calories from fat (see p. 13)."
                 },
                 {
                     "name": "CHO_Factor",
                     "type": "Numeric",
                     "size": 4.2,
                     "allows_null": true,
-                    "description": "Factor for calculating calories from carbohydrate (see p. 12)."
+                    "description": "Factor for calculating calories from carbohydrate (see p. 13)."
                 }
             ]
         },
         {
             "file": "NUT_DATA.txt",
             "description": "Nutrient Data",
-            "records": 595359,
+            "records": 632894,
             "fields": [
                 {
                     "name": "NDB_No",
@@ -257,7 +257,7 @@
         {
             "file": "WEIGHT.txt",
             "description": "Weight",
-            "records": 14162,
+            "records": 15137,
             "fields": [
                 {
                     "name": "NDB_No",
@@ -316,7 +316,7 @@
         {
             "file": "FOOTNOTE.txt",
             "description": "Footnote",
-            "records": 525,
+            "records": 541,
             "fields": [
                 {
                     "name": "NDB_No",
@@ -330,7 +330,7 @@
                     "name": "Footnt_No",
                     "type": "Alphanumeric",
                     "size": 4,
-                    "allows_null": true,
+                    "allows_null": false,
                     "description": "Sequence number. If a given footnote applies to more than one nutrient number, the same footnote number is used. As a result, this file cannot be indexed."
                 },
                 {
@@ -383,7 +383,7 @@
         {
             "file": "LANGUAL.txt",
             "description": "LanguaL Factor",
-            "records": 39085,
+            "records": 38804,
             "fields": [
                 {
                     "name": "NDB_No",
@@ -430,7 +430,7 @@
         {
             "file": "NUTR_DEF.txt",
             "description": "Nutrient Definition",
-            "records": 146,
+            "records": 150,
             "fields": [
                 {
                     "name": "Nutr_No",
@@ -452,7 +452,7 @@
                     "type": "Alphanumeric",
                     "size": 20,
                     "allows_null": true,
-                    "description": "International Network of Food Data Systems (INFOODS) Tagnames. (INFOODS, 2009.) A unique abbreviation for a nutrient/food component developed by INFOODS to aid in the interchange of data."
+                    "description": "International Network of Food Data Systems (INFOODS) Tagnames. (INFOODS, 2012.) A unique abbreviation for a nutrient/food component developed by INFOODS to aid in the interchange of data."
                 },
                 {
                     "name": "NutrDesc",
@@ -501,9 +501,8 @@
         },
         {
             "file": "DERIV_CD.txt",
-            "description": "Data Derivation Code Description",
-            "records": 54,
-            "convert_rows_to_remove_trailing_whitespace_and_empty_lines": true,
+            "description": "Data Derivation Description",
+            "records": 55,
             "fields": [
                 {
                     "name": "Deriv_Cd",
@@ -525,7 +524,7 @@
         {
             "file": "DATA_SRC.txt",
             "description": "Sources of Data",
-            "records": 610,
+            "records": 570,
             "fields": [
                 {
                     "name": "DataSrc_ID",
@@ -546,7 +545,7 @@
                     "name": "Title",
                     "type": "Alphanumeric",
                     "size": 255,
-                    "allows_null": true,
+                    "allows_null": false,
                     "description": "Title of article or name of document, such as a report from a company or trade association."
                 },
                 {
@@ -596,7 +595,7 @@
         {
             "file": "DATSRCLN.txt",
             "description": "Sources of Data Link",
-            "records": 187720,
+            "records": 213653,
             "fields": [
                 {
                     "name": "NDB_No",

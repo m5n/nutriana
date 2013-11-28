@@ -1,18 +1,16 @@
-Modifications made that were missing or incorrect in the data description file ./data/sr25_doc.pdf:
+Clarification of foreign key relationships is needed as the textual description of "this table links to that table" does not specify direction and sometimes refers to tables that do not hold the unique key. Here are the tables that define the keys that can be linked to (T.k means anywhere column k is used, it must relate back to T.k as a foreign key, except for table T itself):
+- DATA_SRC.DataSrc_ID
+- DERIV_CD.Deriv_Cd
+- FD_GROUP.FdGrp_Cd
+- FOOD_DES.NDB_No (also used for Ref_NDB_No)
+- LANGDESC.Factor_Code
+- NUTR_DEF.Nutr_No
+- SRC_CD.Src_Cd
 
-DATA_SRC table
-- change record count from 602 to 610
-- change Title to allow null because entry S1921 doesn't specify this value
- 
-DERIV_CD table
-- add back SR24 rows NR and O, which are still referenced by NUT_DATA
-- (MySQL) SR24 was ok, but SR25 has ^M character after every line
-  and there's one empty line between NP and PAE, which causes problems with MySQL.
-  Also NP's Deriv_Desc value is not terminated by a ~ (instead there's that emtpy line).
-  There are no ways around this other than pre-processing the file.
+
+Modifications made that were missing or incorrect in the data description file ./data/sr26_doc.pdf:
 
 FOOTNOTE table
-- change Footnt_No to allow null because entry 12737 doesn't specify this value
 - (MySQL) convert empty string Nutr_No values to null to avoid foreign key error added on FOOTNOTE table
   + this is to fix ERROR 1452 (23000) at line 387: Cannot add or update a child row:
     a foreign key constraint fails (`usda_nndsr`.<result 2 when explaining filename '#sql-36d3_48'>,
@@ -21,8 +19,6 @@ FOOTNOTE table
   + "select distinct Nutr_No from FOOTNOTE order by Nutr_No" reveals there's an empty value, which the NUTR_DEF table does not contain
 
 NUT_DATA table
-- change record count from 599359 to 595359
-- change DF size from 2 to 4 because entry (04025, 307) and others length is 3, and (14096, 207) and others length is 4
 - (MySQL) convert empty string Deriv_Cd values to null to avoid foreign key error added on NUT_DATA table
   + this is to fix ERROR 1452 (23000) at line 368: Cannot add or update a child row:
     a foreign key constraint fails (`usda_nndsr`.<result 2 when explaining filename '#sql-36d3_44'>,
@@ -36,5 +32,5 @@ NUT_DATA table
   + the error above occurs with this statement: alter table NUT_DATA add foreign key (Ref_NDB_No) references FOOD_DES(NDB_No)
   + "select distinct Ref_NDB_No from NUT_DATA order by Ref_NDB_No" reveals there's an empty value, which the FOOD_DES table does not contain
 
-WEIGHT table
-- change Msre_Desc size from 80 to 84 because entries (14400, *) have lengths of 83 and 84.
+NUTR_DEF table
+- NUTR_DEF.txt contains non-ASCII characters (the mcg symbol). This is not corrected, so the actual value in the DB may not be the right character.
