@@ -11,25 +11,27 @@ NUTRIENT DATABASES INCLUDED:
   (Full and Abbreviated versions.)
 
 PROJECT DESCRIPTION:
-Nutriana takes the food composition data released by various official sources in the
-world and converts it into formats specific to the database systems mentioned above.
+Nutriana takes the food composition data released by various official sources
+in the world and converts it into formats specific to the database systems
+mentioned above.
 
 HOW IT WORKS:
 A human being is needed to extract the description and constraints of a given
 nutrient database into a file that can be programmatically processed.  The JSON
 format was chosen for readability and portability reasons.
-Nutriana prefers not to modify the nutrient database's official data files, but to
-ensure successful database creation and data import, some changes may be necessary.
-All modifications are fully disclosed in the */MODIFICATIONS files, and typically
-involve correcting field size or key constraint definitions, removing trailing
-whitespace and/or replacing "no value" indicators with "null".
+Nutriana prefers not to modify the nutrient database's official data files, but
+to ensure successful database creation and data import, some changes may be
+necessary.
+All modifications are fully disclosed in the */MODIFICATIONS files, and
+typically involve correcting field size or key constraint definitions, removing
+trailing whitespace and/or replacing "no value" indicators with "null".
 
 IF YOUR PREFERRED DATABASE IS NOT SUPPORTED:
 It should be easy to add support for other databases by copying one of the Perl
-module files (*.pm) and editing it as needed to output the format for your database
-system.  (If you find it's not, let me know by creating an issue.)
-Run the build.sh file to (re)generate the database vendor files.  The script will
-automatically detect the new .pm file and attempt to output SQL for it.
+module files (*.pm) and editing it as needed to output the format for your
+database system.  (If you find it's not, let me know by creating an issue.)
+Run the build.sh file to (re)generate the database vendor files.  The script
+will automatically detect the new .pm file and attempt to output SQL for it.
 To alter the database name or user credentials, edit the "generate_sql.pl" file.
 
 AUTHOR:
