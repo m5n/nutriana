@@ -8,7 +8,7 @@ if [ "$PERL" == "" ]; then echo "Please install Perl" ; exit 1 ; fi
 ./clean.sh
 
 # Process all nutrient databases included.
-for NUTDBDIR in `find . -type d -depth 1`; do
+for NUTDBDIR in `find . -mindepth 1 -maxdepth 1 -type d`; do
     # Extract nutrient dabatase identifier.
     NUTDBID=`expr "$NUTDBDIR" : "\./\(.*\)"`
 
