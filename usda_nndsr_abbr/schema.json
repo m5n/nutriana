@@ -1,7 +1,7 @@
 {
-    "version": 25,
-    "description": "USDA National Nutrient Database for Standard Reference (Abbreviated Version), Release 25",
-    "url": "http://www.ars.usda.gov/nutrientdata",
+    "version": 27,
+    "description": "USDA National Nutrient Database for Standard Reference (Abbreviated Version), Release 27",
+    "url": "http://www.ars.usda.gov/ba/bhnrc/ndl",
     "field_separator": "^",
     "text_separator": "~",
     "ignore_header_lines": 0,
@@ -9,7 +9,7 @@
         {
             "file": "ABBREV.txt",
             "description": "Abbreviated",
-            "records": 8194,
+            "records": 8618,
             "fields": [
                 {
                     "name": "NDB_No",
@@ -24,7 +24,7 @@
                     "type": "Alphanumeric",
                     "size": 60,
                     "allows_null": true,
-                    "description": "60-character abbreviated description of food item. For a 200-character description and other descriptive information, link to the Food Description file."
+                    "description": "60-character abbreviated description of food item. (For a 200-character description and other descriptive information, link to the Food Description file.)"
                 },
                 {
                     "name": "Water",
@@ -353,7 +353,7 @@
                     "type": "Numeric",
                     "size": 9.2,
                     "allows_null": true,
-                    "description": "First household weight for this item from the Weight file. For the complete list and description of the measure, link to the Weight file."
+                    "description": "First household weight for this item from the Weight file. (For the complete list and description of the measure, link to the Weight file.)"
                 },
                 {
                     "name": "GmWt_Desc1",
@@ -367,7 +367,7 @@
                     "type": "Numeric",
                     "size": 9.2,
                     "allows_null": true,
-                    "description": "Second household weight for this item from the Weight file. For the complete list and description of the measure, link to the Weight file."
+                    "description": "Second household weight for this item from the Weight file. (For the complete list and description of the measure, link to the Weight file.)"
                 },
                 {
                     "name": "GmWt_Desc2",
@@ -381,7 +381,7 @@
                     "type": "Numeric",
                     "size": 2,
                     "allows_null": true,
-                    "description": "Percent refuse. For a description of refuse, link to the Food Description file."
+                    "description": "Percent refuse. (For a description of refuse, link to the Food Description file.)"
                 }
             ]
         }

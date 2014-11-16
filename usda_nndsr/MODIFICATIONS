@@ -8,7 +8,7 @@ Clarification of foreign key relationships is needed as the textual description 
 - SRC_CD.Src_Cd
 
 
-Modifications made that were missing or incorrect in the data description file ./data/sr26_doc.pdf:
+Modifications made that were missing or incorrect in the data description file ./data/sr27_doc.pdf:
 
 FOOTNOTE table
 - (MySQL) convert empty string Nutr_No values to null to avoid foreign key error added on FOOTNOTE table

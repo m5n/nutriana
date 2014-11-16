@@ -12,7 +12,7 @@ sub sql_comment {
 }
 
 sub sql_how_to_run_as_admin {
-    return "mysql -v -u root < file.sql";
+    return "mysql --local_infile=1 -v -u root < file.sql";
 }
 
 sub sql_recreate_database_and_user_to_access_it {

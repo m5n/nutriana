@@ -1,6 +1,6 @@
 {
-    "version": 26,
-    "description": "USDA National Nutrient Database for Standard Reference, Release 26",
+    "version": 27,
+    "description": "USDA National Nutrient Database for Standard Reference, Release 27",
     "url": "http://www.ars.usda.gov/ba/bhnrc/ndl",
     "field_separator": "^",
     "text_separator": "~",
@@ -9,7 +9,7 @@
         {
             "file": "FOOD_DES.txt",
             "description": "Food Description",
-            "records": 8463,
+            "records": 8618,
             "fields": [
                 {
                     "name": "NDB_No",
@@ -116,7 +116,7 @@
         {
             "file": "NUT_DATA.txt",
             "description": "Nutrient Data",
-            "records": 632894,
+            "records": 654572,
             "fields": [
                 {
                     "name": "NDB_No",
@@ -172,7 +172,7 @@
                     "foreign_key": "DERIV_CD.Deriv_Cd",
                     "allows_null": true,
                     "convert_empty_string_to_null": true,
-                    "description": "Data Derivation Code giving specific information on how the value is determined"
+                    "description": "Data Derivation Code giving specific information on how the value is determined. This field is populated only for items added or updated starting with SR14."
                 },
                 {
                     "name": "Ref_NDB_No",
@@ -181,14 +181,14 @@
                     "foreign_key": "FOOD_DES.NDB_No",
                     "allows_null": true,
                     "convert_empty_string_to_null": true,
-                    "description": "NDB number of the item used to impute a missing value. Populated only for items added or updated starting with SR14."
+                    "description": "NDB number of the item used to calculate a missing value. Populated only for items added or updated starting with SR14."
                 },
                 {
                     "name": "Add_Nutr_Mark",
                     "type": "Alphanumeric",
                     "size": 1,
                     "allows_null": true,
-                    "description": "Indicates a vitamin or mineral added for fortification or enrichment. This field is populated for ready-to-eat breakfast cereals in food group 8."
+                    "description": "Indicates a vitamin or mineral added for fortification or enrichment. This field is populated for ready-to-eat breakfast cereals and many brand-name hot cereals in food group 8."
                 },
                 {
                     "name": "Num_Studies",
@@ -237,7 +237,7 @@
                     "type": "Alphanumeric",
                     "size": 10,
                     "allows_null": true,
-                    "description": "Statistical comments. See definitions below."
+                    "description": "Statistical comments. See definitions starting on page 33."
                 },
                 {
                     "name": "AddMod_Date",
@@ -257,7 +257,7 @@
         {
             "file": "WEIGHT.txt",
             "description": "Weight",
-            "records": 15137,
+            "records": 15228,
             "fields": [
                 {
                     "name": "NDB_No",
@@ -316,7 +316,7 @@
         {
             "file": "FOOTNOTE.txt",
             "description": "Footnote",
-            "records": 541,
+            "records": 531,
             "fields": [
                 {
                     "name": "NDB_No",
@@ -383,7 +383,7 @@
         {
             "file": "LANGUAL.txt",
             "description": "LanguaL Factor",
-            "records": 38804,
+            "records": 38725,
             "fields": [
                 {
                     "name": "NDB_No",
@@ -452,7 +452,7 @@
                     "type": "Alphanumeric",
                     "size": 20,
                     "allows_null": true,
-                    "description": "International Network of Food Data Systems (INFOODS) Tagnames. (INFOODS, 2012.) A unique abbreviation for a nutrient/food component developed by INFOODS to aid in the interchange of data."
+                    "description": "International Network of Food Data Systems (INFOODS) Tagnames. (INFOODS, 2014.) A unique abbreviation for a nutrient/food component developed by INFOODS to aid in the interchange of data."
                 },
                 {
                     "name": "NutrDesc",
@@ -501,7 +501,7 @@
         },
         {
             "file": "DERIV_CD.txt",
-            "description": "Data Derivation Description",
+            "description": "Data Derivation Code Description",
             "records": 55,
             "fields": [
                 {
@@ -524,7 +524,7 @@
         {
             "file": "DATA_SRC.txt",
             "description": "Sources of Data",
-            "records": 570,
+            "records": 655,
             "fields": [
                 {
                     "name": "DataSrc_ID",
@@ -595,7 +595,7 @@
         {
             "file": "DATSRCLN.txt",
             "description": "Sources of Data Link",
-            "records": 213653,
+            "records": 230663,
             "fields": [
                 {
                     "name": "NDB_No",

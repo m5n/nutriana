@@ -2,7 +2,7 @@
 
 # The SQL files are generated via Perl, so make sure it's installed.
 PERL=`which perl`
-if [ "$PERL" == "" ]; then echo "Please install Perl" ; exit 1 ; fi
+if [ "$PERL" = "" ]; then echo "Please install Perl" ; exit 1 ; fi
 
 # Start clean.
 ./clean.sh
@@ -13,7 +13,7 @@ for NUTDBDIR in `find . -mindepth 1 -maxdepth 1 -type d`; do
     NUTDBID=`expr "$NUTDBDIR" : "\./\(.*\)"`
 
     # Ignore .git dir.
-    if [ "$NUTDBID" == ".git" ]; then continue; fi
+    if [ "$NUTDBID" = ".git" ]; then continue; fi
 
     echo "================================== $NUTDBID =================================="
 
@@ -29,7 +29,8 @@ for NUTDBDIR in `find . -mindepth 1 -maxdepth 1 -type d`; do
         # Extract dabatase identifier.
         RDBMSID=`expr "$PMFILE" : "\./\(.*\).pm"`
         # Convert outfile to lowercase.
-        OUTFILE="$(tr [A-Z] [a-z] <<< $NUTDBID"_"$RDBMSID.sql)"
+        #OUTFILE="$(tr [A-Z] [a-z] <<< $NUTDBID"_"$RDBMSID.sql)"
+        OUTFILE="$( echo $NUTDBID"_"$RDBMSID.sql | tr '[:upper:]' '[:lower:]')"
 
         echo "- $RDBMSID: $OUTFILE"
 
