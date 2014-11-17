@@ -20,8 +20,10 @@ sub sql_comment {
 }
 
 sub sql_how_to_run_as_admin {
-    return "sqlplus \"/as sysdba\" < file.sql";
-    # alternative: return "sqlplus system/your_pwd < file.sql";
+    my ($outfile) = @_;
+
+    return "sqlplus \"/as sysdba\" < $outfile";
+    # alternative: return "sqlplus system/your_pwd < $outfile";
 }
 
 sub sql_recreate_database_and_user_to_access_it {

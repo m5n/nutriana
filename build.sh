@@ -37,6 +37,6 @@ for NUTDBDIR in `find . -mindepth 1 -maxdepth 1 -type d`; do
         # Generate the SQL file for this database.
         # Make sure to add the current directory to the beginning of @INC
         # to avoid accidentally using official modules with the same name.
-        $PERL -I . -M$RDBMSID ./generate_sql.pl $RDBMSID $NUTDBID > $OUTFILE
+        $PERL -I . -M$RDBMSID ./generate_sql.pl $RDBMSID $NUTDBID $OUTFILE > $OUTFILE
     done
 done
