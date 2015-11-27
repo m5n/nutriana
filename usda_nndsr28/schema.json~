@@ -1,0 +1,630 @@
+{
+    "version": 28,
+    "description": "USDA National Nutrient Database for Standard Reference, Release 28",
+    "url": "http://www.ars.usda.gov/ba/bhnrc/ndl",
+    "field_separator": "^",
+    "text_separator": "~",
+    "ignore_header_lines": 0,
+    "tables": [
+        {
+            "file": "FOOD_DES.txt",
+            "description": "Food Description",
+            "records": 8789,
+            "fields": [
+                {
+                    "name": "NDB_No",
+                    "type": "Alphanumeric",
+                    "size": 5,
+                    "is_primary_key": true,
+                    "allows_null": false,
+                    "description": "5-digit Nutrient Databank number that uniquely identifies a food item. If this field is defined as numeric, the leading zero will be lost."
+                },
+                {
+                    "name": "FdGrp_Cd",
+                    "type": "Alphanumeric",
+                    "size": 4,
+                    "foreign_key": "FD_GROUP.FdGrp_Cd",
+                    "allows_null": false,
+                    "description": "4-digit code indicating food group to which a food item belongs."
+                },
+                {
+                    "name": "Long_Desc",
+                    "type": "Alphanumeric",
+                    "size": 200,
+                    "allows_null": false,
+                    "description": "200-character description of food item."
+                },
+                {
+                    "name": "Shrt_Desc",
+                    "type": "Alphanumeric",
+                    "size": 60,
+                    "allows_null": false,
+                    "description": "60-character abbreviated description of food item. Generated from the 200-character description using abbreviations in Appendix A. If short description is longer than 60 characters, additional abbreviations are made."
+                },
+                {
+                    "name": "ComName",
+                    "type": "Alphanumeric",
+                    "size": 100,
+                    "allows_null": true,
+                    "description": "Other names commonly used to describe a food, including local or regional names for various foods, for example, \"soda\" or \"pop\" for \"carbonated beverages.\""
+                },
+                {
+                    "name": "ManufacName",
+                    "type": "Alphanumeric",
+                    "size": 65,
+                    "allows_null": true,
+                    "description": "Indicates the company that manufactured the product, when appropriate."
+                },
+                {
+                    "name": "Survey",
+                    "type": "Alphanumeric",
+                    "size": 1,
+                    "allows_null": true,
+                    "description": "Indicates if the food item is used in the USDA Food and Nutrient Database for Dietary Studies (FNDDS) and thus has a complete nutrient profile for the 65 FNDDS nutrients."
+                },
+                {
+                    "name": "Ref_desc",
+                    "type": "Alphanumeric",
+                    "size": 135,
+                    "allows_null": true,
+                    "description": "Description of inedible parts of a food item (refuse), such as seeds or bone."
+                },
+                {
+                    "name": "Refuse",
+                    "type": "Numeric",
+                    "size": 2,
+                    "allows_null": true,
+                    "description": "Percentage of refuse."
+                },
+                {
+                    "name": "SciName",
+                    "type": "Alphanumeric",
+                    "size": 65,
+                    "allows_null": true,
+                    "description": "Scientific name of the food item. Given for the least processed form of the food (usually raw), if applicable."
+                },
+                {
+                    "name": "N_Factor",
+                    "type": "Numeric",
+                    "size": 4.2,
+                    "allows_null": true,
+                    "description": "Factor for converting nitrogen to protein (see p. 12)."
+                },
+                {
+                    "name": "Pro_Factor",
+                    "type": "Numeric",
+                    "size": 4.2,
+                    "allows_null": true,
+                    "description": "Factor for calculating calories from protein (see p. 13)."
+                },
+                {
+                    "name": "Fat_Factor",
+                    "type": "Numeric",
+                    "size": 4.2,
+                    "allows_null": true,
+                    "description": "Factor for calculating calories from fat (see p. 13)."
+                },
+                {
+                    "name": "CHO_Factor",
+                    "type": "Numeric",
+                    "size": 4.2,
+                    "allows_null": true,
+                    "description": "Factor for calculating calories from carbohydrate (see p. 13)."
+                }
+            ]
+        },
+        {
+            "file": "NUT_DATA.txt",
+            "description": "Nutrient Data",
+            "records": 679045,
+            "fields": [
+                {
+                    "name": "NDB_No",
+                    "type": "Alphanumeric",
+                    "size": 5,
+                    "is_primary_key": true,
+                    "foreign_key": "FOOD_DES.NDB_No",
+                    "allows_null": false,
+                    "description": "5-digit Nutrient Databank number."
+                },
+                {
+                    "name": "Nutr_No",
+                    "type": "Alphanumeric",
+                    "size": 3,
+                    "is_primary_key": true,
+                    "foreign_key": "NUTR_DEF.Nutr_No",
+                    "allows_null": false,
+                    "description": "Unique 3-digit identifier code for a nutrient ."
+                },
+                {
+                    "name": "Nutr_Val",
+                    "type": "Numeric",
+                    "size": 10.3,
+                    "allows_null": false,
+                    "description": "Amount in 100 grams, edible portion (Nutrient values have been rounded to a specified number of decimal places for each nutrient. Number of decimal places is listed in the Nutrient Definition file.)."
+                },
+                {
+                    "name": "Num_Data_Pts",
+                    "type": "Numeric",
+                    "size": 5.0,
+                    "allows_null": false,
+                    "description": "Number of data points (previously called Sample_Ct) is the number of analyses used to calculate the nutrient value. If the number of data points is 0, the value was calculated or imputed."
+                },
+                {
+                    "name": "Std_Error",
+                    "type": "Numeric",
+                    "size": 8.3,
+                    "allows_null": true,
+                    "description": "Standard error of the mean. Null if cannot be calculated. The standard error is also not given if the number of data points is less than three."
+                },
+                {
+                    "name": "Src_Cd",
+                    "type": "Alphanumeric",
+                    "size": 2,
+                    "foreign_key": "SRC_CD.Src_Cd",
+                    "allows_null": false,
+                    "description": "Code indicating type of data."
+                },
+                {
+                    "name": "Deriv_Cd",
+                    "type": "Alphanumeric",
+                    "size": 4,
+                    "foreign_key": "DERIV_CD.Deriv_Cd",
+                    "allows_null": true,
+                    "convert_empty_string_to_null": true,
+                    "description": "Data Derivation Code giving specific information on how the value is determined. This field is populated only for items added or updated starting with SR14."
+                },
+                {
+                    "name": "Ref_NDB_No",
+                    "type": "Alphanumeric",
+                    "size": 5,
+                    "foreign_key": "FOOD_DES.NDB_No",
+                    "allows_null": true,
+                    "convert_empty_string_to_null": true,
+                    "description": "NDB number of the item used to calculate a missing value. Populated only for items added or updated starting with SR14."
+                },
+                {
+                    "name": "Add_Nutr_Mark",
+                    "type": "Alphanumeric",
+                    "size": 1,
+                    "allows_null": true,
+                    "description": "Indicates a vitamin or mineral added for fortification or enrichment. This field is populated for ready-to-eat breakfast cereals and many brand-name hot cereals in food group 8."
+                },
+                {
+                    "name": "Num_Studies",
+                    "type": "Numeric",
+                    "size": 2,
+                    "allows_null": true,
+                    "description": "Number of studies."
+                },
+                {
+                    "name": "Min",
+                    "type": "Numeric",
+                    "size": 10.3,
+                    "allows_null": true,
+                    "description": "Minimum value."
+                },
+                {
+                    "name": "Max",
+                    "type": "Numeric",
+                    "size": 10.3,
+                    "allows_null": true,
+                    "description": "Maximum value."
+                },
+                {
+                    "name": "DF",
+                    "type": "Numeric",
+                    "size": 4,
+                    "allows_null": true,
+                    "description": "Degrees of freedom."
+                },
+                {
+                    "name": "Low_EB",
+                    "type": "Numeric",
+                    "size": 10.3,
+                    "allows_null": true,
+                    "description": "Lower 95% error bound."
+                },
+                {
+                    "name": "Up_EB",
+                    "type": "Numeric",
+                    "size": 10.3,
+                    "allows_null": true,
+                    "description": "Upper 95% error bound."
+                },
+                {
+                    "name": "Stat_cmt",
+                    "type": "Alphanumeric",
+                    "size": 10,
+                    "allows_null": true,
+                    "description": "Statistical comments. See definitions starting on page 33."
+                },
+                {
+                    "name": "AddMod_Date",
+                    "type": "Date(mm/yyyy)",
+                    "allows_null": true,
+                    "description": "Indicates when a value was either added to the database or last modified."
+                },
+                {
+                    "name": "CC",
+                    "type": "Alphanumeric",
+                    "size": 1,
+                    "allows_null": true,
+                    "description": "Confidence Code indicating data quality, based on evaluation of sample plan, sample handling, analytical method, analytical quality control, and number of samples analyzed. Not included in this release, but is planned for future releases."
+                }
+            ]
+        },
+        {
+            "file": "WEIGHT.txt",
+            "description": "Weight",
+            "records": 15438,
+            "fields": [
+                {
+                    "name": "NDB_No",
+                    "type": "Alphanumeric",
+                    "size": 5,
+                    "is_primary_key": true,
+                    "foreign_key": "FOOD_DES.NDB_No",
+                    "allows_null": false,
+                    "description": "5-digit Nutrient Databank number."
+                },
+                {
+                    "name": "Seq",
+                    "type": "Alphanumeric",
+                    "size": 2,
+                    "is_primary_key": true,
+                    "allows_null": false,
+                    "description": "Sequence number."
+                },
+                {
+                    "name": "Amount",
+                    "type": "Numeric",
+                    "size": 5.3,
+                    "allows_null": false,
+                    "description": "Unit modifier (for example, 1 in \"1 cup\")."
+                },
+                {
+                    "name": "Msre_Desc",
+                    "type": "Alphanumeric",
+                    "size": 84,
+                    "allows_null": false,
+                    "description": "Description (for example, cup, diced, and 1-inch pieces)."
+                },
+                {
+                    "name": "Gm_Wgt",
+                    "type": "Numeric",
+                    "size": 7.1,
+                    "allows_null": false,
+                    "description": "Gram weight."
+                },
+                {
+                    "name": "Num_Data_Pts",
+                    "type": "Numeric",
+                    "size": 3,
+                    "allows_null": true,
+                    "description": "Number of data points."
+                },
+                {
+                    "name": "Std_Dev",
+                    "type": "Numeric",
+                    "size": 7.3,
+                    "allows_null": true,
+                    "description": "Standard deviation."
+                }
+           ]
+        },
+        {
+            "file": "FOOTNOTE.txt",
+            "description": "Footnote",
+            "records": 553,
+            "fields": [
+                {
+                    "name": "NDB_No",
+                    "type": "Alphanumeric",
+                    "size": 5,
+                    "foreign_key": "FOOD_DES.NDB_No",
+                    "allows_null": false,
+                    "description": "5-digit Nutrient Databank number."
+                },
+                {
+                    "name": "Footnt_No",
+                    "type": "Alphanumeric",
+                    "size": 4,
+                    "allows_null": false,
+                    "description": "Sequence number. If a given footnote applies to more than one nutrient number, the same footnote number is used. As a result, this file cannot be indexed."
+                },
+                {
+                    "name": "Footnt_Typ",
+                    "type": "Alphanumeric",
+                    "size": 1,
+                    "allows_null": false,
+                    "description": "Type of footnote: D = footnote adding information to the food description; M = footnote adding information to measure description; N = footnote providing additional information on a nutrient value. If the Footnt_typ = N, the Nutr_No will also be filled in."
+                },
+                {
+                    "name": "Nutr_No",
+                    "type": "Alphanumeric",
+                    "size": 3,
+                    "foreign_key": "NUTR_DEF.Nutr_No",
+                    "allows_null": true,
+                    "convert_empty_string_to_null": true,
+                    "description": "Unique 3-digit identifier code for a nutrient to which footnote applies."
+                },
+                {
+                    "name": "Footnt_Txt",
+                    "type": "Alphanumeric",
+                    "size": 200,
+                    "allows_null": false,
+                    "description": "Footnote text."
+                }
+           ]
+        },
+        {
+            "file": "FD_GROUP.txt",
+            "description": "Food Group Description",
+            "records": 25,
+            "fields": [
+                {
+                    "name": "FdGrp_Cd",
+                    "type": "Alphanumeric",
+                    "size": 4,
+                    "is_primary_key": true,
+                    "allows_null": false,
+                    "description": "4-digit code identifying a food group. Only the first 2 digits are currently assigned. In the future, the last 2 digits may be used. Codes may not be consecutive."
+                },
+                {
+                    "name": "FdGrp_Desc",
+                    "type": "Alphanumeric",
+                    "size": 60,
+                    "allows_null": false,
+                    "description": "Name of food group."
+                }
+            ]
+        },
+        {
+            "file": "LANGUAL.txt",
+            "description": "LanguaL Factor",
+            "records": 38301,
+            "fields": [
+                {
+                    "name": "NDB_No",
+                    "type": "Alphanumeric",
+                    "size": 5,
+                    "is_primary_key": true,
+                    "foreign_key": "FOOD_DES.NDB_No",
+                    "allows_null": false,
+                    "description": "5-digit Nutrient Databank number that uniquely identifies a food item. If this field is defined as numeric, the leading zero will be lost."
+                },
+                {
+                    "name": "Factor_Code",
+                    "type": "Alphanumeric",
+                    "size": 5,
+                    "is_primary_key": true,
+                    "foreign_key": "LANGDESC.Factor_Code",
+                    "allows_null": false,
+                    "description": "The LanguaL factor from the Thesaurus"
+                }
+            ]
+        },
+        {
+            "file": "LANGDESC.txt",
+            "description": "LanguaL Factors Description",
+            "records": 774,
+            "fields": [
+                {
+                    "name": "Factor_Code",
+                    "type": "Alphanumeric",
+                    "size": 5,
+                    "is_primary_key": true,
+                    "allows_null": false,
+                    "description": "The LanguaL factor from the Thesaurus. Only those codes used to factor the foods contained in the LanguaL Factor file are included in this file"
+                },
+                {
+                    "name": "Description",
+                    "type": "Alphanumeric",
+                    "size": 140,
+                    "allows_null": false,
+                    "description": "The description of the LanguaL Factor Code from the thesaurus"
+                }
+           ]
+        },
+        {
+            "file": "NUTR_DEF.txt",
+            "description": "Nutrient Definition",
+            "records": 150,
+            "fields": [
+                {
+                    "name": "Nutr_No",
+                    "type": "Alphanumeric",
+                    "size": 3,
+                    "is_primary_key": true,
+                    "allows_null": false,
+                    "description": "Unique 3-digit identifier code for a nutrient."
+                },
+                {
+                    "name": "Units",
+                    "type": "Alphanumeric",
+                    "size": 7,
+                    "allows_null": false,
+                    "description": "Units of measure (mg, g, mcg, and so on)."
+                },
+                {
+                    "name": "Tagname",
+                    "type": "Alphanumeric",
+                    "size": 20,
+                    "allows_null": true,
+                    "description": "International Network of Food Data Systems (INFOODS) Tagnames. (INFOODS, 2014.) A unique abbreviation for a nutrient/food component developed by INFOODS to aid in the interchange of data."
+                },
+                {
+                    "name": "NutrDesc",
+                    "type": "Alphanumeric",
+                    "size": 60,
+                    "allows_null": false,
+                    "description": "Name of nutrient/food component."
+                },
+                {
+                    "name": "Num_Dec",
+                    "type": "Alphanumeric",
+                    "size": 1,
+                    "allows_null": false,
+                    "description": "Number of decimal places to which a nutrient value is rounded."
+                },
+                {
+                    "name": "SR_Order",
+                    "type": "Numeric",
+                    "size": 6,
+                    "allows_null": false,
+                    "description": "Used to sort nutrient records in the same order as various reports produced from SR."
+                }
+           ]
+        },
+        {
+            "file": "SRC_CD.txt",
+            "description": "Source Code",
+            "records": 10,
+            "fields": [
+                {
+                    "name": "Src_Cd",
+                    "type": "Alphanumeric",
+                    "size": 2,
+                    "is_primary_key": true,
+                    "allows_null": false,
+                    "description": "2-digit code."
+                },
+                {
+                    "name": "SrcCd_Desc",
+                    "type": "Alphanumeric",
+                    "size": 60,
+                    "allows_null": false,
+                    "description": "Description of source code that identifies the type of nutrient data."
+                }
+           ]
+        },
+        {
+            "file": "DERIV_CD.txt",
+            "description": "Data Derivation Code Description",
+            "records": 55,
+            "fields": [
+                {
+                    "name": "Deriv_Cd",
+                    "type": "Alphanumeric",
+                    "size": 4,
+                    "is_primary_key": true,
+                    "allows_null": false,
+                    "description": "Derivation Code."
+                },
+                {
+                    "name": "Deriv_Desc",
+                    "type": "Alphanumeric",
+                    "size": 120,
+                    "allows_null": false,
+                    "description": "Description of derivation code giving specific information on how the value was determined."
+                }
+           ]
+        },
+        {
+            "file": "DATA_SRC.txt",
+            "description": "Sources of Data",
+            "records": 681,
+            "fields": [
+                {
+                    "name": "DataSrc_ID",
+                    "type": "Alphanumeric",
+                    "size": 6,
+                    "is_primary_key": true,
+                    "allows_null": false,
+                    "description": "Unique number identifying the reference/source."
+                },
+                {
+                    "name": "Authors",
+                    "type": "Alphanumeric",
+                    "size": 255,
+                    "allows_null": true,
+                    "description": "List of authors for a journal article or name of sponsoring organization for other documents."
+                },
+                {
+                    "name": "Title",
+                    "type": "Alphanumeric",
+                    "size": 255,
+                    "allows_null": false,
+                    "description": "Title of article or name of document, such as a report from a company or trade association."
+                },
+                {
+                    "name": "Year",
+                    "type": "Alphanumeric",
+                    "size": 4,
+                    "allows_null": true,
+                    "description": "Year article or document was published."
+                },
+                {
+                    "name": "Journal",
+                    "type": "Alphanumeric",
+                    "size": 135,
+                    "allows_null": true,
+                    "description": "Name of the journal in which the article was published."
+                },
+                {
+                    "name": "Vol_City",
+                    "type": "Alphanumeric",
+                    "size": 16,
+                    "allows_null": true,
+                    "description": "Volume number for journal articles, books, or reports; city where sponsoring organization is located."
+                },
+                {
+                    "name": "Issue_State",
+                    "type": "Alphanumeric",
+                    "size": 5,
+                    "allows_null": true,
+                    "description": "Issue number for journal article; State where the sponsoring organization is located."
+                },
+                {
+                    "name": "Start_Page",
+                    "type": "Alphanumeric",
+                    "size": 5,
+                    "allows_null": true,
+                    "description": "Starting page number of article/document."
+                },
+                {
+                    "name": "End_Page",
+                    "type": "Alphanumeric",
+                    "size": 5,
+                    "allows_null": true,
+                    "description": "Ending page number of article/document."
+                }
+           ]
+        },
+        {
+            "file": "DATSRCLN.txt",
+            "description": "Sources of Data Link",
+            "records": 244496,
+            "fields": [
+                {
+                    "name": "NDB_No",
+                    "type": "Alphanumeric",
+                    "size": 5,
+                    "is_primary_key": true,
+                    "foreign_key": "FOOD_DES.NDB_No",
+                    "allows_null": false,
+                    "description": "5-digit Nutrient Databank number."
+                },
+                {
+                    "name": "Nutr_No",
+                    "type": "Alphanumeric",
+                    "size": 3,
+                    "is_primary_key": true,
+                    "foreign_key": "NUTR_DEF.Nutr_No",
+                    "allows_null": false,
+                    "description": "Unique 3-digit identifier code for a nutrient."
+                },
+                {
+                    "name": "DataSrc_ID",
+                    "type": "Alphanumeric",
+                    "size": 6,
+                    "is_primary_key": true,
+                    "foreign_key": "DATA_SRC.DataSrc_ID",
+                    "allows_null": false,
+                    "description": "Unique ID identifying the reference/source."
+                }
+            ]
+        }
+    ]
+}
