@@ -1,0 +1,11 @@
+#!/bin/sh
+
+FILENAMES=`ls data/|grep ".txt"`
+
+
+for m in ${FILENAMES};do
+
+echo ${m} `cat data/${m} |wc -l`
+
+
+done
