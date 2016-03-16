@@ -1,6 +1,6 @@
 {
-    "version": 27,
-    "description": "USDA National Nutrient Database for Standard Reference, Release 27",
+    "version": 28,
+    "description": "USDA National Nutrient Database for Standard Reference, Release 28",
     "url": "http://www.ars.usda.gov/ba/bhnrc/ndl",
     "field_separator": "^",
     "text_separator": "~",
@@ -9,7 +9,7 @@
         {
             "file": "FOOD_DES.txt",
             "description": "Food Description",
-            "records": 8618,
+            "records": 8789,
             "fields": [
                 {
                     "name": "NDB_No",
@@ -95,28 +95,28 @@
                     "type": "Numeric",
                     "size": 4.2,
                     "allows_null": true,
-                    "description": "Factor for calculating calories from protein (see p. 13)."
+                    "description": "Factor for calculating calories from protein (see p. 14)."
                 },
                 {
                     "name": "Fat_Factor",
                     "type": "Numeric",
                     "size": 4.2,
                     "allows_null": true,
-                    "description": "Factor for calculating calories from fat (see p. 13)."
+                    "description": "Factor for calculating calories from fat (see p. 14)."
                 },
                 {
                     "name": "CHO_Factor",
                     "type": "Numeric",
                     "size": 4.2,
                     "allows_null": true,
-                    "description": "Factor for calculating calories from carbohydrate (see p. 13)."
+                    "description": "Factor for calculating calories from carbohydrate (see p. 14)."
                 }
             ]
         },
         {
             "file": "NUT_DATA.txt",
             "description": "Nutrient Data",
-            "records": 654572,
+            "records": 679045,
             "fields": [
                 {
                     "name": "NDB_No",
@@ -125,7 +125,7 @@
                     "is_primary_key": true,
                     "foreign_key": "FOOD_DES.NDB_No",
                     "allows_null": false,
-                    "description": "5-digit Nutrient Databank number."
+                    "description": "5-digit Nutrient Databank number that uniquely identifies a food item. If this field is defined as numeric, the leading zero will be lost."
                 },
                 {
                     "name": "Nutr_No",
@@ -134,7 +134,7 @@
                     "is_primary_key": true,
                     "foreign_key": "NUTR_DEF.Nutr_No",
                     "allows_null": false,
-                    "description": "Unique 3-digit identifier code for a nutrient ."
+                    "description": "Unique 3-digit identifier code for a nutrient."
                 },
                 {
                     "name": "Nutr_Val",
@@ -148,7 +148,7 @@
                     "type": "Numeric",
                     "size": 5.0,
                     "allows_null": false,
-                    "description": "Number of data points (previously called Sample_Ct) is the number of analyses used to calculate the nutrient value. If the number of data points is 0, the value was calculated or imputed."
+                    "description": "Number of data points is the number of analyses used to calculate the nutrient value. If the number of data points is 0, the value was calculated or imputed."
                 },
                 {
                     "name": "Std_Error",
@@ -172,7 +172,7 @@
                     "foreign_key": "DERIV_CD.Deriv_Cd",
                     "allows_null": true,
                     "convert_empty_string_to_null": true,
-                    "description": "Data Derivation Code giving specific information on how the value is determined. This field is populated only for items added or updated starting with SR14."
+                    "description": "Data Derivation Code giving specific information on how the value is determined. This field is populated only for items added or updated starting with SR14. This field may not be populated if older records were used in the calculation of the mean value."
                 },
                 {
                     "name": "Ref_NDB_No",
@@ -188,7 +188,7 @@
                     "type": "Alphanumeric",
                     "size": 1,
                     "allows_null": true,
-                    "description": "Indicates a vitamin or mineral added for fortification or enrichment. This field is populated for ready-to-eat breakfast cereals and many brand-name hot cereals in food group 8."
+                    "description": "Indicates a vitamin or mineral added for fortification or enrichment. This field is populated for ready-to-eat breakfast cereals and many brand-name hot cereals in food group 08."
                 },
                 {
                     "name": "Num_Studies",
@@ -237,7 +237,7 @@
                     "type": "Alphanumeric",
                     "size": 10,
                     "allows_null": true,
-                    "description": "Statistical comments. See definitions starting on page 33."
+                    "description": "Statistical comments. See definitions below."
                 },
                 {
                     "name": "AddMod_Date",
@@ -257,7 +257,7 @@
         {
             "file": "WEIGHT.txt",
             "description": "Weight",
-            "records": 15228,
+            "records": 15438,
             "fields": [
                 {
                     "name": "NDB_No",
@@ -266,7 +266,7 @@
                     "is_primary_key": true,
                     "foreign_key": "FOOD_DES.NDB_No",
                     "allows_null": false,
-                    "description": "5-digit Nutrient Databank number."
+                    "description": "5-digit Nutrient Databank number that uniquely identifies a food item. If this field is defined as numeric, the leading zero will be lost."
                 },
                 {
                     "name": "Seq",
@@ -316,7 +316,7 @@
         {
             "file": "FOOTNOTE.txt",
             "description": "Footnote",
-            "records": 531,
+            "records": 552,
             "fields": [
                 {
                     "name": "NDB_No",
@@ -324,14 +324,14 @@
                     "size": 5,
                     "foreign_key": "FOOD_DES.NDB_No",
                     "allows_null": false,
-                    "description": "5-digit Nutrient Databank number."
+                    "description": "5-digit Nutrient Databank number that uniquely identifies a food item. If this field is defined as numeric, the leading zero will be lost. "
                 },
                 {
                     "name": "Footnt_No",
                     "type": "Alphanumeric",
                     "size": 4,
                     "allows_null": false,
-                    "description": "Sequence number. If a given footnote applies to more than one nutrient number, the same footnote number is used. As a result, this file cannot be indexed."
+                    "description": "Sequence number. If a given footnote applies to more than one nutrient number, the same footnote number is used. As a result, this file cannot be indexed and there is no primary key."
                 },
                 {
                     "name": "Footnt_Typ",
@@ -383,7 +383,7 @@
         {
             "file": "LANGUAL.txt",
             "description": "LanguaL Factor",
-            "records": 38725,
+            "records": 38301,
             "fields": [
                 {
                     "name": "NDB_No",
@@ -401,7 +401,7 @@
                     "is_primary_key": true,
                     "foreign_key": "LANGDESC.Factor_Code",
                     "allows_null": false,
-                    "description": "The LanguaL factor from the Thesaurus"
+                    "description": "The LanguaL factor from the Thesaurus."
                 }
             ]
         },
@@ -416,14 +416,14 @@
                     "size": 5,
                     "is_primary_key": true,
                     "allows_null": false,
-                    "description": "The LanguaL factor from the Thesaurus. Only those codes used to factor the foods contained in the LanguaL Factor file are included in this file"
+                    "description": "The LanguaL factor from the Thesaurus. Only those codes used to factor the foods contained in the LanguaL Factor file are included in this file."
                 },
                 {
                     "name": "Description",
                     "type": "Alphanumeric",
                     "size": 140,
                     "allows_null": false,
-                    "description": "The description of the LanguaL Factor Code from the thesaurus"
+                    "description": "The description of the LanguaL Factor Code from the thesaurus."
                 }
            ]
         },
@@ -488,7 +488,7 @@
                     "size": 2,
                     "is_primary_key": true,
                     "allows_null": false,
-                    "description": "2-digit code."
+                    "description": "2-digit code indicating type of data."
                 },
                 {
                     "name": "SrcCd_Desc",
@@ -524,7 +524,7 @@
         {
             "file": "DATA_SRC.txt",
             "description": "Sources of Data",
-            "records": 655,
+            "records": 682,
             "fields": [
                 {
                     "name": "DataSrc_ID",
@@ -532,7 +532,7 @@
                     "size": 6,
                     "is_primary_key": true,
                     "allows_null": false,
-                    "description": "Unique number identifying the reference/source."
+                    "description": "Unique ID identifying the reference/source."
                 },
                 {
                     "name": "Authors",
@@ -595,7 +595,7 @@
         {
             "file": "DATSRCLN.txt",
             "description": "Sources of Data Link",
-            "records": 230663,
+            "records": 244496,
             "fields": [
                 {
                     "name": "NDB_No",
@@ -604,7 +604,7 @@
                     "is_primary_key": true,
                     "foreign_key": "FOOD_DES.NDB_No",
                     "allows_null": false,
-                    "description": "5-digit Nutrient Databank number."
+                    "description": "5-digit Nutrient Databank number that uniquely identifies a food item. If this field is defined as numeric, the leading zero will be lost."
                 },
                 {
                     "name": "Nutr_No",

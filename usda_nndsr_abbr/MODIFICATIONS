@@ -1,3 +1,3 @@
-Modifications made that were missing or incorrect in the data description file ./data/sr27_doc.pdf:
+Modifications made that were missing or incorrect in the data description file ./data/sr28_doc.pdf:
 
 The documentation does not mention what columns can be null, so assuming all columns except for the primary key column can be null.

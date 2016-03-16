@@ -1,6 +1,6 @@
 {
-    "version": 27,
-    "description": "USDA National Nutrient Database for Standard Reference (Abbreviated Version), Release 27",
+    "version": 28,
+    "description": "USDA National Nutrient Database for Standard Reference (Abbreviated Version), Release 28",
     "url": "http://www.ars.usda.gov/ba/bhnrc/ndl",
     "field_separator": "^",
     "text_separator": "~",
@@ -9,7 +9,7 @@
         {
             "file": "ABBREV.txt",
             "description": "Abbreviated",
-            "records": 8618,
+            "records": 8789,
             "fields": [
                 {
                     "name": "NDB_No",
@@ -17,7 +17,7 @@
                     "size": 5,
                     "is_primary_key": true,
                     "allows_null": false,
-                    "description": "5-digit Nutrient Databank number."
+                    "description": "5-digit Nutrient Databank number. If this field is defined as numeric, the leading zero will be lost."
                 },
                 {
                     "name": "Shrt_Desc",
@@ -52,7 +52,7 @@
                     "type": "Numeric",
                     "size": 10.2,
                     "allows_null": true,
-                    "description": "Total lipid (fat)(g/100 g)"
+                    "description": "Total lipid (fat) (g/100 g)"
                 },
                 {
                     "name": "Ash",
