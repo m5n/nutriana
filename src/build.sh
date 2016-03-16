@@ -8,12 +8,12 @@ if [ "$PERL" = "" ]; then echo "Please install Perl" ; exit 1 ; fi
 ./clean.sh
 
 # Process all nutrient databases included.
-for NUTDBDIR in `find . -mindepth 1 -maxdepth 1 -type d`; do
+for NUTDBDIR in `find .. -mindepth 1 -maxdepth 1 -type d`; do
     # Extract nutrient dabatase identifier.
-    NUTDBID=`expr "$NUTDBDIR" : "\./\(.*\)"`
+    NUTDBID=`expr "$NUTDBDIR" : "\.\./\(.*\)"`
 
-    # Ignore .git dir.
-    if [ "$NUTDBID" = ".git" ]; then continue; fi
+    # Ignore non-DB dirs.
+    if [ "$NUTDBID" = ".git" -o "$NUTDBID" = "src" ]; then continue; fi
 
     echo "================================== $NUTDBID =================================="
 
@@ -37,6 +37,6 @@ for NUTDBDIR in `find . -mindepth 1 -maxdepth 1 -type d`; do
         # Generate the SQL file for this database.
         # Make sure to add the current directory to the beginning of @INC
         # to avoid accidentally using official modules with the same name.
-        $PERL -I . -M$RDBMSID ./generate_sql.pl $RDBMSID $NUTDBID $OUTFILE > $OUTFILE
+        $PERL -I . -M$RDBMSID ./generate_sql.pl $RDBMSID $NUTDBID $OUTFILE > ../$NUTDBID/dist/$OUTFILE
     done
 done

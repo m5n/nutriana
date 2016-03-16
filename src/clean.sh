@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # Delete Oracle sqlldr control files.
-rm -rf */sqlldr
+rm -rf ../*/sqlldr
 
 # Delete trimmed files.
-find . -name \*.trimmed -exec rm {} \;
+find .. -name \*.trimmed -exec rm {} \;
 

@@ -154,16 +154,17 @@ sub sql_load_file {
     my ($nutdbid, $user_name, $user_pwd, $file, $table_name, $field_separator, $text_separator, $line_separator, $ignore_header_lines, @fieldinfo) = @_;
 
     # Keep things tidy and gather all control files into a subdir.
-    `mkdir -p ./$nutdbid/sqlldr`;
+    `mkdir -p ../$nutdbid/sqlldr`;
 
     # Generate control file.
-    $file = "./" . $nutdbid . "/sqlldr/" . $table_name . ".ctl";
+    $file =~ s|/data/|/sqlldr/|;
+    $file =~ s/\.txt$/\.ctl/;
     open FILE, ">$file" or die $!;
     print FILE "OPTIONS (DIRECT=TRUE, PARALLEL=TRUE";   # Load all or nothing.
     print FILE ", SKIP=$ignore_header_lines" if $ignore_header_lines;
     print FILE ")\n";
     print FILE "LOAD DATA\n";
-    print FILE "    INFILE './$nutdbid/data/$table_name.txt'\n";   # Using field separator so no need for streaming option to load multi-line values.
+    print FILE "    INFILE '../data/$table_name.txt'\n";   # Using field separator so no need for streaming option to load multi-line values.
     print FILE "    APPEND\n";   # Must be APPEND to use PARALLEL option.
     print FILE "    INTO TABLE $table_name\n";
     print FILE "    FIELDS TERMINATED BY '$field_separator'\n";
@@ -183,7 +184,8 @@ sub sql_load_file {
     close FILE;
 
     # Invoke sqlldr.
-    return "HOST SQLLDR $user_name/$user_pwd control=$file;";
+    my $relative_file = join("", split /$nutdbid\//, $file);
+    return "HOST SQLLDR $user_name/$user_pwd control=$relative_file;";
 }
 
 sub sql_assert_record_count {

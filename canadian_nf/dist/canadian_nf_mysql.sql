@@ -119,7 +119,7 @@ create table YLD_NM (
 );
 
 -- Load data into FOOD_NM
-load data local infile './canadian_nf/data/FOOD_NM.txt.trimmed'
+load data local infile '../data/FOOD_NM.txt.trimmed'
     into table FOOD_NM
     fields terminated by '$' optionally enclosed by '"'
     lines terminated by '\r\n'
@@ -137,7 +137,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into NT_AMT
-load data local infile './canadian_nf/data/NT_AMT.txt'
+load data local infile '../data/NT_AMT.txt'
     into table NT_AMT
     fields terminated by '$' optionally enclosed by '"'
     lines terminated by '\r\n'
@@ -154,7 +154,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into CONV_FAC
-load data local infile './canadian_nf/data/CONV_FAC.txt'
+load data local infile '../data/CONV_FAC.txt'
     into table CONV_FAC
     fields terminated by '$' optionally enclosed by '"'
     lines terminated by '\r\n'
@@ -171,7 +171,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into REFUSE
-load data local infile './canadian_nf/data/REFUSE.txt'
+load data local infile '../data/REFUSE.txt'
     into table REFUSE
     fields terminated by '$' optionally enclosed by '"'
     lines terminated by '\r\n'
@@ -188,7 +188,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into YIELD
-load data local infile './canadian_nf/data/YIELD.txt'
+load data local infile '../data/YIELD.txt'
     into table YIELD
     fields terminated by '$' optionally enclosed by '"'
     lines terminated by '\r\n'
@@ -205,7 +205,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into FOOD_GRP
-load data local infile './canadian_nf/data/FOOD_GRP.txt'
+load data local infile '../data/FOOD_GRP.txt'
     into table FOOD_GRP
     fields terminated by '$' optionally enclosed by '"'
     lines terminated by '\r\n'
@@ -221,7 +221,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into FOOD_SRC
-load data local infile './canadian_nf/data/FOOD_SRC.txt'
+load data local infile '../data/FOOD_SRC.txt'
     into table FOOD_SRC
     fields terminated by '$' optionally enclosed by '"'
     lines terminated by '\r\n'
@@ -237,7 +237,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into NT_NM
-load data local infile './canadian_nf/data/NT_NM.txt'
+load data local infile '../data/NT_NM.txt'
     into table NT_NM
     fields terminated by '$' optionally enclosed by '"'
     lines terminated by '\r\n'
@@ -253,7 +253,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into NT_SRC
-load data local infile './canadian_nf/data/NT_SRC.txt'
+load data local infile '../data/NT_SRC.txt'
     into table NT_SRC
     fields terminated by '$' optionally enclosed by '"'
     lines terminated by '\r\n'
@@ -269,7 +269,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into MEASURE
-load data local infile './canadian_nf/data/MEASURE.txt'
+load data local infile '../data/MEASURE.txt'
     into table MEASURE
     fields terminated by '$' optionally enclosed by '"'
     lines terminated by '\r\n'
@@ -285,7 +285,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into REFU_NM
-load data local infile './canadian_nf/data/REFU_NM.txt'
+load data local infile '../data/REFU_NM.txt'
     into table REFU_NM
     fields terminated by '$' optionally enclosed by '"'
     lines terminated by '\r\n'
@@ -301,7 +301,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into YLD_NM
-load data local infile './canadian_nf/data/YLD_NM.txt'
+load data local infile '../data/YLD_NM.txt'
     into table YLD_NM
     fields terminated by '$' optionally enclosed by '"'
     lines terminated by '\r\n'

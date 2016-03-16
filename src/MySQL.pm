@@ -136,7 +136,8 @@ sub sql_load_file {
     my ($nutdbid, $user_name, $user_pwd, $file, $table_name, $field_separator, $text_separator, $line_separator, $ignore_header_lines, @fieldinfo) = @_;
 
     # TODO: how to make MySQL generate an error if varchar data truncation occurs?
-    my $result = "load data local infile '$file'\n";
+    my $relative_file = join("", split /$nutdbid\//, $file);
+    my $result = "load data local infile '$relative_file'\n";
     $result .= "    into table $table_name\n";
     $result .= "    fields terminated by '$field_separator'";
     $result .= " optionally enclosed by '$text_separator'" if $text_separator;

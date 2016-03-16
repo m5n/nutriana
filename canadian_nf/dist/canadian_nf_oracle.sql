@@ -144,7 +144,7 @@ CREATE TABLE YLD_NM (
 );
 
 -- Load data into FOOD_NM
-HOST SQLLDR food/food control=./canadian_nf/sqlldr/FOOD_NM.ctl;
+HOST SQLLDR food/food control=../sqlldr/FOOD_NM.txt.trimmed;
 -- Assert all 5807 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -154,7 +154,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into NT_AMT
-HOST SQLLDR food/food control=./canadian_nf/sqlldr/NT_AMT.ctl;
+HOST SQLLDR food/food control=../sqlldr/NT_AMT.ctl;
 -- Assert all 495878 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -164,7 +164,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into CONV_FAC
-HOST SQLLDR food/food control=./canadian_nf/sqlldr/CONV_FAC.ctl;
+HOST SQLLDR food/food control=../sqlldr/CONV_FAC.ctl;
 -- Assert all 22260 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -174,7 +174,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into REFUSE
-HOST SQLLDR food/food control=./canadian_nf/sqlldr/REFUSE.ctl;
+HOST SQLLDR food/food control=../sqlldr/REFUSE.ctl;
 -- Assert all 7138 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -184,7 +184,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into YIELD
-HOST SQLLDR food/food control=./canadian_nf/sqlldr/YIELD.ctl;
+HOST SQLLDR food/food control=../sqlldr/YIELD.ctl;
 -- Assert all 1599 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -194,7 +194,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into FOOD_GRP
-HOST SQLLDR food/food control=./canadian_nf/sqlldr/FOOD_GRP.ctl;
+HOST SQLLDR food/food control=../sqlldr/FOOD_GRP.ctl;
 -- Assert all 23 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -204,7 +204,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into FOOD_SRC
-HOST SQLLDR food/food control=./canadian_nf/sqlldr/FOOD_SRC.ctl;
+HOST SQLLDR food/food control=../sqlldr/FOOD_SRC.ctl;
 -- Assert all 17 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -214,7 +214,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into NT_NM
-HOST SQLLDR food/food control=./canadian_nf/sqlldr/NT_NM.ctl;
+HOST SQLLDR food/food control=../sqlldr/NT_NM.ctl;
 -- Assert all 150 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -224,7 +224,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into NT_SRC
-HOST SQLLDR food/food control=./canadian_nf/sqlldr/NT_SRC.ctl;
+HOST SQLLDR food/food control=../sqlldr/NT_SRC.ctl;
 -- Assert all 20 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -234,7 +234,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into MEASURE
-HOST SQLLDR food/food control=./canadian_nf/sqlldr/MEASURE.ctl;
+HOST SQLLDR food/food control=../sqlldr/MEASURE.ctl;
 -- Assert all 1174 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -244,7 +244,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into REFU_NM
-HOST SQLLDR food/food control=./canadian_nf/sqlldr/REFU_NM.ctl;
+HOST SQLLDR food/food control=../sqlldr/REFU_NM.ctl;
 -- Assert all 151 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -254,7 +254,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into YLD_NM
-HOST SQLLDR food/food control=./canadian_nf/sqlldr/YLD_NM.ctl;
+HOST SQLLDR food/food control=../sqlldr/YLD_NM.ctl;
 -- Assert all 82 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);

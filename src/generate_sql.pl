@@ -23,7 +23,7 @@ die "Usage: $0 rdbmsid nutdbid\n" if !$dbid or !$nutdbid;
 
 
 my $project_url = "http://github.com/m5n/nutriana";
-my $file = "./$nutdbid/schema.json";
+my $file = "../$nutdbid/schema.json";
 my $json = do { local $/ = undef; open my $fh, "<", $file or die "Could not open $file: $!"; <$fh>; };
 my $data = decode_json($json);
 my $header = $data->{"description"} . " (" . $data->{"url"} . ")";
@@ -80,7 +80,7 @@ foreach (@{$data->{"tables"}}) {
     my %table = %{$_};
     my $table_name = substr($table{"file"}, 0, -length(".txt"));
     my @fieldinfo = ();
-    my $datafile = "./$nutdbid/data/" . $table{"file"};
+    my $datafile = "../$nutdbid/data/" . $table{"file"};
     my $line_separator = "\\r\\n";
 
     # Convert files if needed.
@@ -94,7 +94,9 @@ foreach (@{$data->{"tables"}}) {
             open OUTFILE, ">", $datafile or die "Could not open $datafile: $!";
             # TODO: doing this while loop ends up setting @{$data->{"tables"}}[0] to undefined, leading to trouble below.  Why?
             while (<INFILE>) {
-                $_ =~ s/\s$//g;
+print STDERR "BEFORE: $_ END\n" if /182.182/;
+                $_ =~ s/\s+$//g;
+print STDERR "AFTER: $_ END\n" if /182.182/;
                 print OUTFILE $_ . "\r\n" if length($_) > 0;   # Interpreted version of $line_separator.   # TODO: find Perl function to convert "\\r\\n" -> "\r\n".
             }
             close INFILE;
