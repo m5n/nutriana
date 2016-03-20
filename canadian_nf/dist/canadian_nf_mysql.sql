@@ -122,7 +122,7 @@ create table YLD_NM (
 load data local infile '../data/FOOD_NM.txt.trimmed'
     into table FOOD_NM
     fields terminated by '$' optionally enclosed by '"'
-    lines terminated by '\r\n'
+    lines terminated by '\n'
     ignore 1 lines
     (FD_ID, FD_CODE, FD_GRP_ID, FD_SRC_ID, A_FD_NME, A_FD_NMF, L_FD_NME, L_FD_NMF, COUNTRY_C, @date1, @date2, SCI_NM)
     set
@@ -137,10 +137,10 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into NT_AMT
-load data local infile '../data/NT_AMT.txt'
+load data local infile '../data/NT_AMT.txt.trimmed'
     into table NT_AMT
     fields terminated by '$' optionally enclosed by '"'
-    lines terminated by '\r\n'
+    lines terminated by '\n'
     ignore 1 lines
     (FD_ID, NT_ID, NT_VALUE, STD_ERR, NUM_OBS, NT_SRC_ID, @date1, NT_TR)
     set
@@ -154,10 +154,10 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into CONV_FAC
-load data local infile '../data/CONV_FAC.txt'
+load data local infile '../data/CONV_FAC.txt.trimmed'
     into table CONV_FAC
     fields terminated by '$' optionally enclosed by '"'
-    lines terminated by '\r\n'
+    lines terminated by '\n'
     ignore 1 lines
     (FD_ID, MSR_ID, CONV_FAC, @date1)
     set
@@ -171,10 +171,10 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into REFUSE
-load data local infile '../data/REFUSE.txt'
+load data local infile '../data/REFUSE.txt.trimmed'
     into table REFUSE
     fields terminated by '$' optionally enclosed by '"'
-    lines terminated by '\r\n'
+    lines terminated by '\n'
     ignore 1 lines
     (FD_ID, REFUSE_ID, REFUSE_AMT, @date1)
     set
@@ -188,10 +188,10 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into YIELD
-load data local infile '../data/YIELD.txt'
+load data local infile '../data/YIELD.txt.trimmed'
     into table YIELD
     fields terminated by '$' optionally enclosed by '"'
-    lines terminated by '\r\n'
+    lines terminated by '\n'
     ignore 1 lines
     (FD_ID, YLD_ID, YLD_AMT, @date1)
     set
@@ -205,10 +205,10 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into FOOD_GRP
-load data local infile '../data/FOOD_GRP.txt'
+load data local infile '../data/FOOD_GRP.txt.trimmed'
     into table FOOD_GRP
     fields terminated by '$' optionally enclosed by '"'
-    lines terminated by '\r\n'
+    lines terminated by '\n'
     ignore 1 lines
     (FD_GRP_ID, FD_GRP_COD, FD_GRP_NME, FD_GRP_NMF)
 ;
@@ -221,10 +221,10 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into FOOD_SRC
-load data local infile '../data/FOOD_SRC.txt'
+load data local infile '../data/FOOD_SRC.txt.trimmed'
     into table FOOD_SRC
     fields terminated by '$' optionally enclosed by '"'
-    lines terminated by '\r\n'
+    lines terminated by '\n'
     ignore 1 lines
     (FD_SRC_ID, FD_SRC_COD, FD_SRC_NME, FD_SRC_NMF)
 ;
@@ -237,10 +237,10 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into NT_NM
-load data local infile '../data/NT_NM.txt'
+load data local infile '../data/NT_NM.txt.trimmed'
     into table NT_NM
     fields terminated by '$' optionally enclosed by '"'
-    lines terminated by '\r\n'
+    lines terminated by '\n'
     ignore 1 lines
     (NT_ID, NT_COD, NT_SYM, UNIT, NT_NME, NT_NMF, TAGNAME, NT_DEC)
 ;
@@ -253,10 +253,10 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into NT_SRC
-load data local infile '../data/NT_SRC.txt'
+load data local infile '../data/NT_SRC.txt.trimmed'
     into table NT_SRC
     fields terminated by '$' optionally enclosed by '"'
-    lines terminated by '\r\n'
+    lines terminated by '\n'
     ignore 1 lines
     (NT_SRC_ID, NT_SRC_COD, NT_SRC_NME, NT_SRC_NMF)
 ;
@@ -269,10 +269,10 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into MEASURE
-load data local infile '../data/MEASURE.txt'
+load data local infile '../data/MEASURE.txt.trimmed'
     into table MEASURE
     fields terminated by '$' optionally enclosed by '"'
-    lines terminated by '\r\n'
+    lines terminated by '\n'
     ignore 1 lines
     (MSR_ID, MSR_NME, MSR_NMF)
 ;
@@ -285,10 +285,10 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into REFU_NM
-load data local infile '../data/REFU_NM.txt'
+load data local infile '../data/REFU_NM.txt.trimmed'
     into table REFU_NM
     fields terminated by '$' optionally enclosed by '"'
-    lines terminated by '\r\n'
+    lines terminated by '\n'
     ignore 1 lines
     (REFUSE_ID, REFUSE_NME, REFUSE_NMF)
 ;
@@ -301,10 +301,10 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into YLD_NM
-load data local infile '../data/YLD_NM.txt'
+load data local infile '../data/YLD_NM.txt.trimmed'
     into table YLD_NM
     fields terminated by '$' optionally enclosed by '"'
-    lines terminated by '\r\n'
+    lines terminated by '\n'
     ignore 1 lines
     (YLD_ID, YLD_NME, YLD_NMF)
 ;

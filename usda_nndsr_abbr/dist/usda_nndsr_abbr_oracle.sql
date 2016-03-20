@@ -4,9 +4,20 @@
 -- Run this SQL with an account that has admin priviledges, e.g.: sqlplus "/as sysdba" < usda_nndsr_abbr_oracle.sql
 -- ===============================================================================================================================
 
--- This script assumes you've already set up a database when you installed Oracle.
+-- This script assumes you've already set up a database when you installed Oracle and that $ORACLE_HOME/bin is in your path.
+
+-- Needed since Oracle 12c.
+ALTER SESSION SET "_ORACLE_SCRIPT"=TRUE;
+
 BEGIN EXECUTE IMMEDIATE 'CREATE USER food IDENTIFIED BY food'; EXCEPTION WHEN OTHERS THEN IF SQLCODE != -01920 THEN RAISE; END IF; END;
 /
+
+-- Needed since Oracle 12c.
+ALTER USER food QUOTA 100M ON USERS;
+
+-- Needed since Oracle 12c.
+ALTER SESSION SET "_ORACLE_SCRIPT"=FALSE;
+
 GRANT CONNECT, RESOURCE TO food;
 CONNECT food/food;
 
@@ -70,7 +81,7 @@ CREATE TABLE ABBREV (
 );
 
 -- Load data into ABBREV
-HOST SQLLDR food/food control=../sqlldr/ABBREV.ctl;
+HOST sqlldr food/food CONTROL=../sqlldr/ABBREV.ctl LOG=../sqlldr/ABBREV.log;
 -- Assert all 8789 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);

@@ -4,9 +4,20 @@
 -- Run this SQL with an account that has admin priviledges, e.g.: sqlplus "/as sysdba" < usda_nndsr_oracle.sql
 -- =========================================================================================================
 
--- This script assumes you've already set up a database when you installed Oracle.
+-- This script assumes you've already set up a database when you installed Oracle and that $ORACLE_HOME/bin is in your path.
+
+-- Needed since Oracle 12c.
+ALTER SESSION SET "_ORACLE_SCRIPT"=TRUE;
+
 BEGIN EXECUTE IMMEDIATE 'CREATE USER food IDENTIFIED BY food'; EXCEPTION WHEN OTHERS THEN IF SQLCODE != -01920 THEN RAISE; END IF; END;
 /
+
+-- Needed since Oracle 12c.
+ALTER USER food QUOTA 100M ON USERS;
+
+-- Needed since Oracle 12c.
+ALTER SESSION SET "_ORACLE_SCRIPT"=FALSE;
+
 GRANT CONNECT, RESOURCE TO food;
 CONNECT food/food;
 
@@ -155,7 +166,7 @@ CREATE TABLE DATSRCLN (
 );
 
 -- Load data into FOOD_DES
-HOST SQLLDR food/food control=../sqlldr/FOOD_DES.ctl;
+HOST sqlldr food/food CONTROL=../sqlldr/FOOD_DES.ctl LOG=../sqlldr/FOOD_DES.log;
 -- Assert all 8789 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -165,7 +176,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into NUT_DATA
-HOST SQLLDR food/food control=../sqlldr/NUT_DATA.ctl;
+HOST sqlldr food/food CONTROL=../sqlldr/NUT_DATA.ctl LOG=../sqlldr/NUT_DATA.log;
 -- Assert all 679045 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -175,7 +186,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into WEIGHT
-HOST SQLLDR food/food control=../sqlldr/WEIGHT.ctl;
+HOST sqlldr food/food CONTROL=../sqlldr/WEIGHT.ctl LOG=../sqlldr/WEIGHT.log;
 -- Assert all 15438 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -185,7 +196,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into FOOTNOTE
-HOST SQLLDR food/food control=../sqlldr/FOOTNOTE.ctl;
+HOST sqlldr food/food CONTROL=../sqlldr/FOOTNOTE.ctl LOG=../sqlldr/FOOTNOTE.log;
 -- Assert all 552 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -195,7 +206,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into FD_GROUP
-HOST SQLLDR food/food control=../sqlldr/FD_GROUP.ctl;
+HOST sqlldr food/food CONTROL=../sqlldr/FD_GROUP.ctl LOG=../sqlldr/FD_GROUP.log;
 -- Assert all 25 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -205,7 +216,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into LANGUAL
-HOST SQLLDR food/food control=../sqlldr/LANGUAL.ctl;
+HOST sqlldr food/food CONTROL=../sqlldr/LANGUAL.ctl LOG=../sqlldr/LANGUAL.log;
 -- Assert all 38301 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -215,7 +226,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into LANGDESC
-HOST SQLLDR food/food control=../sqlldr/LANGDESC.ctl;
+HOST sqlldr food/food CONTROL=../sqlldr/LANGDESC.ctl LOG=../sqlldr/LANGDESC.log;
 -- Assert all 774 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -225,7 +236,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into NUTR_DEF
-HOST SQLLDR food/food control=../sqlldr/NUTR_DEF.ctl;
+HOST sqlldr food/food CONTROL=../sqlldr/NUTR_DEF.ctl LOG=../sqlldr/NUTR_DEF.log;
 -- Assert all 150 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -235,7 +246,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into SRC_CD
-HOST SQLLDR food/food control=../sqlldr/SRC_CD.ctl;
+HOST sqlldr food/food CONTROL=../sqlldr/SRC_CD.ctl LOG=../sqlldr/SRC_CD.log;
 -- Assert all 10 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -245,7 +256,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into DERIV_CD
-HOST SQLLDR food/food control=../sqlldr/DERIV_CD.ctl;
+HOST sqlldr food/food CONTROL=../sqlldr/DERIV_CD.ctl LOG=../sqlldr/DERIV_CD.log;
 -- Assert all 55 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -255,7 +266,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into DATA_SRC
-HOST SQLLDR food/food control=../sqlldr/DATA_SRC.ctl;
+HOST sqlldr food/food CONTROL=../sqlldr/DATA_SRC.ctl LOG=../sqlldr/DATA_SRC.log;
 -- Assert all 682 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -265,7 +276,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into DATSRCLN
-HOST SQLLDR food/food control=../sqlldr/DATSRCLN.ctl;
+HOST sqlldr food/food CONTROL=../sqlldr/DATSRCLN.ctl LOG=../sqlldr/DATSRCLN.log;
 -- Assert all 244496 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);

@@ -130,10 +130,10 @@ create table DATSRCLN (
 );
 
 -- Load data into FOOD_DES
-load data local infile '../data/FOOD_DES.txt'
+load data local infile '../data/FOOD_DES.txt.trimmed'
     into table FOOD_DES
     fields terminated by '^' optionally enclosed by '~'
-    lines terminated by '\r\n'
+    lines terminated by '\n'
     (NDB_No, FdGrp_Cd, Long_Desc, Shrt_Desc, ComName, ManufacName, Survey, Ref_desc, Refuse, SciName, N_Factor, Pro_Factor, Fat_Factor, CHO_Factor)
 ;
 -- Assert all 8789 records were loaded
@@ -145,10 +145,10 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into NUT_DATA
-load data local infile '../data/NUT_DATA.txt'
+load data local infile '../data/NUT_DATA.txt.trimmed'
     into table NUT_DATA
     fields terminated by '^' optionally enclosed by '~'
-    lines terminated by '\r\n'
+    lines terminated by '\n'
     (NDB_No, Nutr_No, Nutr_Val, Num_Data_Pts, Std_Error, Src_Cd, Deriv_Cd, Ref_NDB_No, Add_Nutr_Mark, Num_Studies, Min, Max, DF, Low_EB, Up_EB, Stat_cmt, @date1, CC)
     set
     AddMod_Date = str_to_date(@date1, '%m/%Y');
@@ -161,10 +161,10 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into WEIGHT
-load data local infile '../data/WEIGHT.txt'
+load data local infile '../data/WEIGHT.txt.trimmed'
     into table WEIGHT
     fields terminated by '^' optionally enclosed by '~'
-    lines terminated by '\r\n'
+    lines terminated by '\n'
     (NDB_No, Seq, Amount, Msre_Desc, Gm_Wgt, Num_Data_Pts, Std_Dev)
 ;
 -- Assert all 15438 records were loaded
@@ -176,10 +176,10 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into FOOTNOTE
-load data local infile '../data/FOOTNOTE.txt'
+load data local infile '../data/FOOTNOTE.txt.trimmed'
     into table FOOTNOTE
     fields terminated by '^' optionally enclosed by '~'
-    lines terminated by '\r\n'
+    lines terminated by '\n'
     (NDB_No, Footnt_No, Footnt_Typ, Nutr_No, Footnt_Txt)
 ;
 -- Assert all 552 records were loaded
@@ -191,10 +191,10 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into FD_GROUP
-load data local infile '../data/FD_GROUP.txt'
+load data local infile '../data/FD_GROUP.txt.trimmed'
     into table FD_GROUP
     fields terminated by '^' optionally enclosed by '~'
-    lines terminated by '\r\n'
+    lines terminated by '\n'
     (FdGrp_Cd, FdGrp_Desc)
 ;
 -- Assert all 25 records were loaded
@@ -206,10 +206,10 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into LANGUAL
-load data local infile '../data/LANGUAL.txt'
+load data local infile '../data/LANGUAL.txt.trimmed'
     into table LANGUAL
     fields terminated by '^' optionally enclosed by '~'
-    lines terminated by '\r\n'
+    lines terminated by '\n'
     (NDB_No, Factor_Code)
 ;
 -- Assert all 38301 records were loaded
@@ -221,10 +221,10 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into LANGDESC
-load data local infile '../data/LANGDESC.txt'
+load data local infile '../data/LANGDESC.txt.trimmed'
     into table LANGDESC
     fields terminated by '^' optionally enclosed by '~'
-    lines terminated by '\r\n'
+    lines terminated by '\n'
     (Factor_Code, Description)
 ;
 -- Assert all 774 records were loaded
@@ -236,10 +236,10 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into NUTR_DEF
-load data local infile '../data/NUTR_DEF.txt'
+load data local infile '../data/NUTR_DEF.txt.trimmed'
     into table NUTR_DEF
     fields terminated by '^' optionally enclosed by '~'
-    lines terminated by '\r\n'
+    lines terminated by '\n'
     (Nutr_No, Units, Tagname, NutrDesc, Num_Dec, SR_Order)
 ;
 -- Assert all 150 records were loaded
@@ -251,10 +251,10 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into SRC_CD
-load data local infile '../data/SRC_CD.txt'
+load data local infile '../data/SRC_CD.txt.trimmed'
     into table SRC_CD
     fields terminated by '^' optionally enclosed by '~'
-    lines terminated by '\r\n'
+    lines terminated by '\n'
     (Src_Cd, SrcCd_Desc)
 ;
 -- Assert all 10 records were loaded
@@ -266,10 +266,10 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into DERIV_CD
-load data local infile '../data/DERIV_CD.txt'
+load data local infile '../data/DERIV_CD.txt.trimmed'
     into table DERIV_CD
     fields terminated by '^' optionally enclosed by '~'
-    lines terminated by '\r\n'
+    lines terminated by '\n'
     (Deriv_Cd, Deriv_Desc)
 ;
 -- Assert all 55 records were loaded
@@ -281,10 +281,10 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into DATA_SRC
-load data local infile '../data/DATA_SRC.txt'
+load data local infile '../data/DATA_SRC.txt.trimmed'
     into table DATA_SRC
     fields terminated by '^' optionally enclosed by '~'
-    lines terminated by '\r\n'
+    lines terminated by '\n'
     (DataSrc_ID, Authors, Title, Year, Journal, Vol_City, Issue_State, Start_Page, End_Page)
 ;
 -- Assert all 682 records were loaded
@@ -296,10 +296,10 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into DATSRCLN
-load data local infile '../data/DATSRCLN.txt'
+load data local infile '../data/DATSRCLN.txt.trimmed'
     into table DATSRCLN
     fields terminated by '^' optionally enclosed by '~'
-    lines terminated by '\r\n'
+    lines terminated by '\n'
     (NDB_No, Nutr_No, DataSrc_ID)
 ;
 -- Assert all 244496 records were loaded

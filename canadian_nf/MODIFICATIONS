@@ -1,4 +1,6 @@
-The documentation does not mention what columns can be null, so assuming all columns cannot be null, here are the modifications made:
+All tables:
+- The original table data files are unchanged, but because during data import MySQL cannot handle trailing spaces and Oracle cannot handle trailing line feed characters (^M), the original "data/<table>.txt" files were copied to "data/<table>.txt.trimmed" files and processed further to remove all trailing whitespace on every line and empty lines altogether.
+- The documentation does not mention what columns can be null, so assuming all columns cannot be null, here are the modifications made:
 
 FOOD_NM:
 - Allow COUNTRY_C to be null as not all records specify a value

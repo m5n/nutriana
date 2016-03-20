@@ -12,7 +12,7 @@ sub sql_comment {
 }
 
 sub sql_how_to_run_as_admin {
-    my ($outfile) = @_;
+    my ($user_name, $outfile) = @_;
 
     return "mysql --local_infile=1 -v -u root < $outfile";
 }

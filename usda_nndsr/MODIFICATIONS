@@ -1,4 +1,4 @@
-Clarification of foreign key relationships is needed as the textual description of "this table links to that table" does not specify direction and sometimes refers to tables that do not hold the unique key. Here are the tables that define the keys that can be linked to (T.k means anywhere column k is used, it must relate back to T.k as a foreign key, except for table T itself):
+Clarification of foreign key relationships is needed as the textual description of "this table links to that table" does not specify direction and sometimes refers to tables that do not hold the unique key. Here are the tables that define the keys that can be linked to (T.c means anywhere column c is used, it must relate back to T.c as a foreign key, except for table T itself):
 - DATA_SRC.DataSrc_ID
 - DERIV_CD.Deriv_Cd
 - FD_GROUP.FdGrp_Cd
@@ -9,6 +9,9 @@ Clarification of foreign key relationships is needed as the textual description 
 
 
 Modifications made that were missing or incorrect in the data description file ./data/sr28_doc.pdf:
+
+All tables:
+- The original table data files are unchanged, but because during data import MySQL cannot handle trailing spaces and Oracle cannot handle trailing line feed characters (^M), the original "data/<table>.txt" files were copied to "data/<table>.txt.trimmed" files and processed further to remove all trailing whitespace on every line and empty lines altogether.
 
 DATA_SRC table
 - Number of records = 682 instead of 681.

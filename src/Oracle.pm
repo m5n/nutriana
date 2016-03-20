@@ -20,7 +20,7 @@ sub sql_comment {
 }
 
 sub sql_how_to_run_as_admin {
-    my ($outfile) = @_;
+    my ($user_name, $outfile) = @_;
 
     return "sqlplus \"/as sysdba\" < $outfile";
     # alternative: return "sqlplus system/your_pwd < $outfile";
@@ -35,7 +35,7 @@ sub sql_recreate_database_and_user_to_access_it {
     # TODO: drop database
 
     # Create database.
-    $result .= sql_comment("This script assumes you've already set up a database when you installed Oracle.") . "\n";   # TODO: create db
+    $result .= sql_comment("This script assumes you've already set up a database when you installed Oracle and that \$ORACLE_HOME/bin is in your path.") . "\n";   # TODO: create db
 
     # Switch to it.
     # Not needed for Oracle.
@@ -45,7 +45,21 @@ sub sql_recreate_database_and_user_to_access_it {
     # Yes, it's better to create tablespace, but then we'd have to pick a path to a
     # datafile, complicating the script.  Something like this could be added however:
     # DEFAULT TABLESPACE $user_name TEMPORARY TABLESPACE temp QUOTA UNLIMITED ON $user_name
+
+    # Needed since Oracle 12c.
+    $result .= "\n" . sql_comment('Needed since Oracle 12c.') . "\n";
+    $result .= "ALTER SESSION SET \"_ORACLE_SCRIPT\"=TRUE;\n\n";
+
     $result .= sql_ignore_exception("-01920", "CREATE USER $user_name IDENTIFIED BY $user_pwd") . "\n";   # Avoid error if user already exists.
+
+    # Needed since Oracle 12c.
+    $result .= "\n" . sql_comment('Needed since Oracle 12c.') . "\n";
+    $result .= "ALTER USER food QUOTA 100M ON USERS;\n";
+
+    # Needed since Oracle 12c.
+    $result .= "\n" . sql_comment('Needed since Oracle 12c.') . "\n";
+    $result .= "ALTER SESSION SET \"_ORACLE_SCRIPT\"=FALSE;\n\n";
+
     $result .= "GRANT CONNECT, RESOURCE TO $user_name;\n";
 
     # The tables should be created in the new user's schema (see "thanks" link above), so connect as that user.
@@ -156,15 +170,21 @@ sub sql_load_file {
     # Keep things tidy and gather all control files into a subdir.
     `mkdir -p ../$nutdbid/sqlldr`;
 
+    # Generate infile from $file (which looks like "../<nutdbid>/data/<table>.txt[.trimmed]").
+    my @parts = split /\//, $file;
+    splice @parts, 1, 1;
+    my $infile = join "/", @parts;
+
     # Generate control file.
     $file =~ s|/data/|/sqlldr/|;
-    $file =~ s/\.txt$/\.ctl/;
+    $file =~ s/\.txt(.trimmed)?$/\.ctl/;
+
     open FILE, ">$file" or die $!;
     print FILE "OPTIONS (DIRECT=TRUE, PARALLEL=TRUE";   # Load all or nothing.
     print FILE ", SKIP=$ignore_header_lines" if $ignore_header_lines;
     print FILE ")\n";
     print FILE "LOAD DATA\n";
-    print FILE "    INFILE '../data/$table_name.txt'\n";   # Using field separator so no need for streaming option to load multi-line values.
+    print FILE "    INFILE '$infile'\n";   # Using field separator so no need for streaming option to load multi-line values.
     print FILE "    APPEND\n";   # Must be APPEND to use PARALLEL option.
     print FILE "    INTO TABLE $table_name\n";
     print FILE "    FIELDS TERMINATED BY '$field_separator'\n";
@@ -185,7 +205,7 @@ sub sql_load_file {
 
     # Invoke sqlldr.
     my $relative_file = join("", split /$nutdbid\//, $file);
-    return "HOST SQLLDR $user_name/$user_pwd control=$relative_file;";
+    return "HOST sqlldr $user_name/$user_pwd CONTROL=$relative_file LOG=../sqlldr/$table_name.log;";
 }
 
 sub sql_assert_record_count {
