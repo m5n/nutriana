@@ -3,6 +3,10 @@
 # Generates the SQL file for a specific RDBMS.
 # This file is part of http://github/m5n/nutriana
 
+use strict;
+use warnings;
+
+
 
 # Change these to suit your needs.
 # TODO: move to properties file
@@ -58,7 +62,7 @@ print sql_recreate_database_and_user_to_access_it($nutdbid, $DB_USER, $DB_PWD, $
 # Create tables.
 foreach (@{$data->{"tables"}}) {
     my %table = %{$_};
-    my $table_name = substr($table{"file"}, 0, -length(".txt"));
+    my $table_name = $table{"table"};
     my @fields = @{$table{"fields"}};
     my $idx = 0;
 
@@ -76,23 +80,26 @@ foreach (@{$data->{"tables"}}) {
 }
 
 # Import data.
+$/ = $data->{"data_file_record_separator"};   # Some data file entries span multiple lines (probably due to a typo), so use custom record separator.
 foreach (@{$data->{"tables"}}) {
     my %table = %{$_};
-    my $table_name = substr($table{"file"}, 0, -length(".txt"));
+    my $table_name = $table{"table"};
     my @fieldinfo = ();
     my $datafile = "../$nutdbid/data/" . $table{"file"};
+    my $trimmedfile = $datafile;   # File used in sql_load_file below.
+    $trimmedfile =~ s/\s/_/g;
+    $trimmedfile .= ".trimmed";
     my $line_separator = "\\n";   # \\r, if any, will be removed via the .trimmed file.
 
     # Convert files to remove trailing whitespace and empty lines.
-    if (-e "$datafile.trimmed") {   # Only convert once.
-        $datafile = "$datafile.trimmed";   # Update file used in sql_load_file below.
-    } else {
+    if (!-e $trimmedfile) {   # Only convert once.
         open INFILE, "<", $datafile or die "Could not open $datafile: $!";
-        $datafile = "$datafile.trimmed";   # Update file used in sql_load_file below.
-        open OUTFILE, ">", $datafile or die "Could not open $datafile: $!";
+        open OUTFILE, ">", $trimmedfile or die "Could not open $trimmedfile: $!";
         # TODO: doing this while loop ends up setting @{$data->{"tables"}}[0] to undefined, leading to trouble below.  Why?
         while (<INFILE>) {
-            $_ =~ s/\s+$//g;
+            $_ =~ s/[\r\n]//g;   # Even though a custom record separator is used, make sure to remove any remaining "regular" line endings.
+            $_ =~ s/\s+$//g;   # Remove trailing space.
+            next if &empty_record($_, $data->{"field_separator"});
             print OUTFILE $_ . "\n" if length($_) > 0;   # Interpreted version of $line_separator.   # TODO: find Perl function to convert "\\n" -> "\n".
         }
         close INFILE;
@@ -106,7 +113,7 @@ foreach (@{$data->{"tables"}}) {
     }
 
     print sql_comment("Load data into $table_name") . "\n";
-    print sql_load_file($nutdbid, $DB_USER, $DB_PWD, $datafile, $table_name, $data->{"field_separator"}, $data->{"text_separator"}, $line_separator, $data->{"ignore_header_lines"}, @fieldinfo) . "\n";
+    print sql_load_file($nutdbid, $DB_USER, $DB_PWD, $trimmedfile, $table_name, $data->{"field_separator"}, $data->{"text_separator"}, $line_separator, $data->{"ignore_header_lines"}, @fieldinfo) . "\n";
 
     # Assert all records were loaded.  Make sure a SQL error is generated if the count is off.
     print sql_comment("Assert all " . $table{"records"} . " records were loaded") . "\n";
@@ -119,7 +126,7 @@ $data = decode_json($json);   # TODO: without this, we get this error: Can't use
 print sql_comment("Correct data inconsistencies, if any") . "\n";
 foreach (@{$data->{"tables"}}) {
     my %table = %{$_};
-    my $table_name = substr($table{"file"}, 0, -length(".txt"));
+    my $table_name = $table{"table"};
 
     foreach (@{$table{"fields"}}) {
         my %field = %{$_};
@@ -134,7 +141,7 @@ print "\n";
 print sql_comment("Add primary keys") . "\n";
 foreach (@{$data->{"tables"}}) {
     my %table = %{$_};
-    my $table_name = substr($table{"file"}, 0, -length(".txt"));
+    my $table_name = $table{"table"};
     my @primary_keys = ();
 
     foreach (@{$table{"fields"}}) {
@@ -151,11 +158,24 @@ print "\n";
 print sql_comment("Add foreign keys") . "\n";
 foreach (@{$data->{"tables"}}) {
     my %table = %{$_};
-    my $table_name = substr($table{"file"}, 0, -length(".txt"));
+    my $table_name = $table{"table"};
 
     foreach (@{$table{"fields"}}) {
         my %field = %{$_};
 
         print sql_add_foreign_key($table_name, $field{"name"}, $field{"foreign_key"}) . "\n" if $field{"foreign_key"};
     }
+}
+
+sub empty_record {
+  my ($record_str, $field_separator) = @_;
+
+  # This doesn't work, neither with or without \Q: $record_str =~ m/^\Q$field_separator+$/;
+  # Do it the hard--and non-Perl--way.
+  my $copy = $record_str;
+  while ((my $idx = index($copy, $field_separator)) >= 0) {
+    $copy = substr($copy, 0, $idx) . substr($copy, $idx + length($field_separator));
+  }
+
+  return length($copy) == 0;
 }

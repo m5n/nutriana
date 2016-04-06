@@ -2,11 +2,13 @@
     "version": 28,
     "description": "USDA National Nutrient Database for Standard Reference (Abbreviated Version), Release 28",
     "url": "http://www.ars.usda.gov/ba/bhnrc/ndl",
+    "data_file_record_separator": "\u000D",
     "field_separator": "^",
     "text_separator": "~",
     "ignore_header_lines": 0,
     "tables": [
         {
+            "table": "ABBREV",
             "file": "ABBREV.txt",
             "description": "Abbreviated",
             "records": 8789,

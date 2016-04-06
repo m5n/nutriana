@@ -1,0 +1,21 @@
+NutrientSourceID,NutrientSourceCode,NutrientSourceDescription,NutrientSourc DescriptionF
+0,0,No change from USDA,Provient intégralement de l'USDA
+1,1,Nutrient levels changed to meet the canadian regulations ,Teneur en nutriments modifiée pour satisfaire la réglementation canadienne
+2,2,Nutrient calculated from data other than USDA,Nutriment calculé avec des données autres que l'USDA
+3,3,Nutrient analyzed in a Canadian government lab,Nutriment analysé en laboratoire du gouvernement canadien
+4,4,Nutrient calculated from USDA data,Nutriment calculé d'après les données de l'USDA
+5,5,Nutrient imputed from a similar USDA food,Nutriment imputé d'un aliment semblable du USDA
+6,6,Nutrient from canadian industry. Documentation incomplete.,Nutriment provenant de l'industrie canadienne. Documentation incomplète.
+7,7,Nutrient analyzed in Canadian product (non-government lab). Documentation complete.,Nutriment analysé d'un produit canadien (labo non gouvernemental). Documentation complète.
+8,8,Nutrient value of food created for the Nutrition Canada Survey,Nutriment provenant d'un aliment créé pour l'Enquête Nutrition Canada
+9,9,Nutrient from the label declaration,Nutriment tiré de l'information nutritionnelle de l'étiquette
+10,10,Nutrient derived from scientific literature,Nutriment provenant de la littérature scientifique
+12,12,Nutrient value is an assumed zero,Nutriment estimé à zéro 
+14,14,Provisional data,Donnée provisoire
+15,15,Nutrient value imputed from data other than USDA,Nutriment imputé de source autre que l'USDA
+82,82,Danish Food Composition Databank (revision 5.0)   Danish Institute for Food and Veterinary Research (revision 5),Base de données danoise sur la composition des aliments. Institut danois sur la recherche alimentaire et vétérinaire.
+83,83,Fineli.  Finnish food composition database.  National Public Health Institute.,Fineli: Base de données finlandaise sur la composition des aliments. Institut National de la Santé Publique
+102,51,Calculated using a recipe,Calculé d'après une recette
+106,16,Calculated field,Champ calculé
+107,17,Calculated from analytical Canadian data,Calculé à partir de données analytiques canadiennes
+108,18,Imputed data that USDA has deleted,

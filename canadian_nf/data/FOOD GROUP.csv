@@ -1,0 +1,25 @@
+FoodGroupID,FoodGroupCode,FoodGroupName,FoodGroupNameF
+1,1,Dairy and Egg Products,"Produits laitiers et d'oeufs
+"
+2,2,Spices and Herbs,Épices et fines herbes
+3,3,Babyfoods,Aliments pour bébés
+4,4,Fats and Oils,Matières grasses et huiles
+5,5,Poultry Products,Produits de volaille
+6,6,"Soups, Sauces and Gravies",Potages et sauces
+7,7,Sausages and Luncheon meats,Saucisses et viandes froides
+8,8,Breakfast cereals,Céréales à déjeuner
+9,9,Fruits and fruit juices,Fruits et jus de fruits
+10,10,Pork Products,Produits de porc
+11,11,Vegetables and Vegetable Products,Légumes et produits végétaux
+12,12,Nuts and Seeds,Noix et graines
+13,13,Beef Products,Produits de boeuf
+14,14,Beverages,Boissons
+15,15,Finfish and Shellfish Products,"Produits de poissons, mollusques et crustacés"
+16,16,Legumes and Legume Products,Légumineuses et produits de légumineuses
+17,17,"Lamb, Veal and Game","Ageau, veau et gibier"
+18,18,Baked Products,Produits de boulangerie
+19,19,Sweets,Sucreries
+20,20,"Cereals, Grains and Pasta","Céréales, grains et pâtes"
+21,21,Fast Foods,Aliments prêts-à-manger
+22,22,Mixed Dishes,Mets composés
+25,25,Snacks,Grignotises

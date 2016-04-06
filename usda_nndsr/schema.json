@@ -2,11 +2,13 @@
     "version": 28,
     "description": "USDA National Nutrient Database for Standard Reference, Release 28",
     "url": "http://www.ars.usda.gov/ba/bhnrc/ndl",
+    "data_file_record_separator": "\u000D",
     "field_separator": "^",
     "text_separator": "~",
     "ignore_header_lines": 0,
     "tables": [
         {
+            "table": "FOOD_DES",
             "file": "FOOD_DES.txt",
             "description": "Food Description",
             "records": 8789,
@@ -114,6 +116,7 @@
             ]
         },
         {
+            "table": "NUT_DATA",
             "file": "NUT_DATA.txt",
             "description": "Nutrient Data",
             "records": 679045,
@@ -255,6 +258,7 @@
             ]
         },
         {
+            "table": "WEIGHT",
             "file": "WEIGHT.txt",
             "description": "Weight",
             "records": 15438,
@@ -314,6 +318,7 @@
            ]
         },
         {
+            "table": "FOOTNOTE",
             "file": "FOOTNOTE.txt",
             "description": "Footnote",
             "records": 552,
@@ -359,6 +364,7 @@
            ]
         },
         {
+            "table": "FD_GROUP",
             "file": "FD_GROUP.txt",
             "description": "Food Group Description",
             "records": 25,
@@ -381,6 +387,7 @@
             ]
         },
         {
+            "table": "LANGUAL",
             "file": "LANGUAL.txt",
             "description": "LanguaL Factor",
             "records": 38301,
@@ -406,6 +413,7 @@
             ]
         },
         {
+            "table": "LANGDESC",
             "file": "LANGDESC.txt",
             "description": "LanguaL Factors Description",
             "records": 774,
@@ -428,6 +436,7 @@
            ]
         },
         {
+            "table": "NUTR_DEF",
             "file": "NUTR_DEF.txt",
             "description": "Nutrient Definition",
             "records": 150,
@@ -478,6 +487,7 @@
            ]
         },
         {
+            "table": "SRC_CD",
             "file": "SRC_CD.txt",
             "description": "Source Code",
             "records": 10,
@@ -500,6 +510,7 @@
            ]
         },
         {
+            "table": "DERIV_CD",
             "file": "DERIV_CD.txt",
             "description": "Data Derivation Code Description",
             "records": 55,
@@ -522,6 +533,7 @@
            ]
         },
         {
+            "table": "DATA_SRC",
             "file": "DATA_SRC.txt",
             "description": "Sources of Data",
             "records": 682,
@@ -593,6 +605,7 @@
            ]
         },
         {
+            "table": "DATSRCLN",
             "file": "DATSRCLN.txt",
             "description": "Sources of Data Link",
             "records": 244496,

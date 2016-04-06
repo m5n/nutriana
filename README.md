@@ -3,8 +3,8 @@
 * Oracle
 
 ### Nutrient Databases Included
-* Canadian Nutrient File, Health Canada, 2010
-  (electronic version at www.healthcanada.gc.ca/cnf)
+* Health Canada, 2015. Canadian Nutrient File
+  www.healthcanada.gc.ca/cnf
 * US Department of Agriculture, Agricultural Research Service, Nutrient Data Laboratory.
   USDA National Nutrient Database for Standard Reference, Release 28. Version Current:
   September 2015. Internet: http://www.ars.usda.gov/ba/bhnrc/ndl
