@@ -58,13 +58,7 @@ NUTRIENT AMOUNT:
 NUTRIENT NAME:
 - Allow Tagname to be null as not all records specify a value
 
-TODO: review the rest:
-
-FOOD_NM:
-- (MySQL) Change FD_SRC_ID size from 11 to 2 to prevent an error with MySQL which requires the size of foreign keyed column to be the same as the referenced column:
-  120918 23:08:28 Error in foreign key constraint of table canadian_nf/#sql-5f1_5f:
-  foreign key (FD_SRC_ID) references FOOD_SRC(FD_SRC_ID):
-  Cannot find an index in the referenced table where the
-  referenced columns appear as the first columns, or column types
-  in the table and the referenced table do not match for constraint.
-
+NUTRIENT_SOURCE:
+- One record has a missing value for NutrientSourceDescriptionF: 
+  108,18,Imputed data that USDA has deleted,
+  It was corrected by manually filling in that value in the NUTRIENT_SOURCE.csv.trimmed file (rather than allowing NutrientSourceDescriptionF to be null).

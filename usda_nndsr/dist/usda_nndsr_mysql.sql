@@ -53,10 +53,10 @@ create table NUT_DATA (
 create table WEIGHT (
     NDB_No varchar(5) not null,   -- 5-digit Nutrient Databank number that uniquely identifies a food item. If this field is defined as numeric, the leading zero will be lost.
     Seq varchar(2) not null,   -- Sequence number.
-    Amount dec(5, 3) unsigned not null,   -- Unit modifier (for example, 1 in "1 cup").
+    Amount dec(6, 3) unsigned not null,   -- Unit modifier (for example, 1 in "1 cup").
     Msre_Desc varchar(84) not null,   -- Description (for example, cup, diced, and 1-inch pieces).
     Gm_Wgt dec(7, 1) unsigned not null,   -- Gram weight.
-    Num_Data_Pts smallint(3) unsigned,   -- Number of data points.
+    Num_Data_Pts smallint(4) unsigned,   -- Number of data points.
     Std_Dev dec(7, 3) unsigned   -- Standard deviation.
 );
 

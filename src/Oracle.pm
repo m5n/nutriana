@@ -54,7 +54,7 @@ sub sql_recreate_database_and_user_to_access_it {
 
     # Needed since Oracle 12c.
     $result .= "\n" . sql_comment('Needed since Oracle 12c.') . "\n";
-    $result .= "ALTER USER food QUOTA 100M ON USERS;\n";
+    $result .= "ALTER USER food QUOTA UNLIMITED ON USERS;\n";
 
     # Needed since Oracle 12c.
     $result .= "\n" . sql_comment('Needed since Oracle 12c.') . "\n";

@@ -41,3 +41,13 @@ NUT_DATA table
 
 NUTR_DEF table
 - NUTR_DEF.txt contains non-ASCII characters (the mcg symbol). This is not corrected, so the actual value in the DB may not be the right character.
+
+WEIGHT table:
+- Change the size of Amount from 5.3 to 6.3 to accommodate these records (remember, n.m means n digits total with m decimal places):
+  ~14260~^1^240^~ml~^240^1^
+  ~14276~^2^200^~ml~^200^1^
+
+- Change the size of Num_Data_Pts from 3 to 4 to accommodate these records:
+  ~07254~^2^1^~slice 12 oz pkg~^16^1329^
+  ~07973~^1^1^~slice~^8.1^1587^
+  ~07973~^2^1^~raw pr g~^15^1627^

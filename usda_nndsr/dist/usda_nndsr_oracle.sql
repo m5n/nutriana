@@ -13,7 +13,7 @@ BEGIN EXECUTE IMMEDIATE 'CREATE USER food IDENTIFIED BY food'; EXCEPTION WHEN OT
 /
 
 -- Needed since Oracle 12c.
-ALTER USER food QUOTA 100M ON USERS;
+ALTER USER food QUOTA UNLIMITED ON USERS;
 
 -- Needed since Oracle 12c.
 ALTER SESSION SET "_ORACLE_SCRIPT"=FALSE;
@@ -71,10 +71,10 @@ BEGIN EXECUTE IMMEDIATE 'DROP TABLE WEIGHT CASCADE CONSTRAINTS'; EXCEPTION WHEN 
 CREATE TABLE WEIGHT (
     NDB_No VARCHAR2(5) NOT NULL,   -- 5-digit Nutrient Databank number that uniquely identifies a food item. If this field is defined as numeric, the leading zero will be lost.
     Seq VARCHAR2(2) NOT NULL,   -- Sequence number.
-    Amount NUMBER(5, 3) NOT NULL,   -- Unit modifier (for example, 1 in "1 cup").
+    Amount NUMBER(6, 3) NOT NULL,   -- Unit modifier (for example, 1 in "1 cup").
     Msre_Desc VARCHAR2(84) NOT NULL,   -- Description (for example, cup, diced, and 1-inch pieces).
     Gm_Wgt NUMBER(7, 1) NOT NULL,   -- Gram weight.
-    Num_Data_Pts NUMBER(3),   -- Number of data points.
+    Num_Data_Pts NUMBER(4),   -- Number of data points.
     Std_Dev NUMBER(7, 3)   -- Standard deviation.
 );
 

@@ -283,7 +283,7 @@
                 {
                     "name": "Amount",
                     "type": "Numeric",
-                    "size": 5.3,
+                    "size": 6.3,
                     "allows_null": false,
                     "description": "Unit modifier (for example, 1 in \"1 cup\")."
                 },
@@ -304,7 +304,7 @@
                 {
                     "name": "Num_Data_Pts",
                     "type": "Numeric",
-                    "size": 3,
+                    "size": 4,
                     "allows_null": true,
                     "description": "Number of data points."
                 },
