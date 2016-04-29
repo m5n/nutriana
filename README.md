@@ -17,7 +17,8 @@ e.g. "usda_nndsr/dist".
 ### Project Description
 Nutriana takes the food composition data released by various official sources
 in the world and converts it into formats specific to the database systems
-mentioned above.
+mentioned above. (A good list of nutrient databases in the world is available here:
+http://www.langual.org/langual_linkcategory.asp?CategoryID=4&Category=Food+Composition)
 
 ### How it Works
 A human being is needed to extract the description and constraints of a given
