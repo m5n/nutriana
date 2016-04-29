@@ -152,7 +152,7 @@ CREATE TABLE YIELD_NAME (
 );
 
 -- Load data into FOOD_NAME
-HOST sqlldr food/food CONTROL=../sqlldr/FOOD_NAME.csv.trimmed LOG=../sqlldr/FOOD_NAME.log;
+HOST sqlldr food/food CONTROL=./sqlldr/FOOD_NAME.ctl LOG=./sqlldr/FOOD_NAME.log;
 -- Assert all 5690 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -162,7 +162,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into NUTRIENT_AMOUNT
-HOST sqlldr food/food CONTROL=../sqlldr/NUTRIENT_AMOUNT.csv.trimmed LOG=../sqlldr/NUTRIENT_AMOUNT.log;
+HOST sqlldr food/food CONTROL=./sqlldr/NUTRIENT_AMOUNT.ctl LOG=./sqlldr/NUTRIENT_AMOUNT.log;
 -- Assert all 524674 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -172,7 +172,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into CONVERSION_FACTOR
-HOST sqlldr food/food CONTROL=../sqlldr/CONVERSION_FACTOR.csv.trimmed LOG=../sqlldr/CONVERSION_FACTOR.log;
+HOST sqlldr food/food CONTROL=./sqlldr/CONVERSION_FACTOR.ctl LOG=./sqlldr/CONVERSION_FACTOR.log;
 -- Assert all 19505 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -182,7 +182,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into REFUSE_AMOUNT
-HOST sqlldr food/food CONTROL=../sqlldr/REFUSE_AMOUNT.csv.trimmed LOG=../sqlldr/REFUSE_AMOUNT.log;
+HOST sqlldr food/food CONTROL=./sqlldr/REFUSE_AMOUNT.ctl LOG=./sqlldr/REFUSE_AMOUNT.log;
 -- Assert all 6897 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -192,7 +192,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into YIELD_AMOUNT
-HOST sqlldr food/food CONTROL=../sqlldr/YIELD_AMOUNT.csv.trimmed LOG=../sqlldr/YIELD_AMOUNT.log;
+HOST sqlldr food/food CONTROL=./sqlldr/YIELD_AMOUNT.ctl LOG=./sqlldr/YIELD_AMOUNT.log;
 -- Assert all 1426 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -202,7 +202,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into FOOD_GROUP
-HOST sqlldr food/food CONTROL=../sqlldr/FOOD_GROUP.csv.trimmed LOG=../sqlldr/FOOD_GROUP.log;
+HOST sqlldr food/food CONTROL=./sqlldr/FOOD_GROUP.ctl LOG=./sqlldr/FOOD_GROUP.log;
 -- Assert all 23 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -212,7 +212,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into FOOD_SOURCE
-HOST sqlldr food/food CONTROL=../sqlldr/FOOD_SOURCE.csv.trimmed LOG=../sqlldr/FOOD_SOURCE.log;
+HOST sqlldr food/food CONTROL=./sqlldr/FOOD_SOURCE.ctl LOG=./sqlldr/FOOD_SOURCE.log;
 -- Assert all 16 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -222,7 +222,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into NUTRIENT_NAME
-HOST sqlldr food/food CONTROL=../sqlldr/NUTRIENT_NAME.csv.trimmed LOG=../sqlldr/NUTRIENT_NAME.log;
+HOST sqlldr food/food CONTROL=./sqlldr/NUTRIENT_NAME.ctl LOG=./sqlldr/NUTRIENT_NAME.log;
 -- Assert all 152 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -232,7 +232,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into NUTRIENT_SOURCE
-HOST sqlldr food/food CONTROL=../sqlldr/NUTRIENT_SOURCE.csv.trimmed LOG=../sqlldr/NUTRIENT_SOURCE.log;
+HOST sqlldr food/food CONTROL=./sqlldr/NUTRIENT_SOURCE.ctl LOG=./sqlldr/NUTRIENT_SOURCE.log;
 -- Assert all 20 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -242,7 +242,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into MEASURE_NAME
-HOST sqlldr food/food CONTROL=../sqlldr/MEASURE_NAME.csv.trimmed LOG=../sqlldr/MEASURE_NAME.log;
+HOST sqlldr food/food CONTROL=./sqlldr/MEASURE_NAME.ctl LOG=./sqlldr/MEASURE_NAME.log;
 -- Assert all 1177 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -252,7 +252,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into REFUSE_NAME
-HOST sqlldr food/food CONTROL=../sqlldr/REFUSE_NAME.csv.trimmed LOG=../sqlldr/REFUSE_NAME.log;
+HOST sqlldr food/food CONTROL=./sqlldr/REFUSE_NAME.ctl LOG=./sqlldr/REFUSE_NAME.log;
 -- Assert all 150 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);
@@ -262,7 +262,7 @@ INSERT INTO tmp (SELECT COUNT(*) FROM tmp);
 DROP TABLE tmp;
 
 -- Load data into YIELD_NAME
-HOST sqlldr food/food CONTROL=../sqlldr/YIELD_NAME.csv.trimmed LOG=../sqlldr/YIELD_NAME.log;
+HOST sqlldr food/food CONTROL=./sqlldr/YIELD_NAME.ctl LOG=./sqlldr/YIELD_NAME.log;
 -- Assert all 79 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);

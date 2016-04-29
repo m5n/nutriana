@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# Delete Oracle sqlldr control files.
-rm -rf ../*/sqlldr
+# Delete Oracle sqlldr log files.
+rm -rf ../*/dist/sqlldr/*.log
 
-# Delete trimmed files.
-rm -rf ../*/data/*.trimmed
+# Delete Oracle sqlldr bad files.
+rm -rf ../*/dist/sqlldr/*.bad

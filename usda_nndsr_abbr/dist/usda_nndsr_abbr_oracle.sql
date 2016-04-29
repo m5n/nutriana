@@ -81,7 +81,7 @@ CREATE TABLE ABBREV (
 );
 
 -- Load data into ABBREV
-HOST sqlldr food/food CONTROL=../sqlldr/ABBREV.ctl LOG=../sqlldr/ABBREV.log;
+HOST sqlldr food/food CONTROL=./sqlldr/ABBREV.ctl LOG=./sqlldr/ABBREV.log;
 -- Assert all 8789 records were loaded
 CREATE TABLE tmp (c NUMBER PRIMARY KEY);
 INSERT INTO tmp (c) VALUES (2);

@@ -67,7 +67,7 @@ create table ABBREV (
 );
 
 -- Load data into ABBREV
-load data local infile '../data/ABBREV.txt.trimmed'
+load data local infile './data.processed/ABBREV.txt.trimmed'
     into table ABBREV
     fields terminated by '^' optionally enclosed by '~'
     lines terminated by '\n'

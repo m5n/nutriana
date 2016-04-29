@@ -130,7 +130,7 @@ create table DATSRCLN (
 );
 
 -- Load data into FOOD_DES
-load data local infile '../data/FOOD_DES.txt.trimmed'
+load data local infile './data.processed/FOOD_DES.txt.trimmed'
     into table FOOD_DES
     fields terminated by '^' optionally enclosed by '~'
     lines terminated by '\n'
@@ -145,7 +145,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into NUT_DATA
-load data local infile '../data/NUT_DATA.txt.trimmed'
+load data local infile './data.processed/NUT_DATA.txt.trimmed'
     into table NUT_DATA
     fields terminated by '^' optionally enclosed by '~'
     lines terminated by '\n'
@@ -161,7 +161,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into WEIGHT
-load data local infile '../data/WEIGHT.txt.trimmed'
+load data local infile './data.processed/WEIGHT.txt.trimmed'
     into table WEIGHT
     fields terminated by '^' optionally enclosed by '~'
     lines terminated by '\n'
@@ -176,7 +176,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into FOOTNOTE
-load data local infile '../data/FOOTNOTE.txt.trimmed'
+load data local infile './data.processed/FOOTNOTE.txt.trimmed'
     into table FOOTNOTE
     fields terminated by '^' optionally enclosed by '~'
     lines terminated by '\n'
@@ -191,7 +191,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into FD_GROUP
-load data local infile '../data/FD_GROUP.txt.trimmed'
+load data local infile './data.processed/FD_GROUP.txt.trimmed'
     into table FD_GROUP
     fields terminated by '^' optionally enclosed by '~'
     lines terminated by '\n'
@@ -206,7 +206,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into LANGUAL
-load data local infile '../data/LANGUAL.txt.trimmed'
+load data local infile './data.processed/LANGUAL.txt.trimmed'
     into table LANGUAL
     fields terminated by '^' optionally enclosed by '~'
     lines terminated by '\n'
@@ -221,7 +221,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into LANGDESC
-load data local infile '../data/LANGDESC.txt.trimmed'
+load data local infile './data.processed/LANGDESC.txt.trimmed'
     into table LANGDESC
     fields terminated by '^' optionally enclosed by '~'
     lines terminated by '\n'
@@ -236,7 +236,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into NUTR_DEF
-load data local infile '../data/NUTR_DEF.txt.trimmed'
+load data local infile './data.processed/NUTR_DEF.txt.trimmed'
     into table NUTR_DEF
     fields terminated by '^' optionally enclosed by '~'
     lines terminated by '\n'
@@ -251,7 +251,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into SRC_CD
-load data local infile '../data/SRC_CD.txt.trimmed'
+load data local infile './data.processed/SRC_CD.txt.trimmed'
     into table SRC_CD
     fields terminated by '^' optionally enclosed by '~'
     lines terminated by '\n'
@@ -266,7 +266,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into DERIV_CD
-load data local infile '../data/DERIV_CD.txt.trimmed'
+load data local infile './data.processed/DERIV_CD.txt.trimmed'
     into table DERIV_CD
     fields terminated by '^' optionally enclosed by '~'
     lines terminated by '\n'
@@ -281,7 +281,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into DATA_SRC
-load data local infile '../data/DATA_SRC.txt.trimmed'
+load data local infile './data.processed/DATA_SRC.txt.trimmed'
     into table DATA_SRC
     fields terminated by '^' optionally enclosed by '~'
     lines terminated by '\n'
@@ -296,7 +296,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into DATSRCLN
-load data local infile '../data/DATSRCLN.txt.trimmed'
+load data local infile './data.processed/DATSRCLN.txt.trimmed'
     into table DATSRCLN
     fields terminated by '^' optionally enclosed by '~'
     lines terminated by '\n'

@@ -80,6 +80,7 @@ foreach (@{$data->{"tables"}}) {
 }
 
 # Import data.
+`mkdir -p ../$nutdbid/dist/data.processed`;   # Keep things tidy and gather all trimmed files into a subdir.
 $/ = $data->{"data_file_record_separator"};   # Some data file entries span multiple lines (probably due to a typo), so use custom record separator.
 foreach (@{$data->{"tables"}}) {
     my %table = %{$_};
@@ -88,6 +89,7 @@ foreach (@{$data->{"tables"}}) {
     my $datafile = "../$nutdbid/data/" . $table{"file"};
     my $trimmedfile = $datafile;   # File used in sql_load_file below.
     $trimmedfile =~ s/\s/_/g;
+    $trimmedfile =~ s|/data/|/dist/data.processed/|g;
     $trimmedfile .= ".trimmed";
     my $line_separator = "\\n";   # \\r, if any, will be removed via the .trimmed file.
 

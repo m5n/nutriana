@@ -168,16 +168,16 @@ sub sql_load_file {
     my ($nutdbid, $user_name, $user_pwd, $file, $table_name, $field_separator, $text_separator, $line_separator, $ignore_header_lines, @fieldinfo) = @_;
 
     # Keep things tidy and gather all control files into a subdir.
-    `mkdir -p ../$nutdbid/sqlldr`;
+    `mkdir -p ../$nutdbid/dist/sqlldr`;
 
-    # Generate infile from $file (which looks like "../<nutdbid>/data/<table>.txt[.trimmed]").
+    # Generate infile from $file (which looks like "../<nutdbid>/dist/data.processed/<table>.(csv|txt)[.trimmed]").
     my @parts = split /\//, $file;
-    splice @parts, 1, 1;
-    my $infile = join "/", @parts;
+    splice @parts, 0, 3;
+    my $infile = "./" . join("/", @parts);
 
     # Generate control file.
-    $file =~ s|/data/|/sqlldr/|;
-    $file =~ s/\.txt(.trimmed)?$/\.ctl/;
+    $file =~ s|/data.processed/|/sqlldr/|;
+    $file =~ s/\.(csv|txt)(.trimmed)?$/\.ctl/;
 
     open FILE, ">$file" or die $!;
     print FILE "OPTIONS (DIRECT=TRUE, PARALLEL=TRUE";   # Load all or nothing.
@@ -204,8 +204,8 @@ sub sql_load_file {
     close FILE;
 
     # Invoke sqlldr.
-    my $relative_file = join("", split /$nutdbid\//, $file);
-    return "HOST sqlldr $user_name/$user_pwd CONTROL=$relative_file LOG=../sqlldr/$table_name.log;";
+    my $relative_file = join("", split /\.\/$nutdbid\/dist/, $file);
+    return "HOST sqlldr $user_name/$user_pwd CONTROL=$relative_file LOG=./sqlldr/$table_name.log;";
 }
 
 sub sql_assert_record_count {

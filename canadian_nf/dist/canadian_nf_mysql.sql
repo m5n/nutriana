@@ -116,7 +116,7 @@ create table YIELD_NAME (
 );
 
 -- Load data into FOOD_NAME
-load data local infile '../data/FOOD_NAME.csv.trimmed'
+load data local infile './data.processed/FOOD_NAME.csv.trimmed'
     into table FOOD_NAME
     fields terminated by ',' optionally enclosed by '"'
     lines terminated by '\n'
@@ -134,7 +134,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into NUTRIENT_AMOUNT
-load data local infile '../data/NUTRIENT_AMOUNT.csv.trimmed'
+load data local infile './data.processed/NUTRIENT_AMOUNT.csv.trimmed'
     into table NUTRIENT_AMOUNT
     fields terminated by ',' optionally enclosed by '"'
     lines terminated by '\n'
@@ -151,7 +151,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into CONVERSION_FACTOR
-load data local infile '../data/CONVERSION_FACTOR.csv.trimmed'
+load data local infile './data.processed/CONVERSION_FACTOR.csv.trimmed'
     into table CONVERSION_FACTOR
     fields terminated by ',' optionally enclosed by '"'
     lines terminated by '\n'
@@ -168,7 +168,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into REFUSE_AMOUNT
-load data local infile '../data/REFUSE_AMOUNT.csv.trimmed'
+load data local infile './data.processed/REFUSE_AMOUNT.csv.trimmed'
     into table REFUSE_AMOUNT
     fields terminated by ',' optionally enclosed by '"'
     lines terminated by '\n'
@@ -185,7 +185,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into YIELD_AMOUNT
-load data local infile '../data/YIELD_AMOUNT.csv.trimmed'
+load data local infile './data.processed/YIELD_AMOUNT.csv.trimmed'
     into table YIELD_AMOUNT
     fields terminated by ',' optionally enclosed by '"'
     lines terminated by '\n'
@@ -202,7 +202,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into FOOD_GROUP
-load data local infile '../data/FOOD_GROUP.csv.trimmed'
+load data local infile './data.processed/FOOD_GROUP.csv.trimmed'
     into table FOOD_GROUP
     fields terminated by ',' optionally enclosed by '"'
     lines terminated by '\n'
@@ -218,7 +218,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into FOOD_SOURCE
-load data local infile '../data/FOOD_SOURCE.csv.trimmed'
+load data local infile './data.processed/FOOD_SOURCE.csv.trimmed'
     into table FOOD_SOURCE
     fields terminated by ',' optionally enclosed by '"'
     lines terminated by '\n'
@@ -234,7 +234,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into NUTRIENT_NAME
-load data local infile '../data/NUTRIENT_NAME.csv.trimmed'
+load data local infile './data.processed/NUTRIENT_NAME.csv.trimmed'
     into table NUTRIENT_NAME
     fields terminated by ',' optionally enclosed by '"'
     lines terminated by '\n'
@@ -250,7 +250,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into NUTRIENT_SOURCE
-load data local infile '../data/NUTRIENT_SOURCE.csv.trimmed'
+load data local infile './data.processed/NUTRIENT_SOURCE.csv.trimmed'
     into table NUTRIENT_SOURCE
     fields terminated by ',' optionally enclosed by '"'
     lines terminated by '\n'
@@ -266,7 +266,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into MEASURE_NAME
-load data local infile '../data/MEASURE_NAME.csv.trimmed'
+load data local infile './data.processed/MEASURE_NAME.csv.trimmed'
     into table MEASURE_NAME
     fields terminated by ',' optionally enclosed by '"'
     lines terminated by '\n'
@@ -282,7 +282,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into REFUSE_NAME
-load data local infile '../data/REFUSE_NAME.csv.trimmed'
+load data local infile './data.processed/REFUSE_NAME.csv.trimmed'
     into table REFUSE_NAME
     fields terminated by ',' optionally enclosed by '"'
     lines terminated by '\n'
@@ -298,7 +298,7 @@ insert into tmp (select count(*) from tmp);
 drop table tmp;
 
 -- Load data into YIELD_NAME
-load data local infile '../data/YIELD_NAME.csv.trimmed'
+load data local infile './data.processed/YIELD_NAME.csv.trimmed'
     into table YIELD_NAME
     fields terminated by ',' optionally enclosed by '"'
     lines terminated by '\n'

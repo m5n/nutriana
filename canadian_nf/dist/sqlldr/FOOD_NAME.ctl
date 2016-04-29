@@ -1,0 +1,9 @@
+OPTIONS (DIRECT=TRUE, PARALLEL=TRUE, SKIP=1)
+LOAD DATA
+    INFILE './data.processed/FOOD_NAME.csv.trimmed'
+    APPEND
+    INTO TABLE FOOD_NAME
+    FIELDS TERMINATED BY ','
+    OPTIONALLY ENCLOSED BY '"'
+    TRAILING NULLCOLS
+    (FoodID INTEGER EXTERNAL, FoodCode INTEGER EXTERNAL, FoodGroupID INTEGER EXTERNAL, FoodSourceID INTEGER EXTERNAL, FoodDescription CHAR, FoodDescriptionF CHAR, FoodDateOfEntry DATE "yyyy-mm-dd", FoodDateOfPublication DATE "yyyy-mm-dd", CountryCode INTEGER EXTERNAL, ScientificName CHAR)

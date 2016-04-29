@@ -1,0 +1,9 @@
+OPTIONS (DIRECT=TRUE, PARALLEL=TRUE, SKIP=1)
+LOAD DATA
+    INFILE './data.processed/NUTRIENT_SOURCE.csv.trimmed'
+    APPEND
+    INTO TABLE NUTRIENT_SOURCE
+    FIELDS TERMINATED BY ','
+    OPTIONALLY ENCLOSED BY '"'
+    TRAILING NULLCOLS
+    (NutrientSourceID INTEGER EXTERNAL, NutrientSourceCode INTEGER EXTERNAL, NutrientSourceDescription CHAR, NutrientSourceDescriptionF CHAR)
