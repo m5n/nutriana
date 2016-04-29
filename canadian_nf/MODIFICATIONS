@@ -12,7 +12,7 @@ FOOD NAME:
 - Allow ScientificName to be null as not all records specify a value
 - One record has FoodSourceID of 32, which does not exist in FOOD SOURCE table:
   4264,4264,19,32,"Dessert, pudding, vanilla, dry mix, instant, prepared with 2% milk","Dessert, pouding, vanille, mélange sec, instantané, préparé avec lait 2%",1994-01-01,,19211,
-  It was corrected by setting FoodSourceID to 0 in the FOOD_NAME.csv.trimmed file.
+  It was corrected by manually setting FoodSourceID to 0 in the FOOD_NAME.csv.trimmed file.
 - Change FoodID size from 11 to 8 to prevent an error with MySQL which requires the size of foreign keyed column to be the same as the referenced column.
 
 FOOD SOURCE:
@@ -45,15 +45,14 @@ MEASURE NAME:
   |    502472 |
   +-----------+
   15 rows in set (0.02 sec)
-  It was corrected by inserting these missing values into the MEASURE NAME table via the MEASURE_NAME.csv.trimmed file.
-
+  It was corrected by manually inserting these missing values into the MEASURE NAME table via the MEASURE_NAME.csv.trimmed file.
 
 NUTRIENT AMOUNT:
 - Allow StandardError to be null as not all records specify a value
 - Allow NumberOfObservations to be null as not all records specify a value
 - One record has a NutrientID value of 328, which does not exist in the NUTRIENT NAME table:
   534,328,0.1,,,0,2015-05-15
-  It was corrected by setting NutrientID to 339 (the ID for the record in NUTRIENT NAME with NutrientCode == 328) in the NUTRIENT_AMOUNT.csv.trimmed file.
+  It was corrected by manually setting NutrientID to 339 (the ID for the record in NUTRIENT NAME with NutrientCode == 328) in the NUTRIENT_AMOUNT.csv.trimmed file.
 
 NUTRIENT NAME:
 - Allow Tagname to be null as not all records specify a value
