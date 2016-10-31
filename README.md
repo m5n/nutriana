@@ -7,7 +7,7 @@
   www.healthcanada.gc.ca/cnf
 * US Department of Agriculture, Agricultural Research Service, Nutrient Data Laboratory.
   USDA National Nutrient Database for Standard Reference, Release 28. Version Current:
-  September 2015. Internet: http://www.ars.usda.gov/ba/bhnrc/ndl
+  September 2015. Internet: https://www.ars.usda.gov/Services/docs.htm?docid=8964
   (Full and Abbreviated versions.)
 
 ### Where Are the SQL Files?
